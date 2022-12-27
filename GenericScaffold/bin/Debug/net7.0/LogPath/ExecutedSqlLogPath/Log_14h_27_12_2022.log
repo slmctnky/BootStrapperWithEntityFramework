@@ -1,0 +1,78 @@
+Time : 2022.12.27 14:09:46	
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.0144106
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:46	SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.0336183
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:46	
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.1872680
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:46	SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.0110074
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:46	
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.0005339
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:46	SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+Time : 2022.12.27 14:09:46	                   ↓↓                    
+Time : 2022.12.27 14:09:46	RequestID : Console
+Time : 2022.12.27 14:09:46	ElapsedTime : 00:00:00.0156883
+Time : 2022.12.27 14:09:46	//////////////////////////////////
+Time : 2022.12.27 14:09:47	
+Time : 2022.12.27 14:09:47	                   ↓↓                    
+Time : 2022.12.27 14:09:47	RequestID : Console
+Time : 2022.12.27 14:09:47	ElapsedTime : 00:00:00.0004993
+Time : 2022.12.27 14:09:47	//////////////////////////////////
+Time : 2022.12.27 14:09:47	ALTER TABLE "Posts" ADD "TitleTemp" text NOT NULL DEFAULT '';
+
+Time : 2022.12.27 14:09:47	                   ↓↓                    
+Time : 2022.12.27 14:09:47	RequestID : Console
+Time : 2022.12.27 14:09:47	ElapsedTime : 00:00:00.0409357
+Time : 2022.12.27 14:09:47	//////////////////////////////////
+Time : 2022.12.27 14:09:47	
+Time : 2022.12.27 14:09:47	                   ↓↓                    
+Time : 2022.12.27 14:09:47	RequestID : Console
+Time : 2022.12.27 14:09:47	ElapsedTime : 00:00:00.0005407
+Time : 2022.12.27 14:09:47	//////////////////////////////////
+Time : 2022.12.27 14:09:47	INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20221227110843_V2', '7.0.1');
+
+Time : 2022.12.27 14:09:47	                   ↓↓                    
+Time : 2022.12.27 14:09:47	RequestID : Console
+Time : 2022.12.27 14:09:47	ElapsedTime : 00:00:00.0102864
+Time : 2022.12.27 14:09:47	//////////////////////////////////
+Time : 2022.12.27 14:09:58	
+Time : 2022.12.27 14:09:58	                   ↓↓                    
+Time : 2022.12.27 14:09:58	RequestID : Console
+Time : 2022.12.27 14:09:58	ElapsedTime : 00:00:00.0006528
+Time : 2022.12.27 14:09:58	//////////////////////////////////
+Time : 2022.12.27 14:09:58	INSERT INTO "Blogs" ("CreateDate", "UpdateDate", "Url")
+VALUES (@p0, @p1, @p2)
+RETURNING "Id";
+
+Time : 2022.12.27 14:09:58	//////////// PARAMETERS ///////////
+Time : 2022.12.27 14:09:58		@p0	:	27.12.2022 14:09:57
+Time : 2022.12.27 14:09:58		@p1	:	27.12.2022 14:09:57
+Time : 2022.12.27 14:09:58		@p2	:	http://sample.com
+Time : 2022.12.27 14:09:58	/////////////////////////////////// 
+Time : 2022.12.27 14:09:58	                   ↓↓                    
+Time : 2022.12.27 14:09:58	RequestID : Console
+Time : 2022.12.27 14:09:58	ElapsedTime : 00:00:00.0218138
+Time : 2022.12.27 14:09:58	//////////////////////////////////
+Time : 2022.12.27 14:09:58	
+Time : 2022.12.27 14:09:58	                   ↓↓                    
+Time : 2022.12.27 14:09:58	RequestID : Console
+Time : 2022.12.27 14:09:58	ElapsedTime : 00:00:00.0006025
+Time : 2022.12.27 14:09:58	//////////////////////////////////

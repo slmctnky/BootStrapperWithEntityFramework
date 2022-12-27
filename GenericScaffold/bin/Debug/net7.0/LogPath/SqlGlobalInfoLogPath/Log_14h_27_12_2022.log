@@ -1,0 +1,275 @@
+Time : 2022.12.27 14:09:45	dbug: 27.12.2022 14:09:45.826 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 7.0.1 initialized 'cDatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.1+bb6fc9a54b5214588485d0c178bcbc3c84f18479' with options: DetailedErrorsEnabled 
+Time : 2022.12.27 14:09:45	dbug: 27.12.2022 14:09:45.844 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+Time : 2022.12.27 14:09:45	dbug: 27.12.2022 14:09:45.901 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (57ms).
+Time : 2022.12.27 14:09:45	dbug: 27.12.2022 14:09:45.907 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:45	dbug: 27.12.2022 14:09:45.929 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.091 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.098 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.115 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (16ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.127 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.204 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (14ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.221 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (95ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.228 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.293 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.303 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	info: 27.12.2022 14:09:46.333 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (34ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.344 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.351 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (6ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.356 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.396 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.400 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.403 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (6ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.410 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.597 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (187ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.609 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (199ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.614 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.620 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.624 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	info: 27.12.2022 14:09:46.632 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (11ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.645 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.647 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (5ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.856 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.857 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.870 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (12ms).
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.871 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.878 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.886 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+Time : 2022.12.27 14:09:46	info: 27.12.2022 14:09:46.897 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.913 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.918 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'myDataBase' on server 'tcp://127.0.0.1:5432' is being disposed after spending 8ms reading results.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.924 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.927 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (0ms).
+Time : 2022.12.27 14:09:46	info: 27.12.2022 14:09:46.946 RelationalEventId.MigrationApplying[20402] (Microsoft.EntityFrameworkCore.Migrations) 
+      Applying migration '20221227110843_V2'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.974 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.979 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.987 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+Time : 2022.12.27 14:09:46	dbug: 27.12.2022 14:09:46.995 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.002 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.003 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.019 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (16ms).
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.024 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Posts" ADD "TitleTemp" text NOT NULL DEFAULT '';
+Time : 2022.12.27 14:09:47	info: 27.12.2022 14:09:47.061 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      ALTER TABLE "Posts" ADD "TitleTemp" text NOT NULL DEFAULT '';
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.071 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteNonQuery'.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.076 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteNonQuery' (0ms).
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.087 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteNonQuery' (16ms).
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.091 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20221227110843_V2', '7.0.1');
+Time : 2022.12.27 14:09:47	info: 27.12.2022 14:09:47.098 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+      VALUES ('20221227110843_V2', '7.0.1');
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.112 RelationalEventId.TransactionCommitting[20210] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committing transaction.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.123 RelationalEventId.TransactionCommitted[20202] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Committed transaction.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.127 RelationalEventId.TransactionDisposed[20204] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Disposing transaction.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.133 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:47	dbug: 27.12.2022 14:09:47.138 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (7ms).
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.831 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.832 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.836 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.843 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.874 CoreEventId.ValueGenerated[10808] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      'cDatabaseContext' generated a temporary value for the property 'Id.cBlogEntity'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.920 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'cDatabaseContext' started tracking 'cBlogEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.933 CoreEventId.ValueGenerated[10808] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      'cDatabaseContext' generated a temporary value for the property 'Id.cPostEntity'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.952 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'cPostEntity.Blog' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.967 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'cDatabaseContext' started tracking 'cPostEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.971 CoreEventId.ValueGenerated[10808] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      'cDatabaseContext' generated a temporary value for the property 'Id.cPostEntity'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.978 CoreEventId.ReferenceChangeDetected[10805] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The navigation 'cPostEntity.Blog' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.983 CoreEventId.StartedTracking[10806] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      Context 'cDatabaseContext' started tracking 'cPostEntity' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.991 CoreEventId.SaveChangesStarting[10004] (Microsoft.EntityFrameworkCore.Update) 
+      SaveChanges starting for 'cDatabaseContext'.
+Time : 2022.12.27 14:09:57	dbug: 27.12.2022 14:09:57.997 CoreEventId.DetectChangesStarting[10800] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges starting for 'cDatabaseContext'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.012 CoreEventId.DetectChangesCompleted[10801] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      DetectChanges completed for 'cDatabaseContext'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.061 RelationalEventId.CreatingTransactionSavepoint[20212] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Creating transaction savepoint.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.066 RelationalEventId.CreatedTransactionSavepoint[20213] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Created transaction savepoint.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.073 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.073 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.093 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (20ms).
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.098 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Blogs" ("CreateDate", "UpdateDate", "Url")
+      VALUES (@p0, @p1, @p2)
+      RETURNING "Id";
+Time : 2022.12.27 14:09:58	info: 27.12.2022 14:09:58.115 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (22ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?'], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Blogs" ("CreateDate", "UpdateDate", "Url")
+      VALUES (@p0, @p1, @p2)
+      RETURNING "Id";
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.135 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'cBlogEntity.Id' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.146 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'cPostEntity.BlogId' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.150 CoreEventId.ForeignKeyChangeDetected[10803] (Microsoft.EntityFrameworkCore.ChangeTracking) 
+      The foreign key property 'cPostEntity.BlogId' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see property values.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.156 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.162 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'myDataBase' on server 'tcp://127.0.0.1:5432' is being disposed after spending 37ms reading results.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.170 RelationalEventId.BatchReadyForExecution[20700] (Microsoft.EntityFrameworkCore.Update) 
+      Executing 2 update commands as a batch.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.176 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.176 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (0ms).
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.191 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (15ms).
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.196 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[@p3='?' (DbType = Int32), @p4='?', @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?' (DbType = Int32), @p10='?', @p11='?' (DbType = DateTime), @p12='?', @p13='?', @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Posts" ("BlogId", "Content", "CreateDate", "Title", "TitleTemp", "UpdateDate")
+      VALUES (@p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+      INSERT INTO "Posts" ("BlogId", "Content", "CreateDate", "Title", "TitleTemp", "UpdateDate")
+      VALUES (@p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+Time : 2022.12.27 14:09:58	fail: 27.12.2022 14:09:58.218 RelationalEventId.CommandError[20102] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Failed executing DbCommand (24ms) [Parameters=[@p3='?' (DbType = Int32), @p4='?', @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?' (DbType = DateTime), @p9='?' (DbType = Int32), @p10='?', @p11='?' (DbType = DateTime), @p12='?', @p13='?', @p14='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Posts" ("BlogId", "Content", "CreateDate", "Title", "TitleTemp", "UpdateDate")
+      VALUES (@p3, @p4, @p5, @p6, @p7, @p8)
+      RETURNING "Id";
+      INSERT INTO "Posts" ("BlogId", "Content", "CreateDate", "Title", "TitleTemp", "UpdateDate")
+      VALUES (@p9, @p10, @p11, @p12, @p13, @p14)
+      RETURNING "Id";
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.225 RelationalEventId.RollingBackToTransactionSavepoint[20214] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Rolling back to transaction savepoint.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.233 RelationalEventId.RolledBackToTransactionSavepoint[20215] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Rolled back to transaction savepoint.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.239 RelationalEventId.ReleasingTransactionSavepoint[20216] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Releasing transaction savepoint.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.246 RelationalEventId.ReleasedTransactionSavepoint[20217] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Released transaction savepoint.
+Time : 2022.12.27 14:09:58	fail: 27.12.2022 14:09:58.290 CoreEventId.SaveChangesFailed[10000] (Microsoft.EntityFrameworkCore.Update) 
+      An exception occurred in the database while saving changes for context type 'Domain.Data.nDatabaseService.cDatabaseContext'.
+      Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+       ---> Npgsql.PostgresException (0x80004005): 23502: null value in column "TitleTemp" of relation "Posts" violates not-null constraint
+      
+      DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+         at Npgsql.Internal.NpgsqlConnector.<ReadMessage>g__ReadMessageLong|226_0(NpgsqlConnector connector, Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+         at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+         at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+         at Npgsql.NpgsqlDataReader.NextResult()
+         at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+         at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior, Boolean async, CancellationToken cancellationToken)
+         at Npgsql.NpgsqlCommand.ExecuteReader(CommandBehavior behavior)
+         at Npgsql.NpgsqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+        Exception data:
+          Severity: ERROR
+          SqlState: 23502
+          MessageText: null value in column "TitleTemp" of relation "Posts" violates not-null constraint
+          Detail: Detail redacted as it may contain sensitive data. Specify 'Include Error Detail' in the connection string to include this information.
+          SchemaName: public
+          TableName: Posts
+          ColumnName: TitleTemp
+          File: execmain.c
+          Line: 1974
+          Routine: ExecConstraints
+         --- End of inner exception stack trace ---
+         at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.Execute(IRelationalConnection connection)
+         at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.Execute(IEnumerable`1 commandBatches, IRelationalConnection connection)
+         at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChanges(IList`1 entries)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(IList`1 entriesToSave)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(StateManager stateManager, Boolean acceptAllChangesOnSuccess)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.<>c.<SaveChanges>b__107_0(DbContext _, ValueTuple`2 t)
+         at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+         at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChanges(Boolean acceptAllChangesOnSuccess)
+         at Microsoft.EntityFrameworkCore.DbContext.SaveChanges(Boolean acceptAllChangesOnSuccess)
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.342 RelationalEventId.TransactionRollingBack[20211] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Rolling back transaction.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.348 RelationalEventId.TransactionRolledBack[20203] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Rolled back transaction.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.348 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.359 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (10ms).

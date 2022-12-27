@@ -1,0 +1,18 @@
+Time : 2022.12.27 14:09:24	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.27 14:09:24	Type  Bind : cFileEntity`1 -> cFileEntity`1  ,  Life : PerResolveLifetimeManager
+Time : 2022.12.27 14:09:24	Type  Bind : cGlobalSettingEntity -> cGlobalSettingEntity  ,  Life : PerResolveLifetimeManager
+Time : 2022.12.27 14:09:24	Type  Bind : cBaseDataService`1 -> cBaseDataService`1  ,  Life : TransientLifetimeManager
+Time : 2022.12.27 14:09:24	Type  Bind : IFileDateService -> cFileDataService  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.27 14:09:24	Type  Bind : cDataService -> cDataService  ,  Life : TransientLifetimeManager
+Time : 2022.12.27 14:09:24	ResolveInstance<T>() started : cDataService
+Time : 2022.12.27 14:09:24	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.27 14:09:25	ResolveInstance<T>() ended : cDataService
+Time : 2022.12.27 14:09:25	Type  Bind : cDatabaseContext -> cDatabaseContext  ,  Life : PerThreadLifetimeManager
+Time : 2022.12.27 14:09:25	ResolveInstance<T>() started : cStartup`1
+Time : 2022.12.27 14:09:25	ResolveInstance<T>() started : cStarter
+Time : 2022.12.27 14:09:25	ResolveInstance<T>() ended : cStarter
+Time : 2022.12.27 14:09:25	ResolveInstance<T>() ended : cStartup`1
+Time : 2022.12.27 14:09:40	ResolveInstance<T>() started : cDatabaseContext
+Time : 2022.12.27 14:09:40	ResolveInstance<T>() ended : cDatabaseContext
+Time : 2022.12.27 14:09:52	ResolveInstance<T>() started : cDatabaseContext
+Time : 2022.12.27 14:09:52	ResolveInstance<T>() ended : cDatabaseContext

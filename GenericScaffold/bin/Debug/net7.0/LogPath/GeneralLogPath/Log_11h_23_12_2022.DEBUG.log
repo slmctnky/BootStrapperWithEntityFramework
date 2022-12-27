@@ -1,0 +1,30 @@
+Time : 2022.12.23 11:45:30	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:45:30	ResolveInstance<T>() started : cStartup`1
+Time : 2022.12.23 11:45:30	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:45:30	ResolveInstance<T>() started : cStarter
+Time : 2022.12.23 11:45:30	ResolveInstance<T>() ended : cStarter
+Time : 2022.12.23 11:45:30	ResolveInstance<T>() ended : cStartup`1
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() started : cFileDataService
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() ended : cFileDataService
+Time : 2022.12.23 11:46:57	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:46:57	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() started : cStartup`1
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() started : cStarter
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() ended : cStarter
+Time : 2022.12.23 11:46:57	ResolveInstance<T>() ended : cStartup`1
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() started : cFileDataService
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() ended : cFileDataService
+Time : 2022.12.23 11:47:09	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:47:09	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() started : cStartup`1
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() started : cStarter
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() ended : cStarter
+Time : 2022.12.23 11:47:09	ResolveInstance<T>() ended : cStartup`1
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() started : cFileDataService
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() ended : cFileDataService
+Time : 2022.12.23 11:47:53	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:47:53	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() started : cStartup`1
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() started : cStarter
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() ended : cStarter
+Time : 2022.12.23 11:47:53	ResolveInstance<T>() ended : cStartup`1
