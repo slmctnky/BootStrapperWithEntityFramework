@@ -9,7 +9,7 @@
       "GenericScaffold/1.0.0": {
         "dependencies": {
           "Base.Data": "1.0.0",
-          "Domain.Data": "1.0.0",
+          "Data.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.1"
         },
         "runtime": {
@@ -847,12 +847,12 @@
           "Bootstrapper.Core.dll": {}
         }
       },
-      "Domain.Data/1.0.0": {
+      "Data.Domain/1.0.0": {
         "dependencies": {
           "Base.Data": "1.0.0"
         },
         "runtime": {
-          "Domain.Data.dll": {}
+          "Data.Domain.dll": {}
         }
       }
     }
@@ -1387,7 +1387,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Domain.Data/1.0.0": {
+    "Data.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

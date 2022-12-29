@@ -273,3 +273,105 @@ Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.348 RelationalEventId.Conne
       Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
 Time : 2022.12.27 14:09:58	dbug: 27.12.2022 14:09:58.359 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
       Closed connection to database 'myDataBase' on server '' (10ms).
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.671 CoreEventId.ContextInitialized[10403] (Microsoft.EntityFrameworkCore.Infrastructure) 
+      Entity Framework Core 7.0.1 initialized 'cDatabaseContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:7.0.1+bb6fc9a54b5214588485d0c178bcbc3c84f18479' with options: DetailedErrorsEnabled 
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.691 RelationalEventId.ConnectionCreating[20005] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Creating DbConnection.
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.770 RelationalEventId.ConnectionCreated[20006] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Created DbConnection. (78ms).
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.776 RelationalEventId.MigrateUsingConnection[20400] (Microsoft.EntityFrameworkCore.Migrations) 
+      Migrating using database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.809 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.985 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:07	dbug: 27.12.2022 14:16:07.990 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.009 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (17ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.021 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.027 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (8ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.041 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (23ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.046 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.105 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.114 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:16:08	info: 27.12.2022 14:16:08.147 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (35ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.160 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.166 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (5ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.172 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.217 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.218 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.224 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (6ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.231 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteScalar'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.234 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteScalar' (3ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.245 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteScalar' (13ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.252 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.256 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.262 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:16:08	info: 27.12.2022 14:16:08.273 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (16ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.279 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.280 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (0ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.310 RelationalEventId.CommandCreating[20103] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Creating DbCommand for 'ExecuteReader'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.314 RelationalEventId.CommandCreated[20104] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Created DbCommand for 'ExecuteReader' (1ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.351 RelationalEventId.CommandInitialized[20106] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Initialized DbCommand for 'ExecuteReader' (40ms).
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.352 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.388 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.396 RelationalEventId.CommandExecuting[20100] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executing DbCommand [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+Time : 2022.12.27 14:16:08	info: 27.12.2022 14:16:08.409 RelationalEventId.CommandExecuted[20101] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT "MigrationId", "ProductVersion"
+      FROM "__EFMigrationsHistory"
+      ORDER BY "MigrationId";
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.427 RelationalEventId.DataReaderClosing[20301] (Microsoft.EntityFrameworkCore.Database.Command) 
+      Closing data reader to 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.433 RelationalEventId.DataReaderDisposing[20300] (Microsoft.EntityFrameworkCore.Database.Command) 
+      A data reader for 'myDataBase' on server 'tcp://127.0.0.1:5432' is being disposed after spending 8ms reading results.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.438 RelationalEventId.ConnectionClosing[20002] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closing connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:08	dbug: 27.12.2022 14:16:08.439 RelationalEventId.ConnectionClosed[20003] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Closed connection to database 'myDataBase' on server '' (0ms).
+Time : 2022.12.27 14:16:08	info: 27.12.2022 14:16:08.459 RelationalEventId.MigrationsNotApplied[20405] (Microsoft.EntityFrameworkCore.Migrations) 
+      No migrations were applied. The database is already up to date.
+Time : 2022.12.27 14:16:11	dbug: 27.12.2022 14:16:11.639 RelationalEventId.ConnectionOpening[20000] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opening connection to database 'myDataBase' on server ''.
+Time : 2022.12.27 14:16:11	dbug: 27.12.2022 14:16:11.640 RelationalEventId.ConnectionOpened[20001] (Microsoft.EntityFrameworkCore.Database.Connection) 
+      Opened connection to database 'myDataBase' on server 'tcp://127.0.0.1:5432'.
+Time : 2022.12.27 14:16:11	dbug: 27.12.2022 14:16:11.654 RelationalEventId.TransactionStarting[20209] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Beginning transaction with isolation level 'Unspecified'.
+Time : 2022.12.27 14:16:11	dbug: 27.12.2022 14:16:11.660 RelationalEventId.TransactionStarted[20200] (Microsoft.EntityFrameworkCore.Database.Transaction) 
+      Began transaction with isolation level 'ReadCommitted'.

@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Domain.Data.nDatabaseService;
-using Domain.Data.nDatabaseService.Entities;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
+using Data.Domain.nDatabaseService;
+using Data.Domain.nDatabaseService.Entities;
+using DData.Domain.nDatabaseService.Entities;
 
 namespace GenericScaffold
 {
@@ -30,6 +31,27 @@ namespace GenericScaffold
 
             __DatabaseContext.Perform(() =>
             {
+                cDatabaseContext __DatabaseContext2 = DataService.GetDatabaseContext();
+
+                __DatabaseContext2.Perform(() =>
+                {
+
+                    var blog = new cBlogEntity
+                    {
+                        Url = "http://sample.com",
+                        Posts = new List<cPostEntity>()
+                        {
+                            new cPostEntity(){ Content = "test", Title = "Test" },
+                            new cPostEntity() { Content = "test", Title = "Test" }
+                        }
+
+                    };
+                    __DatabaseContext2.Blogs.Add(blog);
+                    __DatabaseContext2.SaveChanges();
+
+                });
+
+
                 var blog = new cBlogEntity
                 {
                     Url = "http://sample.com",

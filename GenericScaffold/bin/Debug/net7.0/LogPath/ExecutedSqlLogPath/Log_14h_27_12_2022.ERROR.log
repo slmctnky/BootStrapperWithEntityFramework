@@ -44,3 +44,18 @@ DETAIL: Detail redacted as it may contain sensitive data. Specify 'Include Error
 
 ####################################################################################################
 
+Time : 2022.12.27 14:16:15
+
+####################################################################################################
+
+The connection is already in a transaction and cannot participate in another transaction.
+    at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.EnsureNoTransactions()
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction(IsolationLevel isolationLevel)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.BeginTransaction()
+   at Microsoft.EntityFrameworkCore.Infrastructure.DatabaseFacade.BeginTransaction()
+   at Base.Data.nDatabaseService.nDatabase.cBaseDatabaseContext.InvokeTransactionalAction(Func`1 _ServiceMethod) in C:\ProjectWorkspace\GenericScaffold\Base.Data\nDatabaseService\nDatabase\cBaseDatabaseContext.cs:line 71 
+ Microsoft.EntityFrameworkCore.Relational 
+ 
+
+####################################################################################################
+

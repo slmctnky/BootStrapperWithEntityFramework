@@ -103,7 +103,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 
             ///////// Log Nereye basılacak Ayarı //////
             LogToFile = true;
-            LogToConsole = true;
+            LogToConsole = false;
             ///////////////////////////////////////////
 
             ///////// Hangi Tip loglar basılacak ayarı //////

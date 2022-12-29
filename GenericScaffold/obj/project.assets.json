@@ -1367,17 +1367,17 @@
           "bin/placeholder/Bootstrapper.Core.dll": {}
         }
       },
-      "Domain.Data/1.0.0": {
+      "Data.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Base.Data": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Domain.Data.dll": {}
+          "bin/placeholder/Data.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Domain.Data.dll": {}
+          "bin/placeholder/Data.Domain.dll": {}
         }
       }
     }
@@ -3796,16 +3796,16 @@
       "path": "../Bootstrapper.Core/Bootstrapper.Core.csproj",
       "msbuildProject": "../Bootstrapper.Core/Bootstrapper.Core.csproj"
     },
-    "Domain.Data/1.0.0": {
+    "Data.Domain/1.0.0": {
       "type": "project",
-      "path": "../Domain.Data/Domain.Data.csproj",
-      "msbuildProject": "../Domain.Data/Domain.Data.csproj"
+      "path": "../Data.Domain/Data.Domain.csproj",
+      "msbuildProject": "../Data.Domain/Data.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Base.Data >= 1.0.0",
-      "Domain.Data >= 1.0.0",
+      "Data.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.1"
     ]
   },
@@ -3845,8 +3845,8 @@
             "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj": {
               "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj"
             },
-            "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj": {
-              "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj"
+            "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj": {
+              "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj"
             }
           }
         }

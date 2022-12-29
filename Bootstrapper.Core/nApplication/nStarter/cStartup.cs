@@ -13,6 +13,7 @@ namespace Bootstrapper.Core.nApplication.nStarter
     [Register]
     public class cStartup<TStarter> : cCoreObject, IStarter where TStarter : IStarter
     {
+        IComponentLoader ComponentLoader { get; set; }
         public TStarter StarterInstance { get; set; }
         public cStartup(cApp _App)
             :base(_App)
@@ -23,6 +24,13 @@ namespace Bootstrapper.Core.nApplication.nStarter
         {
             CultureInfo.DefaultThreadCurrentCulture = _App.Configuration.UICulture;
             CultureInfo.DefaultThreadCurrentUICulture = _App.Configuration.UICulture;
+
+            Type __Type = App.Bootstrapper.GetInheritedTypeFromDomainList<IComponentLoader>();
+            if (__Type != null)
+            {
+                ComponentLoader = (IComponentLoader)App.Factories.ObjectFactory.ResolveInstance(__Type);
+                ComponentLoader.Load();
+            }
 
             //Ön yükleme yapılacak
 

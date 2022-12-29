@@ -331,14 +331,14 @@
         }
       }
     },
-    "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj": {
+    "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj",
-        "projectName": "Domain.Data",
-        "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj",
+        "projectUniqueName": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj",
+        "projectName": "Data.Domain",
+        "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj",
         "packagesPath": "C:\\Users\\hayri.eryürek\\.nuget\\packages\\",
-        "outputPath": "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\obj\\",
+        "outputPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -375,6 +375,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -427,8 +435,8 @@
               "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj": {
                 "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj"
               },
-              "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj": {
-                "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Domain.Data\\Domain.Data.csproj"
+              "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj": {
+                "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj"
               }
             }
           }

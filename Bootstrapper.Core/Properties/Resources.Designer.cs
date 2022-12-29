@@ -19,7 +19,7 @@ namespace Bootstrapper.Core.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -60,7 +60,24 @@ namespace Bootstrapper.Core.Properties {
             }
         }
         
-
+        /// <summary>
+        ///   Looks up a localized string similar to using System;
+        ///using System.Collections.Generic;
+        ///using System.IO;
+        ///using System.Linq;
+        ///using System.Reflection;
+        ///using System.Text;
+        ///using System.Threading.Tasks;
+        ///using System.Windows.Forms;
+        ///using Bootstrapper.Core;
+        ///using Bootstrapper.Core.nCore;
+        ///using Bootstrapper.Core.nApplication;
+        ///using Toygar.DB.Data;
+        ///using Base.FileData;
+        ///
+        ///SOURCE
+        ///.
+        /// </summary>
         internal static string SCRIPTING_CLASS_SOURCE {
             get {
                 return ResourceManager.GetString("SCRIPTING_CLASS_SOURCE", resourceCulture);
