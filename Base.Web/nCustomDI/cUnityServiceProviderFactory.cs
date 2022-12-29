@@ -21,9 +21,7 @@ namespace Base.Web.nCustomDI
 
         public cUnityContainerBuilder CreateBuilder(IServiceCollection _Services)
         {
-            // Store the services for later.
             Services = _Services;
-
             return new cUnityContainerBuilder(App, _Services);
         }
 
@@ -31,17 +29,6 @@ namespace Base.Web.nCustomDI
         {
 
             return _ContainerBuilder.BuildServiceProvider(); 
-            /*var sp = _ContainerBuilder.BuildServiceProvider();
-#pragma warning disable CS0612 // Type or member is obsolete
-            var filters = sp.GetRequiredService<IEnumerable<IStartupConfigureContainerFilter<cUnityContainerBuilder>>>();
-#pragma warning restore CS0612 // Type or member is obsolete
-
-            foreach (var filter in filters)
-            {
-                filter.ConfigureContainer(b => { })(_ContainerBuilder);
-            }
-
-            return _wrapped.CreateServiceProvider(containerBuilder);*/
         }
     }
 }

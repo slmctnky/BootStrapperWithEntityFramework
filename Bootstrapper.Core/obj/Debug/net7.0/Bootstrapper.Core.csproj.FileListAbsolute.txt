@@ -32,3 +32,6 @@ C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\obj\Debug\net7.0\Bootstrap
 C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\obj\Debug\net7.0\refint\Bootstrapper.Core.dll
 C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\obj\Debug\net7.0\Bootstrapper.Core.pdb
 C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\obj\Debug\net7.0\ref\Bootstrapper.Core.dll
+C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\bin\Debug\net7.0\LanguagePath\en.json
+C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\bin\Debug\net7.0\LanguagePath\Languages.json
+C:\ProjectWorkspace\GenericScaffold\Bootstrapper.Core\bin\Debug\net7.0\LanguagePath\tr.json

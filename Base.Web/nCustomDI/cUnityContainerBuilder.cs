@@ -24,19 +24,18 @@ namespace Base.Web.nCustomDI
 
         public cUnityServiceProvider BuildServiceProvider()
         {
-            
             //App.Factories.ObjectFactory.RegisterInstance<IConfiguration>(Configuration);
 
-            var unityServiceProvider = new cUnityServiceProvider(App.Factories.ObjectFactory.DependencyContainer);
+            cUnityServiceProvider __UnityServiceProvider = new cUnityServiceProvider(App.Factories.ObjectFactory.DependencyContainer);
 
 
             Services.AddSingleton<IControllerActivator>(new cUnityControllerActivator(App.Factories.ObjectFactory.DependencyContainer));
 
-            var __DefaultProvider = Services.BuildServiceProvider();
+            IServiceProvider __DefaultProvider = Services.BuildServiceProvider();
 
             App.Factories.ObjectFactory.DependencyContainer.AddExtension(new cUnityFallbackProviderExtension(__DefaultProvider));
 
-            return unityServiceProvider;
+            return __UnityServiceProvider;
         }
     }
 }

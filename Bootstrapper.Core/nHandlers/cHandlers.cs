@@ -25,6 +25,7 @@ using Bootstrapper.Core.nHandlers.nExcelHandler;
 using Bootstrapper.Core.nHandlers.nStackHandler;
 using Bootstrapper.Core.nHandlers.nXmlHandler;
 using Bootstrapper.Core.nHandlers.nScriptHandler;
+using Bootstrapper.Core.nHandlers.nLanguageHandler;
 
 namespace Bootstrapper.Core.nHandlers
 {
@@ -48,6 +49,7 @@ namespace Bootstrapper.Core.nHandlers
 		public cStackHandler StackHandler { get; set; }
         public cXmlHandler XmlHandler { get; set; }
         public cScriptHandler ScriptHandler { get; set; }
+        public cLanguageHandler LanguageHandler { get; set; }
 
         public cHandlers(nApplication.cApp _App)
             : base(_App)
@@ -69,6 +71,7 @@ namespace Bootstrapper.Core.nHandlers
 			StackHandler = new cStackHandler(_App);
             XmlHandler = new cXmlHandler(_App);
             ScriptHandler = new cScriptHandler(_App);
+            LanguageHandler = new cLanguageHandler(App);
         }
 
         public override void Init()
@@ -86,6 +89,7 @@ namespace Bootstrapper.Core.nHandlers
             HashHandler.Init();
             ValidationHandler.Init();
             ContextHandler.Init();
+            LanguageHandler.Init();
             DefaultDataHandler.Init();
             EmailHandler.Init();
 			ExcelHandler.Init();

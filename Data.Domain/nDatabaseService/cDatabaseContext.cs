@@ -13,6 +13,8 @@ namespace Data.Domain.nDatabaseService
 {
     public class cDatabaseContext : cBaseDatabaseContext
     {
+        public DbSet<cBlogEntity> cUserEntity { get; set; }
+        
         public DbSet<cBlogEntity> Blogs { get; set; }
         public DbSet<cPostEntity> Posts { get; set; }
 

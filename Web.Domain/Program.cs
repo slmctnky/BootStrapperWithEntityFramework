@@ -3,84 +3,98 @@ using Base.Web.nCustomDI;
 using Bootstrapper.Boundary.nCore.nBootType;
 using Bootstrapper.Core.nApplication;
 using Data.Domain.nConfiguration;
-using GenericWebScaffold;
 using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Web.Domain;
 
 public class Program
 {
-    public static void Main(string[] args)
+    public static void Main(string[] _Args)
     {
-        //CreateWebHostBuilder(args).Build().Run();
+        WebApplicationBuilder __Builder = WebApplication.CreateBuilder(_Args);
 
-        WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+        __Builder.Services.Configure<KestrelServerOptions>(__Options =>
+        {
+            __Options.AllowSynchronousIO = true;
+        });
+
+        __Builder.Services.Configure<IISServerOptions>(__Options =>
+        {
+            __Options.AllowSynchronousIO = true;
+        });
+
+        __Builder.Services.AddControllersWithViews();
+        __Builder.Services.AddSignalR(__Conf =>
+        {
+            __Conf.MaximumReceiveMessageSize = null;
+        });
+
+        __Builder.Services.AddCors(o => o.AddPolicy("CorsPolicy", __Builder =>
+        {
+            __Builder
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowAnyOrigin();
+        }));
+
+        __Builder.Services.Configure<CookiePolicyOptions>(__Options =>
+        {
+            // This lambda determines whether user consent for non-essential cookies is needed for a given request.
+            __Options.CheckConsentNeeded = context => false;
+            __Options.MinimumSameSitePolicy = SameSiteMode.None;
+        });
+
+        __Builder.Services.AddDistributedMemoryCache();
+
+        __Builder.Services.AddSession(__Options =>
+        {
+            // Set a short timeout for easy testing.
+            __Options.IdleTimeout = TimeSpan.FromSeconds(10);
+            __Options.Cookie.HttpOnly = true;
+            // Make the session cookie essential
+            __Options.Cookie.IsEssential = true;
+        });
+
+
+
 
         cDomainDataConfiguration __Configuration = new cDomainDataConfiguration(EBootType.Web);
         cApp __App = cApp.Start<cStarter>(__Configuration);
 
-
-
-        builder.Host.UseServiceProviderFactory(new cUnityServiceProviderFactory(__App));
+        __Builder.Host.UseServiceProviderFactory(new cUnityServiceProviderFactory(__App));
 
         // Add services to the container.
 
-        
-        builder.Services.AddControllersWithViews();
 
-        var app = builder.Build();
+        var __WebApp = __Builder.Build();
 
         // Configure the HTTP request pipeline.
-        if (!app.Environment.IsDevelopment())
+        if (!__WebApp.Environment.IsDevelopment())
         {
             // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-            app.UseHsts();
+            __WebApp.UseHsts();
         }
 
-        app.UseHttpsRedirection();
-        app.UseStaticFiles();
-        app.UseRouting();
+        __WebApp.UseHttpsRedirection();
+        __WebApp.UseStaticFiles();
+        __WebApp.UseRouting();
 
+        __WebApp.Use((__Context, __Next) =>
+        {
+            __Context.Request.EnableBuffering();
+            return __Next();
+        });
 
-        app.MapControllerRoute(
+        __WebApp.MapControllerRoute(
             name: "default",
             pattern: "{controller}/{action=Index}/{id?}");
 
-        app.MapFallbackToFile("index.html");
+        __WebApp.MapFallbackToFile("index.html");
 
-        app.Run();
+        __WebApp.UseCors("CorsPolicy");
+
+        __WebApp.Run();
     }
 
-    /* public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-         WebHost.CreateDefaultBuilder(args)
-             .UseStartup<Startup>();*/
 }
-
-/*
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllersWithViews();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
-
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-
-
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-
-app.MapFallbackToFile("index.html");
-
-app.Run();
-*/

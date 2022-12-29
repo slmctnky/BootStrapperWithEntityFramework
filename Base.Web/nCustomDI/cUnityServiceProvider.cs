@@ -21,20 +21,20 @@ namespace Base.Web.nCustomDI
         #region Implementation of IServiceProvider
 
         /// <summary>Gets the service object of the specified type.</summary>
-        /// <returns>A service object of type <paramref name="serviceType" />.-or- null if there is no service object of type <paramref name="serviceType" />.</returns>
-        /// <param name="serviceType">An object that specifies the type of service object to get. </param>
-        public object GetService(Type serviceType)
+        /// <returns>A service object of type <paramref name="_ServiceType" />.-or- null if there is no service object of type <paramref name="_ServiceType" />.</returns>
+        /// <param name="_ServiceType">An object that specifies the type of service object to get. </param>
+        public object GetService(Type _ServiceType)
         {
             //Delegates the GetService to the Containers Resolve method
             try
             {
-                return m_Montainer.Resolve(serviceType);
+                return m_Montainer.Resolve(_ServiceType);
             }
             catch(Exception _Ex)
             {
 				cApp.App.Loggers.CoreLogger.LogError(_Ex);
 				IServiceProvider __IServiceProvider = m_Montainer.Resolve<IServiceProvider>();
-                object __Result = __IServiceProvider.GetService(serviceType);
+                object __Result = __IServiceProvider.GetService(_ServiceType);
                 return __Result;
             }
         }

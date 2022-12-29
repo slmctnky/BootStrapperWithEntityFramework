@@ -10,7 +10,7 @@ namespace Base.Data.nDatabaseService.nDatabase
     public class cBaseEntity
     {
         [Key]
-        public int Id { get; set; }
+        public long ID { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
 

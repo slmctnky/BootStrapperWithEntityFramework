@@ -26,7 +26,8 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
         public string ScriptPath { get; private set; }
         public string ScriptCachePath { get; private set; }
         public string ScriptDebugSourcePath { get; private set; }
-
+        public string LanguagePath { get; set; }
+        
 
         public EBootType BootType { get; set; }
 
@@ -87,6 +88,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ConfigurationDataPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ScriptCachePath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ScriptDebugSourcePath, true);
+            App.Handlers.FileHandler.MakeDirectory(App.Configuration.LanguagePath, true);
 
         }
 
@@ -150,8 +152,6 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             ConfigurationDataPath = GetVariableName(() => ConfigurationDataPath);
             ConfigurationDataPath = Path.Combine(HomePath, ConfigurationDataPath);
 
-
-
             ScriptPath = GetVariableName(() => ScriptPath);
             ScriptCachePath = GetVariableName(() => ScriptCachePath);
 
@@ -161,6 +161,8 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             ScriptDebugSourcePath = Path.Combine(HomePath, ScriptPath, ScriptDebugSourcePath);
             ScriptPath = Path.Combine(HomePath, ScriptPath);
 
+            LanguagePath = GetVariableName(() => LanguagePath);
+            LanguagePath = Path.Combine(HomePath, LanguagePath);
 
         }
 
