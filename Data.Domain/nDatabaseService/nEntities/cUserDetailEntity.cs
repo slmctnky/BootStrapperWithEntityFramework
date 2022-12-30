@@ -1,14 +1,14 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDatabaseService.Entities;
+using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DData.Domain.nDatabaseService.Entities
+namespace DData.Domain.nDatabaseService.nEntities
 {
-    public class cUserDetailEntity : cBaseEntity
+    public class cUserDetailEntity : cBaseEntity<cUserDetailEntity>
     {
         public string Telephone { get; set; }
 

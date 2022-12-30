@@ -1,5 +1,5 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDatabaseService.Entities;
+using DData.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DData.Domain.nDatabaseService.Entities
+namespace Data.Domain.nDatabaseService.nEntities
 {
-    public class cUserSessionEntity : cBaseEntity
+    public class cUserSessionEntity : cBaseEntity<cUserSessionEntity>
     {
         public string SessionHash { get; set; }
         public string IpAddress { get; set; }

@@ -11,7 +11,8 @@ using Base.Data.nConfiguration;
 using Bootstrapper.Core.nCore;
 using Bootstrapper.Core.nApplication;
 using Web.Domain.Controllers;
-using DData.Domain.nDatabaseService.Entities;
+using DData.Domain.nDatabaseService.nEntities;
+using Data.GenericWebScaffold.nDataService.nDataManagers;
 
 namespace Web.Domain.nWebGraph.nSessionManager
 {
@@ -165,49 +166,7 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 return __CurrentSession;
             }
         }
-        public cSession CreateSessionFromTemp(IController _Controller, string _OldSessionId)
-        {
-            lock (SessionItems)
-            {
-                ClearUnusedSession(_Controller);
-
-                string __SessionID = _Controller.CurrentContext.Request.Cookies[CookieSessionName];
-                if (string.IsNullOrEmpty(__SessionID))
-                {
-                    CookieOptions __Options = new CookieOptions();
-                    __Options.Expires = DateTime.Now.AddDays(365);
-
-                    __SessionID = _Controller.CurrentContext.Session.Id;
-                    _Controller.CurrentContext.Response.Cookies.Append(CookieSessionName, __SessionID, __Options);
-                }
-
-                cSession __CurrentSession = GetSessionByID(__SessionID);
-                if (__CurrentSession == null)
-                {
-                    __CurrentSession = new cSession(App, _Controller, __SessionID);
-                }
-                cUserEntity __UserEntity = SessionDataManager.GetUserBySessionID(_OldSessionId);
-                if (__UserEntity != null)
-                {
-                    __CurrentSession.SetUser(__UserEntity);
-                }
-                else
-                {
-                    __UserEntity = SessionDataManager.GetUserBySessionIDFromTemp(_OldSessionId);
-                    if (__UserEntity != null)
-                    {
-                        SessionDataManager.AddUserSessionTemp(__UserEntity, __SessionID, _Controller.ClientSession.IpAddress);
-                        __CurrentSession.SetUser(__UserEntity);
-                    }
-                }
-
-                __CurrentSession.RefreshValue(_Controller);
-                SessionItems.Remove(__CurrentSession);
-                SessionItems.Insert(0, __CurrentSession);
-
-                return __CurrentSession;
-            }
-        }
+       
 
         public void Logout(IController _Controller)
         {

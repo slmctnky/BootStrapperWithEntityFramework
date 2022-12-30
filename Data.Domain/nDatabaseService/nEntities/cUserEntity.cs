@@ -1,14 +1,14 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDatabaseService.Entities;
+using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DData.Domain.nDatabaseService.Entities
+namespace DData.Domain.nDatabaseService.nEntities
 {
-    public class cUserEntity : cBaseEntity
+    public class cUserEntity : cBaseEntity<cUserEntity>
     {
         public string Name { get; set; }
 
@@ -24,6 +24,8 @@ namespace DData.Domain.nDatabaseService.Entities
         public  int State { get; set; }
 
         public List<cUserSessionEntity> Sessions { get; set; }
+
+        public List<cRoleEntity> Role { get; set; }
 
         public  cUserDetailEntity UserDetail { get; set; }
     }

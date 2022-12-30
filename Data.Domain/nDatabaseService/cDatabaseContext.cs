@@ -1,7 +1,7 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
 using Bootstrapper.Core.nApplication;
-using Data.Domain.nDatabaseService.Entities;
-using DData.Domain.nDatabaseService.Entities;
+using Data.Domain.nDatabaseService.nEntities;
+using DData.Domain.nDatabaseService.nEntities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +13,11 @@ namespace Data.Domain.nDatabaseService
 {
     public class cDatabaseContext : cBaseDatabaseContext
     {
-        public DbSet<cBlogEntity> cUserEntity { get; set; }
-        
+        public DbSet<cUserEntity> Users { get; set; }
+        public DbSet<cUserDetailEntity> UserDetails { get; set; }
+        public DbSet<cUserSessionEntity> Sessions { get; set; }
+        public DbSet<cRoleEntity> Roles { get; set; }
+
         public DbSet<cBlogEntity> Blogs { get; set; }
         public DbSet<cPostEntity> Posts { get; set; }
 

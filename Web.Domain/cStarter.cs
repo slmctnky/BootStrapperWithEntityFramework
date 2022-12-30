@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDatabaseService.Entities;
-using DData.Domain.nDatabaseService.Entities;
+using Data.Domain.nDatabaseService.nEntities;
+using DData.Domain.nDatabaseService.nEntities;
 
 namespace Web.Domain
 {
@@ -26,6 +26,7 @@ namespace Web.Domain
         public void Start(cApp _App)
         {
             DataService.Migrate();
+            DataService.LoadDefaultData();
 
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 

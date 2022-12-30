@@ -1,14 +1,14 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using DData.Domain.nDatabaseService.Entities;
+using DData.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Domain.nDatabaseService.Entities
+namespace Data.Domain.nDatabaseService.nEntities
 {
-    public class cPostEntity : cBaseEntity
+    public class cPostEntity : cBaseEntity<cPostEntity>
     {
         public string Title { get; set; }
 

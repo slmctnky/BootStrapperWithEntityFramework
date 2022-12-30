@@ -6,13 +6,14 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Base.Data.nDatabaseService
 {
     [Register(null, false, true, true, true, LifeTime.TransientLifetimeManager)]
-    public abstract class cBaseDataService<TDatabaseContext> : cCoreService<cDataServiceContext>
+    public abstract class cBaseDataService<TDatabaseContext> : cCoreService<cDataServiceContext>, IDataService
         where TDatabaseContext : cBaseDatabaseContext
     {
         public bool IsMigrated { get; set; }
@@ -21,6 +22,7 @@ namespace Base.Data.nDatabaseService
         {
             ServiceContext = _ServiceContext;
             IsMigrated = false;
+            cBaseEntityType.DataService = this;
         }
 
         public override void Init()
@@ -48,9 +50,21 @@ namespace Base.Data.nDatabaseService
             }
         }
 
+        public void LoadDefaultData()
+        {
+            IDefaultDataLoader __DefaultDataLoader = ServiceContext.App.Factories.ObjectFactory.ResolveInstance<IDefaultDataLoader>();
+            __DefaultDataLoader.Load();
+        }
+
         public TDatabaseContext GetDatabaseContext()
         {
             return ServiceContext.App.Factories.ObjectFactory.ResolveInstance<TDatabaseContext>();
+        }
+
+        public DbContext GetCoreEFDatabaseContext()
+        {
+            return (DbContext)GetDatabaseContext();
+            
         }
     }
 }
