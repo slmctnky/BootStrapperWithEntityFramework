@@ -27,7 +27,7 @@ namespace Web.Domain.nWebGraph.nErrorMessageManager
 
 		public void ErrorAction(Exception _Ex, IController _Controller, string _Header, string _Message)
 		{
-			cGenericWebScaffoldDataService __DataService = (cGenericWebScaffoldDataService)DataServiceManager.GetDataService();
+			/*cGenericWebScaffoldDataService __DataService = (cGenericWebScaffoldDataService)DataServiceManager.GetDataService();
 
 			if (__DataService.BackendDebugMessageShowToUser)
 			{
@@ -46,12 +46,12 @@ namespace Web.Domain.nWebGraph.nErrorMessageManager
 					   Header = _Header,
 					   Message = _Message
 				   });
-			}
+			}*/
 		}
 
 		public void ErrorAction(IController _Controller, string _Header, string _Message)
 		{
-			cGenericWebScaffoldDataService __DataService = (cGenericWebScaffoldDataService)DataServiceManager.GetDataService();
+			/*cGenericWebScaffoldDataService __DataService = (cGenericWebScaffoldDataService)DataServiceManager.GetDataService();
 
 			if (__DataService.BackendDebugMessageShowToUser)
 			{
@@ -70,7 +70,7 @@ namespace Web.Domain.nWebGraph.nErrorMessageManager
 					   Header = _Header,
 					   Message = _Message
 				   });
-			}
+			}*/
 		}
 	}
 }

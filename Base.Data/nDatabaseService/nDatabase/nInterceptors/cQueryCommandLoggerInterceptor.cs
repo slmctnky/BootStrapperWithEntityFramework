@@ -24,7 +24,7 @@ namespace Base.Data.nDatabaseService.nDatabase.nInterceptors
 
         public override DbCommand CommandCreated(CommandEndEventData _EventData, DbCommand _Result)
         {
-            if (App.Configuration.LogExecutedSqlEnabled)
+            if (App.Configuration.ApplicationSettings.LogExecutedSqlEnabled)
             {
                 Log(_Result, _EventData);
             }
@@ -34,7 +34,7 @@ namespace Base.Data.nDatabaseService.nDatabase.nInterceptors
 
         public override int NonQueryExecuted(DbCommand _Command, CommandExecutedEventData _EventData, int _Result)
         {
-            if (App.Configuration.LogExecutedSqlEnabled)
+            if (App.Configuration.ApplicationSettings.LogExecutedSqlEnabled)
             {
                 Log(_Command, _EventData);
             }
@@ -44,7 +44,7 @@ namespace Base.Data.nDatabaseService.nDatabase.nInterceptors
 
         public override DbDataReader ReaderExecuted(DbCommand _Command, CommandExecutedEventData _EventData, DbDataReader _Result)
         {
-            if (App.Configuration.LogExecutedSqlEnabled)
+            if (App.Configuration.ApplicationSettings.LogExecutedSqlEnabled)
             {
                 Log(_Command, _EventData);
             }
@@ -54,7 +54,7 @@ namespace Base.Data.nDatabaseService.nDatabase.nInterceptors
 
         public override object ScalarExecuted(DbCommand _Command, CommandExecutedEventData _EventData, object _Result)
         {
-            if (App.Configuration.LogExecutedSqlEnabled)
+            if (App.Configuration.ApplicationSettings.LogExecutedSqlEnabled)
             {
                 Log(_Command, _EventData);
             }

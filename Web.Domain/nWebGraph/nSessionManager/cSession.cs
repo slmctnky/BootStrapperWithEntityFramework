@@ -86,7 +86,7 @@ namespace Web.Domain.nWebGraph.nSessionManager
             }
             else if (IsLogined && _CommandID != null)
             {
-                List<cRoleEntity> __ActorRoles = User.Actor.GetValue().Roles.ToList();
+                List<cRoleEntity> __ActorRoles = User.Roles.ToList();
                 for (int i = 0; i < _CommandID.MainRoles.Count; i++)
                 {
                     if (__ActorRoles.Exists(__Item => __Item.Code == _CommandID.MainRoles[i].Code))
@@ -107,7 +107,7 @@ namespace Web.Domain.nWebGraph.nSessionManager
             }
             else
             {
-                List<cRoleEntity> __ActorRoles = User.Actor.GetValue().Roles.ToList();
+                List<cRoleEntity> __ActorRoles = User.Roles.ToList();
                 if (__ActorRoles.Count > 0)
                 {
                     return RoleIDs.GetByCode(__ActorRoles[0].Code, RoleIDs.Unlogined);

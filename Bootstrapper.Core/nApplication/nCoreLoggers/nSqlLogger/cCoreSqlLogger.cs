@@ -23,7 +23,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers.nSqlLogger
 
 		protected override bool IsEnabled()
 		{
-			return App.Configuration.LogExecutedSqlEnabled;
+			return App.Configuration.ApplicationSettings.LogExecutedSqlEnabled;
 		}
 	}
 }

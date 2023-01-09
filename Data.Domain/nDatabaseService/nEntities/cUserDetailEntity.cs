@@ -16,7 +16,5 @@ namespace DData.Domain.nDatabaseService.nEntities
 
         public DateTime DateOfBirth { get; set; }
 
-        public string ProfileImage { get; set; }
-        public string PaymentSubMerchantKey { get; set; }
     }
 }

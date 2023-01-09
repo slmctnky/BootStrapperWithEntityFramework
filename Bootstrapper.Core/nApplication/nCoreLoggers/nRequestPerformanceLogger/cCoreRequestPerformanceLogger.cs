@@ -17,12 +17,12 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers.nRequestPerformanceLogger
 
         protected override string LogPath()
         {
-            return App.Configuration.MicroServicePerformanceLogPath;
+            return App.Configuration.RequestPerformanceLogPath;
         }
 
 		protected override bool IsEnabled()
 		{
-			return App.Configuration.LogMicroServicePerformanceEnabled;
+			return App.Configuration.ApplicationSettings.RequestPerformanceLogPath;
 		}
 	}
 }

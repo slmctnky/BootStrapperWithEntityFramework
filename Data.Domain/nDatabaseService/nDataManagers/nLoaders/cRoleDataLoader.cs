@@ -14,7 +14,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
     public class cRoleDataLoader : cBaseDataLoader
     {
         public cRoleDataManager RoleDataManager { get; set; }
-        public cRoleDataLoader(cApp _App, LoaderIDs _LoaderID, cDataService _DataService, IFileDateService _FileDataService
+        public cRoleDataLoader(cApp _App, cDataService _DataService, IFileDateService _FileDataService
             , cRoleDataManager _RoleDataManager)
           : base(_App, LoaderIDs.RoleDataLoader, _DataService, _FileDataService)
         {

@@ -53,13 +53,13 @@ namespace Bootstrapper.Core.nApplication.nBootstrapper
         protected void LoadPluginDlls()
         {
             String __BinPath = App.Configuration.BinPath;
-            foreach (string __DomainName in App.Configuration.DomainNames)
+            foreach (string __DomainName in App.Configuration.ApplicationSettings.DomainNames)
             {
                 string[] __Plugins = App.Handlers.FileHandler.FindFileStartWith(__BinPath, __DomainName + ".", true);
                 foreach (string __File in __Plugins)
                 {
                     string __FileName = Path.GetFileName(__File);
-                    App.Handlers.AssemblyHandler.IsInApplicationDomain(App.Configuration.DomainNames, __FileName);
+                    App.Handlers.AssemblyHandler.IsInApplicationDomain(App.Configuration.ApplicationSettings.DomainNames, __FileName);
                     {
                         App.Handlers.AssemblyHandler.LoadFromAssemblyPath(__File);
                     }
@@ -111,7 +111,7 @@ namespace Bootstrapper.Core.nApplication.nBootstrapper
         protected void RegisterAllTypes()
         {
             List<cDomainTypeList> __AllTypes = new List<cDomainTypeList>();
-            foreach (string __DomainName in App.Configuration.DomainNames)
+            foreach (string __DomainName in App.Configuration.ApplicationSettings.DomainNames)
             {
                 __AllTypes.Add(new cDomainTypeList(App, this, __DomainName));
             }
@@ -153,7 +153,7 @@ namespace Bootstrapper.Core.nApplication.nBootstrapper
         public Type GetInheritedTypeFromDomainList<TBaseType>()
         {
             List<cDomainTypeList> __AllTypes = new List<cDomainTypeList>();
-            foreach (string __DomainName in App.Configuration.DomainNames)
+            foreach (string __DomainName in App.Configuration.ApplicationSettings.DomainNames)
             {
                 __AllTypes.Add(new cDomainTypeList(App, this, __DomainName));
             }
@@ -207,7 +207,7 @@ namespace Bootstrapper.Core.nApplication.nBootstrapper
         protected List<Object> CreateInstanceFromRegisteredTypes()
         {
             List<object> __InitList = new List<object>();
-            foreach (string __DomainName in App.Configuration.DomainNames)
+            foreach (string __DomainName in App.Configuration.ApplicationSettings.DomainNames)
             {
                 List<Type> __AllTypes = App.Handlers.AssemblyHandler.GetLoadedApplicationTypesByCustomAttribute<Register>(__DomainName);
                 foreach (Type __Type in __AllTypes)

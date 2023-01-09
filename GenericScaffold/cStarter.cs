@@ -11,6 +11,8 @@ using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
 using DData.Domain.nDatabaseService.nEntities;
 using Data.Domain.nDatabaseService.nEntities;
+using Data.GenericWebScaffold.nDefaultValueTypes;
+using System.Xml.Linq;
 
 namespace GenericScaffold
 {
@@ -33,36 +35,29 @@ namespace GenericScaffold
             {
                 cDatabaseContext __DatabaseContext2 = DataService.GetDatabaseContext();
 
-                __DatabaseContext2.Perform(() =>
-                {
 
-                    var blog = new cBlogEntity
+                cUserEntity __UserEntity = new cUserEntity
+                {
+                    Name = "Hayri",
+                    Surname = "Eryürek",
+                    Email = "hayhay8388@hotmail.com",
+                    Language = "tr",
+                    Password = "1",
+                    State = UserStateIDs.Active.ID,
+                    UserDetail = new cUserDetailEntity()
                     {
-                        Url = "http://sample.com",
-                        Posts = new List<cPostEntity>()
-                        {
-                            new cPostEntity(){ Content = "test", Title = "Test" },
-                            new cPostEntity() { Content = "test", Title = "Test" }
-                        }
+                        Telephone = "1111",
+                        DateOfBirth = DateTime.Now,
+                        Gender = GenderIDs.Man.ID
+                    }
+                    ,
+                    Roles = new List<cRoleEntity>()
+                    {
 
-                    };
-                    __DatabaseContext2.Blogs.Add(blog);
-                    __DatabaseContext2.SaveChanges();
-
-                });
-
-
-                var blog = new cBlogEntity
-                {
-                    Url = "http://sample.com",
-                    Posts = new List<cPostEntity>()
-                {
-                    new cPostEntity(){ Content = "test", Title = "Test" },
-                    new cPostEntity() { Content = "test", Title = "Test" }
-                }
+                    }
 
                 };
-                __DatabaseContext.Blogs.Add(blog);
+                cUserEntity.Add(__UserEntity);
                 __DatabaseContext.SaveChanges();
                 
             });

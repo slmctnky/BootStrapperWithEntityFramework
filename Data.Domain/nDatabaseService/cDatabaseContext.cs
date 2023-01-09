@@ -18,9 +18,6 @@ namespace Data.Domain.nDatabaseService
         public DbSet<cUserSessionEntity> Sessions { get; set; }
         public DbSet<cRoleEntity> Roles { get; set; }
 
-        public DbSet<cBlogEntity> Blogs { get; set; }
-        public DbSet<cPostEntity> Posts { get; set; }
-
         public cDatabaseContext()
             : base()
         {

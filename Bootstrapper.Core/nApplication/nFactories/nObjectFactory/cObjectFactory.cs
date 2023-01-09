@@ -157,7 +157,7 @@ namespace Bootstrapper.Core.nApplication.nFactories.nObjectFactory
             PropertyInfo[] _PropertyInfo = _Object.GetType().GetAllProperties();
             foreach (PropertyInfo __PropertyInfo in _PropertyInfo)
             {
-                if (App.Handlers.AssemblyHandler.IsInApplicationDomain(App.Configuration.DomainNames, __PropertyInfo.PropertyType.Namespace.Substring(0, __PropertyInfo.PropertyType.Namespace.IndexOf(".") + 1)))
+                if (App.Handlers.AssemblyHandler.IsInApplicationDomain(App.Configuration.ApplicationSettings.DomainNames, __PropertyInfo.PropertyType.Namespace.Substring(0, __PropertyInfo.PropertyType.Namespace.IndexOf(".") + 1)))
                 {
                     if ((__PropertyInfo.GetMethod != null && __PropertyInfo.GetValue(_Object) == null) && __PropertyInfo.SetMethod != null)
                     {

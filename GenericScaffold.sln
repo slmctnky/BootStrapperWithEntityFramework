@@ -21,11 +21,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layer3_DomainData", "Layer3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Layer4_Web", "Layer4_Web", "{5EBCF25A-535F-40D7-9ABA-83A8B033D0C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web.Domain", "Web.Domain\Web.Domain.csproj", "{CF299142-982E-48FF-841B-65FDA283BCD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web.Domain", "Web.Domain\Web.Domain.csproj", "{CF299142-982E-48FF-841B-65FDA283BCD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data.Domain", "Data.Domain\Data.Domain.csproj", "{C9A66E9E-ECA7-4B3D-9C29-F95ECBD567A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data.Domain", "Data.Domain\Data.Domain.csproj", "{C9A66E9E-ECA7-4B3D-9C29-F95ECBD567A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base.Web", "Base.Web\Base.Web.csproj", "{675742B3-01BE-47CC-9112-38B9141C0A75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Base.Web", "Base.Web\Base.Web.csproj", "{675742B3-01BE-47CC-9112-38B9141C0A75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AllLayerGenerealFiles", "AllLayerGenerealFiles", "{933EF2E4-7194-483C-9BF0-5206C08B97A9}"
+	ProjectSection(SolutionItems) = preProject
+		ApplicationSettings.xml = ApplicationSettings.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

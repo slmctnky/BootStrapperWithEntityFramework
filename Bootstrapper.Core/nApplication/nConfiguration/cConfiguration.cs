@@ -8,15 +8,20 @@ using System.Linq.Expressions;
 using Bootstrapper.Core.nCore;
 using System.IO;
 using Bootstrapper.Boundary.nCore.nBootType;
+using Bootstrapper.Core.nApplication.nConfiguration.nApplicationSettings;
 
 namespace Bootstrapper.Core.nApplication.nConfiguration
 {
     public class cConfiguration : cCoreObject
     {
-        public List<string> DomainNames { get; private set; }
-        public string UICultureName { get; set; }
+        public cApplicationSettings ApplicationSettings { get; private set; }
 
         private cStartParameterController StartParameterController = null;
+
+        /*public List<string> DomainNames { get; private set; }
+        public string UICultureName { get; set; }
+
+        */
 
         public string BinPath { get; private set; }
 
@@ -31,30 +36,18 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 
         public EBootType BootType { get; set; }
 
-
-        public bool LogToFile { get; private set; }
-        public bool LogToConsole { get; private set; }
-        public bool LogDebugEnabled { get; private set; }
-        public bool LogInfoEnabled { get; private set; }
-        public bool LogExceptionEnabled { get; private set; }
-        public bool LogExecutedSqlEnabled { get; set; }
-        public bool LogSqlGlobalInfoEnabled { get; set; }
-        public bool LogGeneralEnabled { get; set; }
-        public bool LogMicroServicePerformanceEnabled { get; set; }
-
-
         public CultureInfo UICulture
         {
             get
             {
                 try
                 {
-                    return string.IsNullOrEmpty(UICultureName) ? CultureInfo.InvariantCulture : new CultureInfo(UICultureName);
+                    return string.IsNullOrEmpty(ApplicationSettings.UICultureName) ? CultureInfo.InvariantCulture : new CultureInfo(ApplicationSettings.UICultureName);
                 }
-                catch(Exception _Ex)
+                catch (Exception _Ex)
                 {
-					App.Loggers.CoreLogger.LogError(_Ex);
-					return CultureInfo.InvariantCulture;
+                    App.Loggers.CoreLogger.LogError(_Ex);
+                    return CultureInfo.InvariantCulture;
                 }
             }
         }
@@ -64,9 +57,9 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 		public string GeneralLogPath { get; private set; }
 		public string ExecutedSqlLogPath { get; private set; }
         public string SqlGlobalInfoLogPath { get; private set; }
-        public string MicroServicePerformanceLogPath { get; private set; }
+        public string RequestPerformanceLogPath { get; private set; }
 
-
+        
 
 
         public cConfiguration(EBootType _BootType)
@@ -74,7 +67,6 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
         {
             BootType = _BootType;
             StartParameterController = new cStartParameterController(this);
-            InitDefault();
         }
 
         public override void Init()
@@ -83,7 +75,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.GeneralLogPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ExecutedSqlLogPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.SqlGlobalInfoLogPath, true);            
-            App.Handlers.FileHandler.MakeDirectory(App.Configuration.MicroServicePerformanceLogPath, true);
+            App.Handlers.FileHandler.MakeDirectory(App.Configuration.RequestPerformanceLogPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.DefaultDataPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ConfigurationDataPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ScriptCachePath, true);
@@ -92,10 +84,13 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 
         }
 
-        public void InitDefault()
+        public void InnerInit(cApp _App)
         {
-            DomainNames = new List<string>() { "Bootstrapper" };
-            UICultureName = "tr-TR";
+            App = _App;
+            App.Factories.ObjectFactory.RegisterInstance(GetType(), this);
+
+            //DomainNames = new List<string>() { "Bootstrapper" };
+            //UICultureName = "tr-TR";
             HomePath = AppDomain.CurrentDomain.BaseDirectory;
             BinPath = AppDomain.CurrentDomain.BaseDirectory;
 
@@ -103,32 +98,37 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             LogPath = Path.Combine(HomePath, LogPath);
 
 
-            ///////// Log Nereye basılacak Ayarı //////
-            LogToFile = true;
-            LogToConsole = false;
-            ///////////////////////////////////////////
-
-            ///////// Hangi Tip loglar basılacak ayarı //////
-            LogDebugEnabled = true;
-            LogInfoEnabled = true;
-            LogExceptionEnabled = true;
-            /////////////////////////////////////////////////
-
-            ///////// Hangi loger mekanizmaları aktif olsun //////
-            LogExecutedSqlEnabled = true;
-            LogSqlGlobalInfoEnabled = true;
-            LogGeneralEnabled = true;
-            LogMicroServicePerformanceEnabled = true;
-            /////////////////////////////////////////////////
-
-
             SetPaths();
+
+            ApplicationSettings = LoadSettingFromApplicationSettings();
         }
 
-        public void InnerInit(cApp _App)
+
+        public cApplicationSettings LoadSettingFromApplicationSettings()
         {
-            App = _App;
-            App.Factories.ObjectFactory.RegisterInstance(GetType(), this);
+            string __Path = App.Handlers.FileHandler.FindFileFromOuterDirectory(App.Configuration.HomePath, "ApplicationSettings.xml");
+            cApplicationSettings __ApplicationSettings = null;
+            if (__Path != null)
+            {
+
+                try
+                {
+                    __ApplicationSettings = App.Handlers.XmlHandler.ReadXMLToObject<cApplicationSettings>(__Path);
+                }
+                catch (Exception _Ex)
+                {
+                }
+
+                cApplicationSettings __SampleSettings = cApplicationSettings.CreateSampleSetting();
+                App.Handlers.XmlHandler.WriteObjectToXML<cApplicationSettings>(__SampleSettings, Path.Combine(Path.GetDirectoryName(__Path), "SampleSettings.xml"));
+            }
+            else
+            {
+                cApplicationSettings __SampleSettings = cApplicationSettings.CreateSampleSetting();
+                App.Handlers.XmlHandler.WriteObjectToXML<cApplicationSettings>(__SampleSettings, Path.Combine(App.Configuration.HomePath, "ApplicationSettings.xml"));
+                throw new Exception("Lütfen \"" + Path.Combine(App.Configuration.HomePath, "ApplicationSettings.xml") + "\" oluşturulmuş ApplicationSettings.xml dosyasını bütün alt projelerin erişebileceği root klasöre taşıyınız.");
+            }
+            return __ApplicationSettings;
         }
 
 
@@ -143,8 +143,8 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             SqlGlobalInfoLogPath = GetVariableName(() => SqlGlobalInfoLogPath);
             SqlGlobalInfoLogPath = Path.Combine(LogPath, SqlGlobalInfoLogPath);
 
-            MicroServicePerformanceLogPath = GetVariableName(() => MicroServicePerformanceLogPath);
-            MicroServicePerformanceLogPath = Path.Combine(LogPath, MicroServicePerformanceLogPath);
+            RequestPerformanceLogPath = GetVariableName(() => RequestPerformanceLogPath);
+            RequestPerformanceLogPath = Path.Combine(LogPath, RequestPerformanceLogPath);
 
             DefaultDataPath = GetVariableName(() => DefaultDataPath);
             DefaultDataPath = Path.Combine(HomePath, DefaultDataPath);

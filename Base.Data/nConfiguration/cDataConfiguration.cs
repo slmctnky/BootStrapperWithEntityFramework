@@ -12,6 +12,7 @@ namespace Base.Data.nConfiguration
         public bool LoadDefaultDataOnStart { get; set; }
         public bool LoadGlobalParamsOnStart { get; set; }
 
+        public string TargetHostName { get; set; }
 
         public cDataConfiguration(EBootType _BootType)
             :base(_BootType)

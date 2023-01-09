@@ -71,7 +71,7 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 return SessionItems.CloneOnlyList().ToList();
             }
         }
-        public List<long> GetAllOnlineUsers()
+        public List<int> GetAllOnlineUsers()
         {
             lock (SessionItems)
             {
@@ -94,19 +94,19 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 return __ResultList;
             }
         }
-        public List<cSession> GetSessionByRole(RoleIDs _RoleValue)
+      /*  public List<cSession> GetSessionByRole(RoleIDs _RoleValue)
         {
             List<cSession> __AllSession = GetSessionList();
             List<cSession> __RoleSession = new List<cSession>();
             for (int i = 0; i < __AllSession.Count; i++)
             {
-                if (__AllSession[i].User != null && __AllSession[i].User.Actor.GetValue().Roles.GetValue().Code == _RoleValue.Code)
+                if (__AllSession[i].User != null && __AllSession[i].User.Roles.GetValue().Code == _RoleValue.Code)
                 {
                     __RoleSession.Add(__AllSession[i]);
                 }
             }
             return __RoleSession;
-        }
+        }*/
         public List<cSession> GetSessionByEmail(string _Email)
         {
             lock (SessionItems)
@@ -152,11 +152,11 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 }
                 else
                 {
-                    __UserEntity = SessionDataManager.GetUserBySessionIDFromTemp(__CurrentSession.SessionID);
+                    /*__UserEntity = SessionDataManager.GetUserBySessionIDFromTemp(__CurrentSession.SessionID);
                     if (__UserEntity != null)
                     {
                         __CurrentSession.SetUser(__UserEntity);
-                    }
+                    }*/
                 }
 
                 __CurrentSession.RefreshValue(_Controller);

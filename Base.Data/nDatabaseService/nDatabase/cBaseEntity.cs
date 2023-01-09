@@ -15,7 +15,7 @@ namespace Base.Data.nDatabaseService.nDatabase
     public class cBaseEntity<TEntity> : cBaseEntityType where TEntity : cBaseEntityType
     {
         [Key]
-        public long ID { get; set; }
+        public int ID { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
 
@@ -25,6 +25,11 @@ namespace Base.Data.nDatabaseService.nDatabase
             UpdateDate = DateTime.Now;
         }
 
+        public static void Add(TEntity _Entity)
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            __DbContext.Set<TEntity>().Add(_Entity);
+        }
 
         public static void Remove(TEntity _Entity)
         {

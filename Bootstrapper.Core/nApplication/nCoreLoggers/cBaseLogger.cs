@@ -43,12 +43,12 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         protected void WriteTo(string _Value, string _FileName)
         {
-            if (App.Configuration.LogToFile)
+            if (App.Configuration.ApplicationSettings.LogToFile)
             {
                 WriteToFile(Path.Combine(ControlledLogPath(), _FileName + ".log"), _Value);
             }
 
-            if (App.Configuration.LogToConsole)
+            if (App.Configuration.ApplicationSettings.LogToConsole)
             {
                 Console.WriteLine(_Value);
             }
@@ -65,7 +65,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void LogInfo(string _Value, params object[] _Args)
         {
-            if (App.Configuration.LogInfoEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogInfoEnabled && IsEnabled())
             {
                 _Value = PrepereString(new List<string>() { _Value.FormatEx(_Args) });
                 WriteTo(_Value, LogFileName);
@@ -74,7 +74,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void LogInfo(List<string> _BulkValue)
         {
-            if (App.Configuration.LogInfoEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogInfoEnabled && IsEnabled())
             {
                 lock (this)
                 {
@@ -96,7 +96,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void DebugLog(string _Value, params object[] _Args)
         {
-            if (App.Configuration.LogDebugEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogDebugEnabled && IsEnabled())
             {
                 _Value = PrepereString(new List<string>() { _Value.FormatEx(_Args) });
                 WriteTo(_Value, DebugLogFileName);
@@ -105,7 +105,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void DebugLog(List<string> _BulkValue)
         {
-            if (App.Configuration.LogDebugEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogDebugEnabled && IsEnabled())
             {
                 lock (this)
                 {
@@ -142,7 +142,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void LogError(string _Value, params object[] _Args)
         {
-            if (App.Configuration.LogExceptionEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogExceptionEnabled && IsEnabled())
             {
                 _Value = PrepereExceptionString(_Value, _Args);
                 WriteTo(_Value, ErrorLogFileName);
@@ -151,7 +151,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
 
         public void LogError(Exception _Ex, Action<string> _Function = null)
         {
-            if (App.Configuration.LogExceptionEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogExceptionEnabled && IsEnabled())
             {
 #if !DEBUG
 var __RavenClient = new RavenClient("https://f0e36791227e431fa63b44e81991a3d8@o1052346.ingest.sentry.io/6037674");
@@ -171,7 +171,7 @@ var __RavenClient = new RavenClient("https://f0e36791227e431fa63b44e81991a3d8@o1
 
         public void LogError(List<string> _BulkValueBeforeError, Exception _Ex, List<string> _BulkValueAfterError)
         {
-            if (App.Configuration.LogExceptionEnabled && IsEnabled())
+            if (App.Configuration.ApplicationSettings.LogExceptionEnabled && IsEnabled())
             {
                 lock (this)
                 {

@@ -12,10 +12,12 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
     public class cDefaultDataLoaderManager : cBaseDataManager, IDefaultDataLoader
     {
         public cLanguageDataLoader LanguageDataLoader { get; set; }
+        public cLanguageDataManager LanguageDataManager { get; set; }
+
         public cGlobalParamsDataLoader GlobalParamsDataLoader { get; set; }
         public cRoleDataLoader RoleDataLoader { get; set; }
 
-        public cLanguageDataManager LanguageDataManager { get; set; }
+        
         public cDefaultDataLoaderManager(cDataServiceContext CoreServiceContext, cDataService _DataService, IFileDateService _FileDataService
             , cLanguageDataLoader _LanguageDataLoader
             , cGlobalParamsDataLoader _GlobalParamsDataLoader
@@ -27,6 +29,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
         {
             LanguageDataLoader = _LanguageDataLoader;
             LanguageDataManager = _LanguageDataManager;
+            RoleDataLoader = _RoleDataLoader;
             GlobalParamsDataLoader = _GlobalParamsDataLoader;
 
         }

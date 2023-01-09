@@ -1,6 +1,0 @@
-Time : 2022.12.23 14:43:05	Type  Bind : cStartup`1 -> cStartup`1  ,  Life : ContainerControlledLifetimeManager
-Time : 2022.12.23 14:43:05	Type  Bind : IScripting -> cScriptRunner  ,  Life : ContainerControlledLifetimeManager
-Time : 2022.12.23 14:43:05	ResolveInstance<T>() started : cStartup`1
-Time : 2022.12.23 14:43:05	ResolveInstance<T>() started : cStarter
-Time : 2022.12.23 14:43:05	ResolveInstance<T>() ended : cStarter
-Time : 2022.12.23 14:43:05	ResolveInstance<T>() ended : cStartup`1

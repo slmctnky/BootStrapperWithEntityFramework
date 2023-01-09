@@ -21,7 +21,7 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers.nCoreLogger
 
 		protected override bool IsEnabled()
 		{
-			return App.Configuration.LogGeneralEnabled;
+			return App.Configuration.ApplicationSettings.LogGeneralEnabled;
 		}
 	}
 }

@@ -157,7 +157,7 @@ namespace Bootstrapper.Core.nHandlers.nAssemblyHandler
 
 		public List<Type> GetTypesFromBaseType(Type _BaseType, string _StartWithName = null)
 		{
-			List<Type> __AllTypes = GetLoadedApplicationTypes(App.Configuration.DomainNames);
+			List<Type> __AllTypes = GetLoadedApplicationTypes(App.Configuration.ApplicationSettings.DomainNames);
 			return __AllTypes.Where(__Item => __Item.IsClass && !__Item.IsAbstract && !__Item.IsInterface && __Item.IsSubclassOf(_BaseType)
 			&& (_StartWithName == null || (_StartWithName != null && __Item.Name.StartsWith(_StartWithName)))
 			).ToList();
@@ -171,7 +171,7 @@ namespace Bootstrapper.Core.nHandlers.nAssemblyHandler
 
 		public List<Type> GetTypesFromBaseInterface(Type _BaseType)
 		{
-			List<Type> __AllTypes = GetLoadedApplicationTypes(App.Configuration.DomainNames);
+			List<Type> __AllTypes = GetLoadedApplicationTypes(App.Configuration.ApplicationSettings.DomainNames);
 			return __AllTypes.Where(__Item => __Item.IsClass && !__Item.IsAbstract && !__Item.IsInterface && _BaseType.IsAssignableFrom(__Item)).ToList();
 		
 		}

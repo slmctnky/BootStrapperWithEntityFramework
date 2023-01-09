@@ -60,6 +60,8 @@ public class Program
 
 
         cDomainDataConfiguration __Configuration = new cDomainDataConfiguration(EBootType.Web);
+
+
         cApp __App = cApp.Start<cStarter>(__Configuration);
 
         __Builder.Host.UseServiceProviderFactory(new cUnityServiceProviderFactory(__App));

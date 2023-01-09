@@ -18,7 +18,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
         public cLanguageDataManager LanguageDataManager { get; set; }
 
 
-        public cLanguageDataLoader(cApp _App, LoaderIDs _LoaderID, cDataService _DataService, IFileDateService _FileDataService
+        public cLanguageDataLoader(cApp _App, cDataService _DataService, IFileDateService _FileDataService
             , cLanguageDataManager _LanguageDataManager
          )
           : base(_App, LoaderIDs.LanguageDataLoader, _DataService, _FileDataService)

@@ -41,7 +41,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nLogInOutActio
 				__JsonObject["User"]["UserPasswordChange"] = null;
 				__JsonObject["User"]["UserPasswordChangeRequest"] = null;
 
-				__JsonObject["User"]["Roles"] = JArray.FromObject(_Controller.ClientSession.User.Actor.GetValue().Roles.ToDynamicObjectList());
+				//__JsonObject["User"]["Roles"] = JArray.FromObject(_Controller.ClientSession.User.Roles.ToDynamicObjectList());
 				__JsonObject["User"]["UserDetail"] = JObject.FromObject(_Controller.ClientSession.User.UserDetail.ToDynamic());
 			}
 

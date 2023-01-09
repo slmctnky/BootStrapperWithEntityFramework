@@ -25,7 +25,7 @@ namespace DData.Domain.nDatabaseService.nEntities
 
         public List<cUserSessionEntity> Sessions { get; set; }
 
-        public List<cRoleEntity> Role { get; set; }
+        public List<cRoleEntity> Roles { get; set; }
 
         public  cUserDetailEntity UserDetail { get; set; }
     }

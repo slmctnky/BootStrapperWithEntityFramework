@@ -19,7 +19,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions
 		{
 			foreach (PropertyDescriptor __Property in TypeDescriptor.GetProperties(this.GetType()))
 			{
-				if (typeof(cBaseEntity).IsAssignableFrom(__Property.PropertyType))
+				if (typeof(cBaseEntityType).IsAssignableFrom(__Property.PropertyType))
 				{
 					throw new Exception("Serialize edilecek objenin icine entity yollanamaz..!\nSerialize yavasliyor..!");
 				}
@@ -73,7 +73,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions
 
 			foreach (PropertyDescriptor __Property in TypeDescriptor.GetProperties(this.GetType()))
 			{
-				if (typeof(cBaseEntity).IsAssignableFrom(__Property.PropertyType))
+				if (typeof(cBaseEntityType).IsAssignableFrom(__Property.PropertyType))
 				{
 					throw new Exception("Serialize edilecek objenin icine entity yollanamaz..!\nSerialize yavasliyor..!");
 				}

@@ -22,79 +22,180 @@ namespace Data.Domain.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.Entities.cBlogEntity", b =>
+            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserDetailEntity", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<DateTime>("UpdateDate")
+                    b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Blogs");
-                });
-
-            modelBuilder.Entity("Data.Domain.nDatabaseService.Entities.cPostEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("Gender")
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("BlogId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Content")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Title")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("TitleTemp")
+                    b.Property<string>("Telephone")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<DateTime>("UpdateDate")
                         .HasColumnType("timestamp without time zone");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.HasIndex("BlogId");
-
-                    b.ToTable("Posts");
+                    b.ToTable("UserDetails");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDatabaseService.Entities.cPostEntity", b =>
+            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
                 {
-                    b.HasOne("DData.Domain.nDatabaseService.Entities.cBlogEntity", "Blog")
-                        .WithMany("Posts")
-                        .HasForeignKey("BlogId")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("State")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Surname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("UserDetailID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserDetailID");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("cUserEntityID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("cUserEntityID");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserSessionEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("IpAddress")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("SessionHash")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("UserID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("Sessions");
+                });
+
+            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+                {
+                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserDetailEntity", "UserDetail")
+                        .WithMany()
+                        .HasForeignKey("UserDetailID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Blog");
+                    b.Navigation("UserDetail");
                 });
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.Entities.cBlogEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
                 {
-                    b.Navigation("Posts");
+                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserEntity", null)
+                        .WithMany("Roles")
+                        .HasForeignKey("cUserEntityID");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserSessionEntity", b =>
+                {
+                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserEntity", "User")
+                        .WithMany("Sessions")
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+                {
+                    b.Navigation("Roles");
+
+                    b.Navigation("Sessions");
                 });
 #pragma warning restore 612, 618
         }

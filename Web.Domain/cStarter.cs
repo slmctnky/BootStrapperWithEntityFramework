@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
 using Data.Domain.nDatabaseService.nEntities;
 using DData.Domain.nDatabaseService.nEntities;
+using Data.GenericWebScaffold.nDefaultValueTypes;
 
 namespace Web.Domain
 {
@@ -32,19 +33,30 @@ namespace Web.Domain
 
             __DatabaseContext.Perform(() =>
             {
-                var blog = new cBlogEntity
+                cUserEntity __UserEntity = new cUserEntity
                 {
-                    Url = "http://sample.com",
-                    Posts = new List<cPostEntity>()
-                {
-                    new cPostEntity(){ Content = "test", Title = "Test" },
-                    new cPostEntity() { Content = "test", Title = "Test" }
-                }
+                    Name = "Hayri",
+                    Surname = "Eryürek",
+                    Email = "hayhay8388@hotmail.com",
+                    Language = "tr",
+                    Password = "1",
+                    State = UserStateIDs.Active.ID,
+                    UserDetail = new cUserDetailEntity()
+                    {
+                        Telephone = "1111",
+                        DateOfBirth = DateTime.Now,
+                        Gender = GenderIDs.Man.ID
+                    }
+                   ,
+                    Roles = new List<cRoleEntity>()
+                    {
+
+                    }
 
                 };
-                __DatabaseContext.Blogs.Add(blog);
+                cUserEntity.Add(__UserEntity);
                 __DatabaseContext.SaveChanges();
-                
+
             });
 
             Console.WriteLine("Test");
