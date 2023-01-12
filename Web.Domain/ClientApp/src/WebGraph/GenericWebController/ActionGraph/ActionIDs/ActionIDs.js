@@ -54,7 +54,25 @@ var ActionIDs_Class = Class(Component,
 
       //this.ShowMessageCommand = new cCommandID(7, "ShowMessage", true, "")
       //this.CommandIDList.Add(this.ShowMessageCommand);
-    }
+      }
+        ,
+      LoadActions: function (_ActionList) {
+          var EActionID = cActionID;
+          for (var i = 0; i < _ActionList.length; i++) {
+              var __Parameters = "[";
+
+              for (var j = 0; j < _ActionList[i].Parameters.length; j++) {
+                  if (j > 0) __Parameters += ", ";
+                  __Parameters += "\"" + _ActionList[i].Parameters[j] + "\"";
+              }
+              __Parameters += "]";
+
+              var __Eval = "this." + _ActionList[i].Name + "Action = new EActionID(" + _ActionList[i].ID.toString() + ", \"" + _ActionList[i].Name + "\", \"" + _ActionList[i].Info + "\", " + _ActionList[i].Enabled.toString() + ", " + __Parameters + ")";
+              eval(__Eval)
+              __Eval = "this.ActionIDList.Add(this." + _ActionList[i].Name + "Action)";
+              eval(__Eval)
+          }
+      }
     ,
     Destroy: function () {
       this.ActionIDList.DestroyWithItems();

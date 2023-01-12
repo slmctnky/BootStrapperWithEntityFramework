@@ -20,7 +20,8 @@ var CommandIDs_Class = Class(
       CommandIDs_Class.BaseObject.constructor.call(this);
       this.CommandIDList = new cListForBase();
       //var __Temp = this.NewFetch();
-      var __CommandList = null;
+
+        //var __CommandList = null;
       /*$.ajax({
         async: false,
         type: "POST",
@@ -63,7 +64,30 @@ var CommandIDs_Class = Class(
       */
       //this.ShowMessageCommand = new cCommandID(7, "ShowMessage", true, "")
       //this.CommandIDList.Add(this.ShowMessageCommand);
-    },
+        },
+      LoadCommands: function (_CommandList)
+      {
+          var ECommandID = cCommandID;
+          for (var i = 0; i < _CommandList.length; i++) {
+              var __Eval =
+                  "this." +
+                  _CommandList[i].Name +
+                  "Command = new ECommandID(" +
+                  _CommandList[i].ID.toString() +
+                  ', "' +
+                  _CommandList[i].Name +
+                  '", "' +
+                  _CommandList[i].Info +
+                  '", ' +
+                  _CommandList[i].Enabled.toString() +
+                  ")";
+              eval(__Eval);
+              __Eval =
+                  "this.CommandIDList.Add(this." + _CommandList[i].Name + "Command)";
+              eval(__Eval);
+          }
+      }
+    ,
     Destroy: function () {
       this.CommandIDList.DestroyWithItems();
       CommandIDs_Class.BaseObject.Destroy.call(this);

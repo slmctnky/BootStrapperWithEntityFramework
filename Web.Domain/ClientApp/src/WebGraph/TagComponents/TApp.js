@@ -3,7 +3,6 @@ import withRouter from "./Utilities/withRouter";
 import TLoading from "./Utilities/TLoading";
 import { ThemeProvider } from "@mui/material/styles";
 import { WebGraph } from "../GenericCoreGraph/WebGraph/WebGraph";
-//import GenericWebGraph from "../GenericWebController/GenericWebGraph";
 
 import Button from '@mui/material/Button';
 
@@ -20,7 +19,6 @@ class TApp extends Component {
             ...this.state,
         };
         WebGraph.Init();
-        //GenericWebGraph.Init();
     }
 
 
@@ -31,11 +29,11 @@ class TApp extends Component {
     render() {
         return (
             <div style={{ fontFamily: "Montserrat" }}>
-                <React.Suspense fallback={<TLoading />}>
+                <React.Suspense fallback={<div class="loader"></div>}>
                     <ThemeProvider theme={this.GetTheme()}>
-                        <TDynamicLoader />
-                        <Button variant="contained">Contained</Button>
-                        Test
+                        <TDynamicLoader getInnerChilds={() => {
+                            return <Button variant="contained">{window.GenericWebGraph.Managers.LanguageManager.ActiveLanguage.Hi}</Button>
+                        }} />
                     </ThemeProvider>
                 </React.Suspense>
             </div>

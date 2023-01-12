@@ -8,29 +8,14 @@ import {
   ObjectTypes,
   cListForBase,
 } from "../GenericCoreGraph/ClassFramework/Class";
-import { cCommandInterpreter } from "./CommandInterpreter/cCommandInterpreter";
-import cActionGraph from "./ActionGraph/cActionGraph";
 import Actions from "./ActionGraph/Actions";
-//import cSignalListerner from "./SignalListerner/cSignalListerner";
-import cCommandListenerGraph from "../../WebGraph/GenericWebController/CommandListenerGraph/cCommandListenerGraph"
-import cManagersWithListener from "../../WebGraph/GenericWebController/ManagersWithListener/cManagersWithListener"
-
-
-
-import cManagers from "./Managers/cManagers";
-//import Pages from "../TagComponents/Pages";
 import { CommandIDs } from "../GenericWebController/CommandInterpreter/CommandIDs/CommandIDs";
 import { WebGraph } from "../../WebGraph/GenericCoreGraph/WebGraph/WebGraph";
 import moment from "moment";
 
-function GenericWebGraph() {}
+function GenericWebGraph() { }
 
 GenericWebGraph.Init = function () {
-  GenericWebGraph.Managers = new cManagers();
-  GenericWebGraph.CommandInterpreter = new cCommandInterpreter();
-  GenericWebGraph.ActionGraph = new cActionGraph();
-  GenericWebGraph.CommandListenerGraph = new cCommandListenerGraph();
-  GenericWebGraph.ManagersWithListener = new cManagersWithListener();
 };
 
 GenericWebGraph.ObjectList = function () {
@@ -40,12 +25,6 @@ GenericWebGraph.ObjectList = function () {
     var __Item = __Temp[i];
     console.log(__Item.GetObjectType());
   }
-
-  /*for (var i = 0; i < WebGraph.ObjectList.Count(); i++)
-    {
-      var __Item = WebGraph.ObjectList.GetItem(i);
-      console.log(__Item.GetObjectType())
-    }*/
 };
 
 GenericWebGraph.CloseAllModals = function () {

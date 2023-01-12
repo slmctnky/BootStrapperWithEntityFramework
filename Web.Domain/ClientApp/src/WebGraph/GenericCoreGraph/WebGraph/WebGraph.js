@@ -262,6 +262,7 @@ WebGraphClass.prototype.DeleteItemByCreateID = function (Number_CreateID)
 }
 
 export let WebGraph = new WebGraphClass();
+window.WebGraph = WebGraph;
 
 var cListForWebGraph = Class(Object,
   {

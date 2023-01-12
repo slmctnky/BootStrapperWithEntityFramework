@@ -20,12 +20,6 @@ var cLanguageManager = Class(
       cLanguageManager.BaseObject.constructor.call(this);
       this.SetLanguage = this.SetLanguage.bind(this);
 
-      var __LanguageCode = window.GetLanguageCodeFromUrl();
-      if (__LanguageCode.length == 2) {
-        this.FirstLoadSetLanguage(__LanguageCode, true);
-      } else {
-        this.FirstLoadSetLanguage();
-      }
     },
     HandleSetActiveLanguage: function (_Language) {
       this.ActiveLanguage = {};
@@ -56,7 +50,7 @@ var cLanguageManager = Class(
       }
     },
     FirstLoadSetLanguage(_LanguageCode) {
-      var __Url = window.GetUrlParams();
+     /* var __Url = window.GetUrlParams();
         var __Params = queryString.parse(__Url);
       var __ForcedLanguage = "";
       if (__Params.lang) {
@@ -64,7 +58,7 @@ var cLanguageManager = Class(
       }
 
       var __Language = null;
-      var __This = this;
+      var __This = this;*/
       /*$.ajax({
         async: false,
         type: "POST",
@@ -88,7 +82,7 @@ var cLanguageManager = Class(
         complete: function () {},
       });*/
 
-      this.HandleSetActiveLanguage(__Language);
+      //this.HandleSetActiveLanguage(__Language);
       /*this.ActiveLanguage = {};
       this.ActiveLanguage.LanguageCode = __Language.LanguageCode;
 

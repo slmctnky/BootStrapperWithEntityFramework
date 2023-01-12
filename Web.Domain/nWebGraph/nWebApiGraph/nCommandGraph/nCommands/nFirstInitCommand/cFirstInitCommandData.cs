@@ -8,5 +8,6 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommands.nFirstInitCo
 {
     public class cFirstInitCommandData
     {
+        public string LanguageCode;
     }
 }

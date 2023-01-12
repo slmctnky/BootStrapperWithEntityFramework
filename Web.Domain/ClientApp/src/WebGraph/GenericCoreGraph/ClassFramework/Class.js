@@ -43,9 +43,7 @@ ObjectTypeIDCreater.GetID = function ()
 }
 
 
-export const Interface =
-{
-}
+
 
 
 export const Abstract = function ()
@@ -96,6 +94,7 @@ var GetBinderConstructor = function (_ConstructorFunction)
   }
 };
 
+export var Interface = {};
 
 export const Class = function ()
 {
@@ -351,6 +350,10 @@ var Override = function (_OriginalClass, _Overrides)
   }
 };
 
+
+Interface = Class(Object,
+{
+}, {});
 
 
 export const cListForBase = Class(Object,
