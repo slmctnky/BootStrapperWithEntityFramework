@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <cApplicationSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DomainNames>
+    <string>Bootstrapper</string>
     <string>Base</string>
     <string>Data</string>
-    <string>Integration</string>
-    <string>Core</string>
+    <string>Web</string>
     <string>App</string>
+    <string>GenericScaffold</string>
   </DomainNames>
   <UICultureName>tr-TR</UICultureName>
   <LogToFile>true</LogToFile>

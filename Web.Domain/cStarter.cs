@@ -31,7 +31,7 @@ namespace Web.Domain
 
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            __DatabaseContext.Perform(() =>
+            /*__DatabaseContext.Perform(() =>
             {
                 cUserEntity __UserEntity = new cUserEntity
                 {
@@ -57,7 +57,7 @@ namespace Web.Domain
                 cUserEntity.Add(__UserEntity);
                 __DatabaseContext.SaveChanges();
 
-            });
+            });*/
 
             Console.WriteLine("Test");
         }

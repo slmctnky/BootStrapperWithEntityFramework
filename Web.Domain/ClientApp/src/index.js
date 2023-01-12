@@ -1,7 +1,13 @@
-import React from 'react';
+import "./WebGraph/Initializers";
+import "./Themes/Themes.js";
+import "./WebGraph/App";
+
+import React from "react";
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-import App from './App';
+import { BrowserRouter } from "react-router-dom";
+
+import TApp from "./WebGraph/TagComponents/TApp";
+
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
@@ -10,9 +16,14 @@ const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 
 root.render(
-  <BrowserRouter basename={baseUrl}>
-    <App />
-  </BrowserRouter>);
+    <BrowserRouter history={window.History} basename={baseUrl}>
+        <TApp />
+    </BrowserRouter>);
+
+
+
+
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

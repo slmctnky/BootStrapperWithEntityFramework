@@ -31,10 +31,9 @@ namespace GenericScaffold
 
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            __DatabaseContext.Perform(() =>
+            /*__DatabaseContext.Perform(() =>
             {
                 cDatabaseContext __DatabaseContext2 = DataService.GetDatabaseContext();
-
 
                 cUserEntity __UserEntity = new cUserEntity
                 {
@@ -60,7 +59,7 @@ namespace GenericScaffold
                 cUserEntity.Add(__UserEntity);
                 __DatabaseContext.SaveChanges();
                 
-            });
+            });*/
 
             Console.WriteLine("Test");
         }

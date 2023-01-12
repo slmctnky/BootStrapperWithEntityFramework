@@ -14,13 +14,15 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs
 
         public static List<CommandIDs> TypeList { get; set; }
 
-        public static CommandIDs GetCommandList = new CommandIDs(GetVariableName(() => GetCommandList), 1, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
-        public static CommandIDs GetActionList = new CommandIDs(GetVariableName(() => GetActionList), 2, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
-        public static CommandIDs SetLanguage = new CommandIDs(GetVariableName(() => SetLanguage), 3, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
 
-        public static CommandIDs MessageResult = new CommandIDs(GetVariableName(() => MessageResult), 4, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
-        public static CommandIDs GetEnumVariableList = new CommandIDs(GetVariableName(() => GetEnumVariableList), 5, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User }, true);
-        public static CommandIDs GetServerDateTime = new CommandIDs(GetVariableName(() => GetServerDateTime), 6, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs FirstInit = new CommandIDs(GetVariableName(() => FirstInit), 1, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs GetCommandList = new CommandIDs(GetVariableName(() => GetCommandList), 2, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs GetActionList = new CommandIDs(GetVariableName(() => GetActionList), 3, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs SetLanguage = new CommandIDs(GetVariableName(() => SetLanguage), 4, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+
+        public static CommandIDs MessageResult = new CommandIDs(GetVariableName(() => MessageResult), 5, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs GetEnumVariableList = new CommandIDs(GetVariableName(() => GetEnumVariableList), 6, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User }, true);
+        public static CommandIDs GetServerDateTime = new CommandIDs(GetVariableName(() => GetServerDateTime), 7, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
 
 
         public static CommandIDs Login = new CommandIDs(GetVariableName(() => Login), 10, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User }, _DoFlowCheck: true);

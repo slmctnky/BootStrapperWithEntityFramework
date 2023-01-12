@@ -51,7 +51,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration.nApplicationSettings
         public static cApplicationSettings CreateSampleSetting()
         {
             cApplicationSettings __ApplicationSettings = new cApplicationSettings();
-            __ApplicationSettings.DomainNames = new List<string>() { "Base", "Data", "Integration", "Core", "App" };
+            __ApplicationSettings.DomainNames = new List<string>() { "Bootstrapper", "Base", "Data", "Web", "App", "GenericScaffold" };
             __ApplicationSettings.UICultureName = "tr-TR";
 
 

@@ -6,6 +6,7 @@ using Data.Domain.nConfiguration;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Web.Domain;
+using Web.Domain.Controllers;
 
 public class Program
 {
@@ -78,9 +79,22 @@ public class Program
             __WebApp.UseHsts();
         }
 
+
         __WebApp.UseHttpsRedirection();
         __WebApp.UseStaticFiles();
+        __WebApp.UseDefaultFiles();
+        __WebApp.UseSession();
+
         __WebApp.UseRouting();
+
+        __WebApp.UseEndpoints(endpoints =>
+        {
+
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller}/{action=Index}/{id?}");
+            endpoints.MapHub<SignalRHub>("/signalr");
+        });
 
         __WebApp.Use((__Context, __Next) =>
         {
@@ -88,9 +102,10 @@ public class Program
             return __Next();
         });
 
-        __WebApp.MapControllerRoute(
+
+        /*__WebApp.MapControllerRoute(
             name: "default",
-            pattern: "{controller}/{action=Index}/{id?}");
+            pattern: "{controller}/{action=Index}/{id?}");*/
 
         __WebApp.MapFallbackToFile("index.html");
 
