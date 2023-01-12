@@ -25,7 +25,9 @@ public class Program
             __Options.AllowSynchronousIO = true;
         });
 
-        __Builder.Services.AddControllersWithViews();
+        __Builder.Services.AddControllersWithViews().AddNewtonsoftJson();
+        
+
         __Builder.Services.AddSignalR(__Conf =>
         {
             __Conf.MaximumReceiveMessageSize = null;
