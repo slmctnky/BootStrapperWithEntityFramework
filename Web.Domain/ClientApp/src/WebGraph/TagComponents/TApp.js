@@ -29,7 +29,11 @@ class TApp extends Component {
     render() {
         return (
             <div style={{ fontFamily: "Montserrat" }}>
-                <React.Suspense fallback={<div class="loader"></div>}>
+                <React.Suspense fallback={<div className="container">
+                    <div className="center">
+                        <div className="lds-ripple"><div></div><div></div></div>
+                    </div>
+                </div>}>
                     <ThemeProvider theme={this.GetTheme()}>
                         <TDynamicLoader getInnerChilds={() => {
                             return <Button variant="contained">{window.GenericWebGraph.Managers.LanguageManager.ActiveLanguage.Hi}</Button>

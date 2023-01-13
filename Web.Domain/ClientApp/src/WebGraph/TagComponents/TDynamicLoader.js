@@ -28,7 +28,11 @@ var TDynamicLoader = Class(cBaseObject, //TObject,
     {
         TDynamicLoader.BaseObject.constructor.call(this, _Props);
         this.state = {
-            innerChilds: <div class="loader"></div>
+            innerChilds: <div className="container">
+                <div className="center">
+                    <div className="lds-ripple"><div></div><div></div></div>
+                </div>
+            </div>
         }
         this.InitFirstLoad();
     }

@@ -1,9 +1,18 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#ff5757" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
+
+
     <base href="%PUBLIC_URL%/" />
     <!--
       manifest.json provides metadata used when your web app is added to the
@@ -22,74 +31,23 @@
     -->
     <title>Web.Domain</title>
 
-    <style>
 
-        html {
-            height: 100%;
-        }
-
-        body {
-            min-height: 100%;
-        }
-
-        .loader {
-            border: 16px solid #f3f3f3;
-            border-radius: 50%;
-            border-top: 16px solid #3498db;
-            width: 120px;
-            height: 120px;
-            -webkit-animation: spin 2s linear infinite; /* Safari */
-            animation: spin 2s linear infinite;
-        }
-
-        /* Safari */
-        @-webkit-keyframes spin {
-            0% {
-                -webkit-transform: rotate(0deg);
-            }
-
-            100% {
-                -webkit-transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            
-        }
-
-        .center {
-            width: 400px;
-            padding: 10px;
-            color: #fff;
-            font-weight: bold;
-            font-family: Tahoma;
-        }
+    <link href="/css/reset.css" rel="stylesheet" />
+    <link href="/css/custom.css" rel="stylesheet" />
+    <link href="/css/loading.css" rel="stylesheet" />
 
 
-
-
-    </style>
 
 </head>
   <body>
     <noscript>
       You need to enable JavaScript to run this app.
     </noscript>
-    <div id="root" class="container">
-            <div class="center">
-                <div class="loader"></div>
+    <div id="root" class="wrapper">
+            <div class="container">
+                <div class="center">
+                    <div class="lds-ripple"><div></div><div></div></div>
+                </div>
             </div>
     </div>
 
