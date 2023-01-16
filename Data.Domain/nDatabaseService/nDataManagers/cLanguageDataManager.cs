@@ -9,6 +9,10 @@ using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
+using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
+using System.Net;
+using Data.Domain.nDataService.nEntityServices.nEntities;
 
 namespace Data.GenericWebScaffold.nDataService.nDataManagers
 {
@@ -23,55 +27,74 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
         }
 
         /*
+        public cUserEntity GetUserBySessionID(string _SessionID)
+        {
+            cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
+
+            cUserSessionEntity? __UserSessionEntity = __DatabaseContext.Sessions
+                                      .Where(__Item => __Item.SessionHash == _SessionID)
+                                      .FirstOrDefault();
+            return __UserSessionEntity?.User;
+
+        }
+
+
+        public void DeleteOldSessionTempDate(DateTime _Date)
+        {
+            cUserSessionEntity.RemoveRange(__Item => __Item.CreateDate < _Date);
+        }
+        public void DeleteSession(string _SessionID)
+        {
+
+            cUserSessionEntity.RemoveRange(__Item => __Item.SessionHash == _SessionID);
+        }
+
+        public cUserSessionEntity AddUserSession(cUserEntity _UserEntity, string _SessionID, string _IpAddress)
+        {
+            cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
+
+            cUserSessionEntity __UserSessionEntity = new cUserSessionEntity()
+            {
+                IpAddress = _IpAddress,
+                SessionHash = _SessionID,
+                User = _UserEntity
+            };
+
+            __DatabaseContext.Sessions.Add(__UserSessionEntity);
+            __DatabaseContext.SaveChanges();
+
+            return __UserSessionEntity;
+        }
+        */
+
+
         public cLanguageEntity GetLanguageByCode(string _LanguageCode)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
+            cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            cLanguageEntity __LanguageEntity = __DataService.Database.Query<cLanguageEntity>()
-                .SelectAll()
-                .Where()
-                .Operand(__Item => __Item.Code).Eq(_LanguageCode)
-                .ToQuery()
-                .ToList()
-                .FirstOrDefault();
+            cLanguageEntity? __LanguageEntity = cLanguageEntity.Get(__Item => __Item.Code == _LanguageCode).FirstOrDefault();
             return __LanguageEntity;
         }
-
-
-        public cLanguageEntity GetLanguageByID(long _LanguageID)
-        {
-            IDataService __DataService = DataServiceManager.GetDataService();
-            cLanguageEntity __LanguageEntity = __DataService.Database.GetEntityByID<cLanguageEntity>(_LanguageID);
-            return __LanguageEntity;
-        }
-
-        public List<cLanguageEntity> GetLanguages()
-        {
-            IDataService __DataService = DataServiceManager.GetDataService();
-            List<cLanguageEntity> __LanguageEntityList = __DataService.Database.Query<cLanguageEntity>()
-                .SelectAll()
-                .Where()
-                .ToQuery()
-                .ToList();
-            return __LanguageEntityList;
-        }
-
 
         public cLanguageEntity AddLanguage(string _Code, string _Name, string _IconCode)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
+            cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            cLanguageEntity __LanguageEntity = __DataService.Database.CreateNew<cLanguageEntity>();
-            __LanguageEntity.Name = _Name;
-            __LanguageEntity.Code = _Code;
-            __LanguageEntity.IconCode = _IconCode;
-            __LanguageEntity.Save();
+            cLanguageEntity __LanguageEntity = new cLanguageEntity()
+            {
+                Name = _Name,
+                Code = _Code,
+                IconCode = _IconCode
+            };
+
+            __DatabaseContext.Languages.Add(__LanguageEntity);
+            __DatabaseContext.SaveChanges();
+
             return __LanguageEntity;
         }
 
         public cLanguageEntity CreateLanguageIfNotExists(string _Code, string _Name, string _IconCode)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
             cLanguageEntity __LanguageEntity = GetLanguageByCode(_Code);
             if (__LanguageEntity == null)
             {
@@ -80,6 +103,24 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
 
             return __LanguageEntity;
         }
+
+        public cLanguageEntity GetLanguageByID(int _LanguageID)
+        {
+            return cLanguageEntity.GetEntityByID(_LanguageID);
+        }
+
+        public List<cLanguageEntity> GetLanguages()
+        {
+            return cLanguageEntity.GetAll().ToList();
+        }
+
+
+        /*
+       
+
+
+       
+
         public cLanguageHrefLangEntity AddLanguageHref(cLanguageEntity _LanguageEntity, string _Code)
         {
             IDataService __DataService = DataServiceManager.GetDataService();

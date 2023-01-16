@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DData.Domain.nDatabaseService.nEntities
+namespace Data.Domain.nDatabaseService.nEntities
 {
     public class cUserEntity : cBaseEntity<cUserEntity>
     {

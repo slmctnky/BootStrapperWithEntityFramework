@@ -4,6 +4,7 @@
     <string>Bootstrapper</string>
     <string>Base</string>
     <string>Data</string>
+	<string>Core</string>
     <string>Web</string>
     <string>App</string>
     <string>GenericScaffold</string>

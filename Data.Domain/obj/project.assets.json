@@ -1354,6 +1354,19 @@
         "runtime": {
           "bin/placeholder/Bootstrapper.Core.dll": {}
         }
+      },
+      "Data.Boundary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Bootstrapper.Boundary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Data.Boundary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Data.Boundary.dll": {}
+        }
       }
     }
   },
@@ -3745,11 +3758,17 @@
       "type": "project",
       "path": "../Bootstrapper.Core/Bootstrapper.Core.csproj",
       "msbuildProject": "../Bootstrapper.Core/Bootstrapper.Core.csproj"
+    },
+    "Data.Boundary/1.0.0": {
+      "type": "project",
+      "path": "../Data.Boundary/Data.Boundary.csproj",
+      "msbuildProject": "../Data.Boundary/Data.Boundary.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Base.Data >= 1.0.0",
+      "Data.Boundary >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.1"
     ]
   },
@@ -3788,6 +3807,9 @@
           "projectReferences": {
             "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj": {
               "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj"
+            },
+            "C:\\ProjectWorkspace\\GenericScaffold\\Data.Boundary\\Data.Boundary.csproj": {
+              "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Boundary\\Data.Boundary.csproj"
             }
           }
         }

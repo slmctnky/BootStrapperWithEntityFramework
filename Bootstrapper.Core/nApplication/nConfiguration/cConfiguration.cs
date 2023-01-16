@@ -58,7 +58,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 		public string ExecutedSqlLogPath { get; private set; }
         public string SqlGlobalInfoLogPath { get; private set; }
         public string RequestPerformanceLogPath { get; private set; }
-
+        public string BatchJobLogPath { get; private set; }
         
 
 
@@ -76,6 +76,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ExecutedSqlLogPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.SqlGlobalInfoLogPath, true);            
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.RequestPerformanceLogPath, true);
+            App.Handlers.FileHandler.MakeDirectory(App.Configuration.BatchJobLogPath, true);            
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.DefaultDataPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ConfigurationDataPath, true);
             App.Handlers.FileHandler.MakeDirectory(App.Configuration.ScriptCachePath, true);
@@ -145,6 +146,9 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 
             RequestPerformanceLogPath = GetVariableName(() => RequestPerformanceLogPath);
             RequestPerformanceLogPath = Path.Combine(LogPath, RequestPerformanceLogPath);
+
+            BatchJobLogPath = GetVariableName(() => BatchJobLogPath);
+            BatchJobLogPath = Path.Combine(LogPath, BatchJobLogPath);
 
             DefaultDataPath = GetVariableName(() => DefaultDataPath);
             DefaultDataPath = Path.Combine(HomePath, DefaultDataPath);

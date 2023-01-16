@@ -9,6 +9,7 @@
       "Data.Domain/1.0.0": {
         "dependencies": {
           "Base.Data": "1.0.0",
+          "Data.Boundary": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "7.0.1"
         },
         "runtime": {
@@ -840,6 +841,14 @@
         "runtime": {
           "Bootstrapper.Core.dll": {}
         }
+      },
+      "Data.Boundary/1.0.0": {
+        "dependencies": {
+          "Bootstrapper.Boundary": "1.0.0"
+        },
+        "runtime": {
+          "Data.Boundary.dll": {}
+        }
       }
     }
   },
@@ -1362,6 +1371,11 @@
       "sha512": ""
     },
     "Bootstrapper.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Data.Boundary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

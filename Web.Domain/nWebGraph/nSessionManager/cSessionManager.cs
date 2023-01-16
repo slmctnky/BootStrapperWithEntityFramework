@@ -11,7 +11,7 @@ using Base.Data.nConfiguration;
 using Bootstrapper.Core.nCore;
 using Bootstrapper.Core.nApplication;
 using Web.Domain.Controllers;
-using DData.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
 using Data.GenericWebScaffold.nDataService.nDataManagers;
 
 namespace Web.Domain.nWebGraph.nSessionManager

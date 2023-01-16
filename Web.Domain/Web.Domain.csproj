@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Base.Web\Base.Web.csproj" />
+    <ProjectReference Include="..\Core.BatchJobService\Core.BatchJobService.csproj" />
     <ProjectReference Include="..\Data.Domain\Data.Domain.csproj" />
   </ItemGroup>
 

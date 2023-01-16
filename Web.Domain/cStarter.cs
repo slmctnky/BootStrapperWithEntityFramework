@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
 using Data.Domain.nDatabaseService.nEntities;
-using DData.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
 using Data.GenericWebScaffold.nDefaultValueTypes;
 
 namespace Web.Domain

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
-using DData.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
 using Data.Domain.nDatabaseService.nEntities;
 using Data.GenericWebScaffold.nDefaultValueTypes;
 using System.Xml.Linq;

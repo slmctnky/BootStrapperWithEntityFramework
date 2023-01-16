@@ -9,6 +9,7 @@ using Data.GenericWebScaffold.nDefaultValueTypes;
 
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
+using Data.Domain.nDatabaseService.nEntities;
 
 namespace Data.GenericWebScaffold.nDataService.nDataManagers
 {
@@ -22,6 +23,15 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
             DataService = _DataService;
             RoleDataManager = _RoleDataManager;
         }
+
+        public cUserEntity GetUserByEmail(string _Email)
+        {
+            cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
+
+            cUserEntity? __UserEntity = cUserEntity.Get(__Item => __Item.Email == _Email).FirstOrDefault();
+            return __UserEntity;
+        }
+
         /*
         public cQuery<cUserEntity> GetListFromEmail(List<dynamic> __UserList)
         {
@@ -205,19 +215,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
             return __Query.ToList();
         }
 
-        public cUserEntity GetUserByEmail(string _Email)
-        {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
-            cUserEntity __User = __DataService.Database.Query<cUserEntity>()
-                .SelectAll()
-                .Where()
-                .Operand(__Item => __Item.Email).Eq(_Email)
-                .ToQuery()
-                .ToList()
-                .FirstOrDefault();
-            return __User;
-        }
+      
 
         public cUserEntity GetUserByUserNick(string _Usernick)
         {

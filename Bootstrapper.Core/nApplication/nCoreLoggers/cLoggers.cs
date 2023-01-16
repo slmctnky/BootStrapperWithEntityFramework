@@ -1,3 +1,4 @@
+using Bootstrapper.Core.nApplication.nCoreLoggers.nBatchJobLogger;
 using Bootstrapper.Core.nApplication.nCoreLoggers.nCoreLogger;
 using Bootstrapper.Core.nApplication.nCoreLoggers.nRequestPerformanceLogger;
 using Bootstrapper.Core.nApplication.nCoreLoggers.nSqlLogger;
@@ -20,6 +21,8 @@ namespace Bootstrapper.Core.nApplication.nCoreLoggers
         public cSqlGlobalInfoLogger SqlGlobalInfoLogger { get; set; }
 
         public cCoreRequestPerformanceLogger RequestPerformanceLogger { get; set; }
+        
+        public cCoreBatchJobLogger BatchJobLogger { get; set; }
 
 
         public cLoggers(cApp _App)

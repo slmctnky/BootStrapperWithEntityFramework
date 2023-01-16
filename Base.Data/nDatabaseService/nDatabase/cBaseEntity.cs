@@ -25,10 +25,10 @@ namespace Base.Data.nDatabaseService.nDatabase
             UpdateDate = DateTime.Now;
         }
 
-        public static void Add(TEntity _Entity)
+        public static TEntity Add(TEntity _Entity)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
-            __DbContext.Set<TEntity>().Add(_Entity);
+            return __DbContext.Set<TEntity>().Add(_Entity).Entity;
         }
 
         public static void Remove(TEntity _Entity)
@@ -37,16 +37,21 @@ namespace Base.Data.nDatabaseService.nDatabase
             __DbContext.Set<TEntity>().Remove(_Entity);
         }
 
-        public static void RemoveRange(IEnumerable<TEntity> _Entities)
+        public static int RemoveRange(IEnumerable<TEntity> _Entities)
         {
+            int __RemoveCount = _Entities.ToList().Count;
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
             __DbContext.Set<TEntity>().RemoveRange(_Entities);
+            return __RemoveCount;
         }
 
-        public static void RemoveRange(Expression<Func<TEntity, bool>> _Predicate)
+        public static int RemoveRange(Expression<Func<TEntity, bool>> _Predicate)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
-            __DbContext.Set<TEntity>().RemoveRange(__DbContext.Set<TEntity>().Where(_Predicate));
+            List<TEntity> __WillRemove = __DbContext.Set<TEntity>().Where(_Predicate).ToList();
+            int __RemoveCount = __WillRemove.Count;
+            __DbContext.Set<TEntity>().RemoveRange(__WillRemove);
+            return __RemoveCount;
         }
 
         public static void Find(Expression<Func<TEntity, bool>> _Predicate)
@@ -55,14 +60,26 @@ namespace Base.Data.nDatabaseService.nDatabase
             __DbContext.Set<TEntity>().Where(_Predicate);
         }
 
-
-        public static IEnumerable<TEntity> GetAll()
+        public static IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> _Predicate)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
-            return __DbContext.Set<TEntity>().ToList();
+            return __DbContext.Set<TEntity>().Where<TEntity>(_Predicate);
+
         }
 
-        public TEntity GetById(long _Id)
+        public static IQueryable<TEntity> Get(Expression<Func<TEntity,int, bool>> _Predicate)
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            return __DbContext.Set<TEntity>().Where<TEntity>(_Predicate);
+
+        }
+        public static IQueryable<TEntity> GetAll()
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            return __DbContext.Set<TEntity>();
+        }
+
+        public static TEntity GetEntityByID(int _Id)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
             return __DbContext.Set<TEntity>().Find(_Id);

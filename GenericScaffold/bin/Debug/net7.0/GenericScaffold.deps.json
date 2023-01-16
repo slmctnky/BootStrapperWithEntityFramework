@@ -9,6 +9,7 @@
       "GenericScaffold/1.0.0": {
         "dependencies": {
           "Base.Data": "1.0.0",
+          "Core.BatchJobService": "1.0.0",
           "Data.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.1"
         },
@@ -847,9 +848,31 @@
           "Bootstrapper.Core.dll": {}
         }
       },
+      "Core.BatchJobService/1.0.0": {
+        "dependencies": {
+          "Base.Data": "1.0.0",
+          "Base.FileData": "1.0.0",
+          "Bootstrapper.Boundary": "1.0.0",
+          "Bootstrapper.Core": "1.0.0",
+          "Data.Boundary": "1.0.0",
+          "Data.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Core.BatchJobService.dll": {}
+        }
+      },
+      "Data.Boundary/1.0.0": {
+        "dependencies": {
+          "Bootstrapper.Boundary": "1.0.0"
+        },
+        "runtime": {
+          "Data.Boundary.dll": {}
+        }
+      },
       "Data.Domain/1.0.0": {
         "dependencies": {
-          "Base.Data": "1.0.0"
+          "Base.Data": "1.0.0",
+          "Data.Boundary": "1.0.0"
         },
         "runtime": {
           "Data.Domain.dll": {}
@@ -1383,6 +1406,16 @@
       "sha512": ""
     },
     "Bootstrapper.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Core.BatchJobService/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Data.Boundary/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

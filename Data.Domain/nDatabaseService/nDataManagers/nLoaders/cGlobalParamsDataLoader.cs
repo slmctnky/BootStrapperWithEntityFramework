@@ -21,7 +21,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
         {
         }
 
-        public void Init()
+        public override void Init()
         {
 			
         }

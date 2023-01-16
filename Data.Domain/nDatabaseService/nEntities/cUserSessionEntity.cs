@@ -1,5 +1,5 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using DData.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

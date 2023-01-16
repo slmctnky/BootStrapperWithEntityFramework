@@ -1367,11 +1367,43 @@
           "bin/placeholder/Bootstrapper.Core.dll": {}
         }
       },
+      "Core.BatchJobService/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Base.Data": "1.0.0",
+          "Base.FileData": "1.0.0",
+          "Bootstrapper.Boundary": "1.0.0",
+          "Bootstrapper.Core": "1.0.0",
+          "Data.Boundary": "1.0.0",
+          "Data.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Core.BatchJobService.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Core.BatchJobService.dll": {}
+        }
+      },
+      "Data.Boundary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "Bootstrapper.Boundary": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Data.Boundary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Data.Boundary.dll": {}
+        }
+      },
       "Data.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
-          "Base.Data": "1.0.0"
+          "Base.Data": "1.0.0",
+          "Data.Boundary": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Data.Domain.dll": {}
@@ -3796,6 +3828,16 @@
       "path": "../Bootstrapper.Core/Bootstrapper.Core.csproj",
       "msbuildProject": "../Bootstrapper.Core/Bootstrapper.Core.csproj"
     },
+    "Core.BatchJobService/1.0.0": {
+      "type": "project",
+      "path": "../Core.BatchJobService/Core.BatchJobService.csproj",
+      "msbuildProject": "../Core.BatchJobService/Core.BatchJobService.csproj"
+    },
+    "Data.Boundary/1.0.0": {
+      "type": "project",
+      "path": "../Data.Boundary/Data.Boundary.csproj",
+      "msbuildProject": "../Data.Boundary/Data.Boundary.csproj"
+    },
     "Data.Domain/1.0.0": {
       "type": "project",
       "path": "../Data.Domain/Data.Domain.csproj",
@@ -3805,6 +3847,7 @@
   "projectFileDependencyGroups": {
     "net7.0": [
       "Base.Data >= 1.0.0",
+      "Core.BatchJobService >= 1.0.0",
       "Data.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 7.0.1"
     ]
@@ -3844,6 +3887,9 @@
           "projectReferences": {
             "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj": {
               "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Base.Data\\Base.Data.csproj"
+            },
+            "C:\\ProjectWorkspace\\GenericScaffold\\Core.BatchJobService\\Core.BatchJobService.csproj": {
+              "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Core.BatchJobService\\Core.BatchJobService.csproj"
             },
             "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj": {
               "projectPath": "C:\\ProjectWorkspace\\GenericScaffold\\Data.Domain\\Data.Domain.csproj"

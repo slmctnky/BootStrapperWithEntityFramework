@@ -1,3 +1,6 @@
+C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\en.json
+C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\Languages.json
+C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\tr.json
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\Base.FileData.deps.json
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\Base.FileData.dll
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\Base.FileData.pdb
@@ -15,6 +18,3 @@ C:\ProjectWorkspace\GenericScaffold\Base.FileData\obj\Debug\net7.0\Base.FileData
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\obj\Debug\net7.0\refint\Base.FileData.dll
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\obj\Debug\net7.0\Base.FileData.pdb
 C:\ProjectWorkspace\GenericScaffold\Base.FileData\obj\Debug\net7.0\ref\Base.FileData.dll
-C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\en.json
-C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\Languages.json
-C:\ProjectWorkspace\GenericScaffold\Base.FileData\bin\Debug\net7.0\LanguagePath\tr.json

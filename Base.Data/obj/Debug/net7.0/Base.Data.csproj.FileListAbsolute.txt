@@ -1,3 +1,6 @@
+C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\en.json
+C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\Languages.json
+C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\tr.json
 C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\Base.Data.deps.json
 C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\Base.Data.runtimeconfig.json
 C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\Base.Data.dll
@@ -19,6 +22,3 @@ C:\ProjectWorkspace\GenericScaffold\Base.Data\obj\Debug\net7.0\refint\Base.Data.
 C:\ProjectWorkspace\GenericScaffold\Base.Data\obj\Debug\net7.0\Base.Data.pdb
 C:\ProjectWorkspace\GenericScaffold\Base.Data\obj\Debug\net7.0\Base.Data.genruntimeconfig.cache
 C:\ProjectWorkspace\GenericScaffold\Base.Data\obj\Debug\net7.0\ref\Base.Data.dll
-C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\en.json
-C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\Languages.json
-C:\ProjectWorkspace\GenericScaffold\Base.Data\bin\Debug\net7.0\LanguagePath\tr.json

@@ -5,7 +5,7 @@ using System.Text;
 using System.Linq;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using DData.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDatabaseService.nEntities;
 using Microsoft.AspNetCore.Http;
 using Data.Domain.nDatabaseService.nEntities;
 using System.Reflection.Metadata;
@@ -24,9 +24,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
         {
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            cUserSessionEntity? __UserSessionEntity = __DatabaseContext.Sessions
-                                      .Where(__Item => __Item.SessionHash == _SessionID)
-                                      .FirstOrDefault();
+            cUserSessionEntity? __UserSessionEntity = cUserSessionEntity.Get(__Item => __Item.SessionHash == _SessionID).FirstOrDefault();
             return __UserSessionEntity?.User;
 
         }
@@ -36,10 +34,10 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
         {
             cUserSessionEntity.RemoveRange(__Item => __Item.CreateDate < _Date);
         }
-        public void DeleteSession(string _SessionID)
+        public int DeleteSession(string _SessionID)
         {
 
-            cUserSessionEntity.RemoveRange(__Item => __Item.SessionHash == _SessionID);
+            return cUserSessionEntity.RemoveRange(__Item => __Item.SessionHash == _SessionID);
         }
 
         public cUserSessionEntity AddUserSession(cUserEntity _UserEntity, string _SessionID, string _IpAddress)

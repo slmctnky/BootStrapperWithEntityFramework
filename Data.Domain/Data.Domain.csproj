@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Base.Data\Base.Data.csproj" />
+    <ProjectReference Include="..\Data.Boundary\Data.Boundary.csproj" />
   </ItemGroup>
 
   <ItemGroup>
