@@ -13,6 +13,8 @@ using Data.Domain.nDatabaseService;
 using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
 using Data.Domain.nDatabaseService.nEntities;
 using System.Xml.Linq;
+using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
 namespace Core.BatchJobService.nDataService.nDataManagers
 {

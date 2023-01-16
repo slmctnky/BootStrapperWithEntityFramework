@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bootstrapper.Core.nApplication.nStarter
+namespace Base.Data.nDatabaseService
 {
-    public interface IDefaultDataLoader
+    public interface IComponentLoader
     {
         void Load();
     }

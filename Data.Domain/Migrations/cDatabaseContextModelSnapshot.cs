@@ -22,7 +22,113 @@ namespace Data.Domain.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserDetailEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nEntities.cLanguageEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("IconCode")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Languages");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nEntities.cLanguageWordEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("CheckSum")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ParamCount")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Word")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("cLanguageEntityID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("cLanguageEntityID");
+
+                    b.ToTable("LanguageWords");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int?>("cUserEntityID")
+                        .HasColumnType("integer");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("cUserEntityID");
+
+                    b.ToTable("Roles");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserDetailEntity", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -51,7 +157,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("UserDetails");
                 });
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserEntity", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -98,38 +204,6 @@ namespace Data.Domain.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Code")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdateDate")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<int?>("cUserEntityID")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ID");
-
-                    b.HasIndex("cUserEntityID");
-
-                    b.ToTable("Roles");
-                });
-
             modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserSessionEntity", b =>
                 {
                     b.Property<int>("ID")
@@ -162,9 +236,116 @@ namespace Data.Domain.Migrations
                     b.ToTable("Sessions");
                 });
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.GenericWebScaffold.nDataService.nEntityServices.nEntities.cBatchJobEntity", b =>
                 {
-                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserDetailEntity", "UserDetail")
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<bool>("AutoAddExecution")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("ExecuteFirstWithoutWait")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("MaxRetryCount")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("State")
+                        .HasColumnType("integer");
+
+                    b.Property<bool>("StopAfterFirstExecution")
+                        .HasColumnType("boolean");
+
+                    b.Property<int>("TimePeriodMilisecond")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("BatchJobs");
+                });
+
+            modelBuilder.Entity("Data.GenericWebScaffold.nDataService.nEntityServices.nEntities.cBatchJobExecutionEntity", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ID"));
+
+                    b.Property<int>("BatchJobID")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<int>("CurrentTryCount")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("ElapsedTimeMilisecond")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Exception")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("ExecutionTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("ParameterObjects")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Result")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("State")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdateDate")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("BatchJobID");
+
+                    b.ToTable("BatchJobExecutions");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nEntities.cLanguageWordEntity", b =>
+                {
+                    b.HasOne("Data.Domain.nDataService.nEntityServices.nEntities.cLanguageEntity", null)
+                        .WithMany("Words")
+                        .HasForeignKey("cLanguageEntityID");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
+                {
+                    b.HasOne("Data.Domain.nDatabaseService.nEntities.cUserEntity", null)
+                        .WithMany("Roles")
+                        .HasForeignKey("cUserEntityID");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+                {
+                    b.HasOne("Data.Domain.nDatabaseService.nEntities.cUserDetailEntity", "UserDetail")
                         .WithMany()
                         .HasForeignKey("UserDetailID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -173,16 +354,9 @@ namespace Data.Domain.Migrations
                     b.Navigation("UserDetail");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cRoleEntity", b =>
-                {
-                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserEntity", null)
-                        .WithMany("Roles")
-                        .HasForeignKey("cUserEntityID");
-                });
-
             modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserSessionEntity", b =>
                 {
-                    b.HasOne("DData.Domain.nDatabaseService.nEntities.cUserEntity", "User")
+                    b.HasOne("Data.Domain.nDatabaseService.nEntities.cUserEntity", "User")
                         .WithMany("Sessions")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -191,11 +365,32 @@ namespace Data.Domain.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("DData.Domain.nDatabaseService.nEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.GenericWebScaffold.nDataService.nEntityServices.nEntities.cBatchJobExecutionEntity", b =>
+                {
+                    b.HasOne("Data.GenericWebScaffold.nDataService.nEntityServices.nEntities.cBatchJobEntity", "BatchJob")
+                        .WithMany("JobExecutions")
+                        .HasForeignKey("BatchJobID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("BatchJob");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nEntities.cLanguageEntity", b =>
+                {
+                    b.Navigation("Words");
+                });
+
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nEntities.cUserEntity", b =>
                 {
                     b.Navigation("Roles");
 
                     b.Navigation("Sessions");
+                });
+
+            modelBuilder.Entity("Data.GenericWebScaffold.nDataService.nEntityServices.nEntities.cBatchJobEntity", b =>
+                {
+                    b.Navigation("JobExecutions");
                 });
 #pragma warning restore 612, 618
         }

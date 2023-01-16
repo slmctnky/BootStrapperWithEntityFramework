@@ -150,30 +150,6 @@ namespace Bootstrapper.Core.nApplication.nBootstrapper
 
         }
 
-        public Type GetInheritedTypeFromDomainList<TBaseType>()
-        {
-            List<cDomainTypeList> __AllTypes = new List<cDomainTypeList>();
-            foreach (string __DomainName in App.Configuration.ApplicationSettings.DomainNames)
-            {
-                __AllTypes.Add(new cDomainTypeList(App, this, __DomainName));
-            }
-            __AllTypes.Reverse();
-
-            foreach (cDomainTypeList __DomainTypeList in __AllTypes)
-            {
-                List<Type> __TypeList = App.Handlers.AssemblyHandler.GetTypesFromBaseType(typeof(TBaseType));
-                if (__TypeList.Count > 0)
-                {
-                    return __TypeList.First();
-                }
-            }
-
-            return null;
-
-        }
-
-
-
 
         public object GetFactory(Type _Type, object _Instance, MethodInfo _MethodInfo)
         {

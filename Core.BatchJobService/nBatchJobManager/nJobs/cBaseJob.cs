@@ -32,7 +32,9 @@ namespace Core.BatchJobService.nBatchJobManager.nJobs
             FileDataService = _FileDataService;
             BatchJobID = _BatchJobID;
             BatchJobDataManager = _BatchJobDataManager;
-		}
+            DataService = _DataService;
+
+        }
 
         public virtual void AddQueue(TJobProps _Props)
         {

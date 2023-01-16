@@ -51,10 +51,56 @@ namespace Base.Data.nDatabaseService
             }
         }
 
+        public void ComponentLoad()
+        {
+            try
+            {
+                
+                Type __Type = App.Handlers.AssemblyHandler.GetTypeFromBaseInDomainHierarchy<IComponentLoader>();
+                if (__Type != null)
+                {
+                    IComponentLoader __ComponentLoader = (IComponentLoader)App.Factories.ObjectFactory.ResolveInstance(__Type);
+                    __ComponentLoader.Load();
+                }
+            }
+            catch (Exception _Ex)
+            {
+                App.Loggers.CoreLogger.LogError(_Ex);
+            }
+        }
+
         public void LoadDefaultData()
         {
-            IDefaultDataLoader __DefaultDataLoader = ServiceContext.App.Factories.ObjectFactory.ResolveInstance<IDefaultDataLoader>();
-            __DefaultDataLoader.Load();
+            try
+            {
+                Type __Type = App.Handlers.AssemblyHandler.GetTypeFromBaseInDomainHierarchy<IDefaultDataLoader>();
+                if (__Type != null)
+                {
+                    IDefaultDataLoader __DefaultDataLoader = ServiceContext.App.Factories.ObjectFactory.ResolveInstance<IDefaultDataLoader>();
+                    if (__DefaultDataLoader != null) __DefaultDataLoader.Load();
+                }
+            }
+            catch (Exception _Ex)
+            {
+                App.Loggers.CoreLogger.LogError(_Ex);
+            }
+        }
+
+        public void LoadBatchJob()
+        {
+            try
+            {
+                Type __Type = App.Handlers.AssemblyHandler.GetTypeFromBaseInDomainHierarchy<IBatchJobDataLoader>();
+                if (__Type != null)
+                {
+                    IBatchJobDataLoader __BatchJobDataLoader = (IBatchJobDataLoader)App.Factories.ObjectFactory.ResolveInstance(__Type);
+                    if (__BatchJobDataLoader != null) __BatchJobDataLoader.Load();
+                }
+            }
+            catch (Exception _Ex)
+            {
+                App.Loggers.CoreLogger.LogError(_Ex);
+            }
         }
 
         public TDatabaseContext GetDatabaseContext()

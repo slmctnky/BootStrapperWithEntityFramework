@@ -40,10 +40,10 @@ namespace Core.BatchJobService.nDataService.nDataManagers
                 Exception = _Exception,
                 Result = _Result,
                 ExecutionTime = _ExecutionTime,
-                ElapsedTimeMilisecond = _ElapsedTimeMilisecond,
-                BatchJob = _OwnerBatchJobEntity
+                ElapsedTimeMilisecond = _ElapsedTimeMilisecond
             };
 
+            _OwnerBatchJobEntity.JobExecutions.Add(__BatchJobExecutionEntity);
             __DatabaseContext.SaveChanges();
 
             return __BatchJobExecutionEntity;

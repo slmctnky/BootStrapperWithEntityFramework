@@ -27,7 +27,10 @@ namespace Web.Domain
         public void Start(cApp _App)
         {
             DataService.Migrate();
-            DataService.LoadDefaultData();
+            DataService.ComponentLoad();
+            if (App.Configuration.LoadDefaultDataOnStart) DataService.LoadDefaultData();
+            if (App.Configuration.LoadBatchJobOnStart) DataService.LoadBatchJob();
+
 
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 

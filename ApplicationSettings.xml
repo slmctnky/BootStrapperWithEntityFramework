@@ -9,6 +9,7 @@
     <string>App</string>
     <string>GenericScaffold</string>
   </DomainNames>
+  <TargetHostName>localhost</TargetHostName>
   <UICultureName>tr-TR</UICultureName>
   <LogToFile>true</LogToFile>
   <LogToConsole>false</LogToConsole>

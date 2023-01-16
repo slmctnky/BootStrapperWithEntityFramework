@@ -43,7 +43,7 @@ namespace Core.BatchJobService.nDataService.nDataManagers.nLoaders
             {
                 DefaultBatchJobExecutionIDs __Excution = DefaultBatchJobExecutionIDs.TypeList[i];
                 cBatchJobEntity __BatchJobEntity = BatchJobDataManager.GetBatchJobByCode(__Excution.BatchJobID.Code);
-                if (__BatchJobEntity != null && __BatchJobEntity.JobExecutions.Count < 1)
+                if (__BatchJobEntity != null &&  __BatchJobEntity.JobExecutions.Count < 1)
                 {
                     
                     BatchJobExecutionDataManager.AddBatchJob(__BatchJobEntity, __Excution.Props.SerializeObject(), EBatchJobExecutionState.NotRunning, "", "", DateTime.Now, 0);

@@ -25,8 +25,12 @@ namespace Core.BatchJobService.nBatchJobManager.nJobs.nTestJob
 
         public override cBatchJobResult Run(cTestServiceJobProps _Props)
         {
-			cUserEntity __UserEntity = UserDataManager.GetUserByEmail("customer@customer.com");
-            cBatchJobResult __Result = new cBatchJobResult("Başarılı : " + _Props.TestValue + " , " + __UserEntity.Name + " " + __UserEntity.Surname);
+            cBatchJobResult __Result = new cBatchJobResult("Başarız : User bulunamadı");
+            cUserEntity __UserEntity = UserDataManager.GetUserByEmail("customer@customer.com");
+            if (__UserEntity != null)
+            {
+                __Result = new cBatchJobResult("Başarılı : " + _Props.TestValue + " , " + __UserEntity.Name + " " + __UserEntity.Surname);
+            }            
             return __Result;
         }
     }

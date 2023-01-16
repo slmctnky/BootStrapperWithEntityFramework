@@ -52,7 +52,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration.nApplicationSettings
         public static cApplicationSettings CreateSampleSetting()
         {
             cApplicationSettings __ApplicationSettings = new cApplicationSettings();
-            __ApplicationSettings.DomainNames = new List<string>() { "Bootstrapper", "Base", "Data", "Web", "App", "GenericScaffold" };
+            __ApplicationSettings.DomainNames = new List<string>() { "Bootstrapper", "Base", "Data", "Core" ,"Web", "App", "GenericScaffold" };
             __ApplicationSettings.UICultureName = "tr-TR";
 
             __ApplicationSettings.TargetHostName = "localhost";

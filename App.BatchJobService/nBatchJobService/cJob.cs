@@ -88,9 +88,11 @@ namespace App.BatchJobService.nBatchJobService
                                 cBatchJobExecutionEntity __BatchJobExecutionEntity = null;
                                 __DataService.Perform(() =>
                                 {
-                                    BatchJobEntity.JobExecutions.Add(new cBatchJobExecutionEntity() {
+                                    __BatchJobExecutionEntity = new cBatchJobExecutionEntity()
+                                    {
                                         ParameterObjects = __LastExecution.ParameterObjects
-                                    });
+                                    };
+                                    BatchJobEntity.JobExecutions.Add(__BatchJobExecutionEntity);
                                     __DataService.SaveChanges();
                                 });
                                 __Unexecuted = new List<cBatchJobExecutionEntity>() { __BatchJobExecutionEntity };

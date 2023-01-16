@@ -27,7 +27,7 @@ namespace Data.GenericWebScaffold.nDataService.nEntityServices.nEntities
 
         public int MaxRetryCount { get; set; }
 
-        public List<cBatchJobExecutionEntity> JobExecutions { get; set; }
+        public List<cBatchJobExecutionEntity> JobExecutions { get; private set; }
 
     }
 }

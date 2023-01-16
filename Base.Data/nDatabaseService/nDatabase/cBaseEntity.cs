@@ -7,6 +7,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,8 +22,30 @@ namespace Base.Data.nDatabaseService.nDatabase
 
         public cBaseEntity()
         {
+            InitDefaults();
+        }
+
+        private void InitDefaults()
+        {
             CreateDate = DateTime.Now;
             UpdateDate = DateTime.Now;
+
+            Type __Type = this.GetType();
+
+            PropertyInfo[]  __Temp = __Type.GetAllProperties();
+
+            List<PropertyInfo> __PropertyInfos = __Type.GetAllProperties().ToList().Where(__Item => typeof(System.Collections.IEnumerable).IsAssignableFrom(__Item.PropertyType) && __Item.PropertyType != typeof(string)).ToList();
+
+            
+            foreach (PropertyInfo __PropertyInfo in __PropertyInfos)
+            {
+                Type __GenericTypes = __PropertyInfo.PropertyType.GenericTypeArguments.FirstOrDefault();
+                Type __ListType = typeof(List<>);
+                Type __Constructor = __ListType.MakeGenericType(__GenericTypes);
+                __PropertyInfo.SetValue(this, __Constructor.CreateInstance());
+            }
+
+
         }
 
         public static TEntity Add(TEntity _Entity)

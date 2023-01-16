@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Bootstrapper.Core.nApplication.nStarter
+namespace Base.Data.nDatabaseService
 {
     public interface IBatchJobDataLoader
     {

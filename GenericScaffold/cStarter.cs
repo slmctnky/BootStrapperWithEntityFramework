@@ -28,6 +28,9 @@ namespace GenericScaffold
         public void Start(cApp _App)
         {
             DataService.Migrate();
+            DataService.ComponentLoad();
+            if (App.Configuration.LoadDefaultDataOnStart) DataService.LoadDefaultData();
+            if (App.Configuration.LoadBatchJobOnStart) DataService.LoadDefaultData();
 
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 

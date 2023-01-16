@@ -175,5 +175,24 @@ namespace Bootstrapper.Core.nHandlers.nAssemblyHandler
 			return __AllTypes.Where(__Item => __Item.IsClass && !__Item.IsAbstract && !__Item.IsInterface && _BaseType.IsAssignableFrom(__Item)).ToList();
 		
 		}
-	}
+
+        public Type GetTypeFromBaseInDomainHierarchy<TType>()
+        {
+            return GetTypeFromBaseInDomainHierarchy(typeof(TType));
+        }
+
+        public Type GetTypeFromBaseInDomainHierarchy(Type _BaseType)
+        {
+			for (int i = App.Configuration.ApplicationSettings.DomainNames.Count - 1; i > -1; i--)
+			{
+				List<Type> __AllTypes = GetLoadedApplicationTypes(new List<string>() { App.Configuration.ApplicationSettings.DomainNames[i] });
+				__AllTypes = __AllTypes.Where(__Item => __Item.IsClass && !__Item.IsAbstract && !__Item.IsInterface && _BaseType.IsAssignableFrom(__Item)).ToList();
+				if (__AllTypes.Count > 0)
+				{
+					return __AllTypes.FirstOrDefault();
+				}
+			}
+			return null;
+        }
+    }
 }
