@@ -1,5 +1,4 @@
 ﻿using Base.Data.nDatabaseService;
-using Base.Data.nDataServiceManager;
 using Base.FileData;
 using Core.BatchJobService.nBatchJobManager.nJobs.nTestJob;
 using Core.BatchJobService.nDataService.nDataManagers;

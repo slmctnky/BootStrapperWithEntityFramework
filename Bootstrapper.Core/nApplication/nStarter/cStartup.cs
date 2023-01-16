@@ -14,6 +14,10 @@ namespace Bootstrapper.Core.nApplication.nStarter
     public class cStartup<TStarter> : cCoreObject, IStarter where TStarter : IStarter
     {
         IComponentLoader ComponentLoader { get; set; }
+
+        IBatchJobDataLoader BatchJobDataLoader { get; set; }
+
+        IDefaultDataLoader DefaultDataLoader { get; set; }
         public TStarter StarterInstance { get; set; }
         public cStartup(cApp _App)
             :base(_App)
@@ -22,8 +26,8 @@ namespace Bootstrapper.Core.nApplication.nStarter
         }
         public void Start(cApp _App)
         {
-            CultureInfo.DefaultThreadCurrentCulture = _App.Configuration.UICulture;
-            CultureInfo.DefaultThreadCurrentUICulture = _App.Configuration.UICulture;
+            CultureInfo.DefaultThreadCurrentCulture = App.Configuration.UICulture;
+            CultureInfo.DefaultThreadCurrentUICulture = App.Configuration.UICulture;
 
             Type __Type = App.Bootstrapper.GetInheritedTypeFromDomainList<IComponentLoader>();
             if (__Type != null)
@@ -32,6 +36,45 @@ namespace Bootstrapper.Core.nApplication.nStarter
                 ComponentLoader.Load();
             }
 
+            if (App.Configuration.LoadDefaultDataOnStart)
+            {
+                try
+                {
+                    __Type = App.Bootstrapper.GetInheritedTypeFromDomainList<IDefaultDataLoader>();
+                    if (__Type != null)
+                    {
+                        DefaultDataLoader = (IDefaultDataLoader)App.Factories.ObjectFactory.ResolveInstance(__Type);
+                        if (DefaultDataLoader != null) DefaultDataLoader.Load();
+                    }
+                }
+                catch (Exception _Ex)
+                {
+                    App.Loggers.CoreLogger.LogError(_Ex);
+                }
+            }
+
+            if (App.Configuration.LoadBatchJobOnStart)
+            {
+                try
+                {
+                    __Type = App.Bootstrapper.GetInheritedTypeFromDomainList<IBatchJobDataLoader>();
+                    if (__Type != null)
+                    {
+                        BatchJobDataLoader = (IBatchJobDataLoader)App.Factories.ObjectFactory.ResolveInstance(__Type);
+                        if (BatchJobDataLoader != null) BatchJobDataLoader.Load();
+                    }
+
+                    IBatchJobDataLoader __BatchJobDataLoader = App.Factories.ObjectFactory.ResolveInstance<IBatchJobDataLoader>();
+                    if (__BatchJobDataLoader != null) __BatchJobDataLoader.Load();
+                }
+                catch (Exception _Ex)
+                {
+                    App.Loggers.CoreLogger.LogError(_Ex);
+                }
+            }
+
+
+            
             //Ön yükleme yapılacak
 
 

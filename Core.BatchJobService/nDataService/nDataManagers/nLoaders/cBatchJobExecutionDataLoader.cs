@@ -5,7 +5,6 @@ using System.Text;
 using System.Linq;
 using Data.GenericWebScaffold.nDataService.nDataManagers;
 using Data.Boundary.nData;
-using Base.Data.nDataServiceManager;
 using Data.GenericWebScaffold.nDefaultValueTypes;
 using Data.GenericWebScaffold.nDataService;
 using Core.BatchJobService.nDefaultValueTypes;

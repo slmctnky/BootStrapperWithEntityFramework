@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Base.Data.nDataServiceManager;
 using Data.GenericWebScaffold.nDefaultValueTypes;
 using Data.Boundary.nData;
 using Data.GenericWebScaffold.nDataService.nDataManagers;

@@ -12,7 +12,7 @@ namespace Core.BatchJobService.nDefaultValueTypes
     {
         public static List<BatchJobIDs> TypeList { get; set; }
 
-        public static BatchJobIDs TestService = new BatchJobIDs(GetVariableName(() => TestService), "TestService", 1, 10000, EBatchJobState.Started, false, true, false, 3);
+        public static BatchJobIDs TestService = new BatchJobIDs(GetVariableName(() => TestService), "TestService", 1, 10000, EBatchJobState.Started, true, true, false, 3);
         public static BatchJobIDs OldBatchJobExcutionsDelete = new BatchJobIDs(GetVariableName(() => OldBatchJobExcutionsDelete), "OldBatchJobExcutionsDelete", 2, 86400000, EBatchJobState.Started, true, true, false, 3);
         
         ///////////////////// 

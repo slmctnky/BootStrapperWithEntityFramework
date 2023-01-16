@@ -59,7 +59,13 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
         public string SqlGlobalInfoLogPath { get; private set; }
         public string RequestPerformanceLogPath { get; private set; }
         public string BatchJobLogPath { get; private set; }
-        
+
+
+        public bool LoadDefaultDataOnStart { get; set; }
+        public bool LoadBatchJobOnStart { get; set; }
+        public bool LoadGlobalParamsOnStart { get; set; }
+
+
 
 
         public cConfiguration(EBootType _BootType)
@@ -97,6 +103,11 @@ namespace Bootstrapper.Core.nApplication.nConfiguration
 
             LogPath = GetVariableName(() => LogPath);
             LogPath = Path.Combine(HomePath, LogPath);
+
+            LoadDefaultDataOnStart = true;
+            LoadBatchJobOnStart = true;
+            LoadGlobalParamsOnStart = true;
+
 
 
             SetPaths();

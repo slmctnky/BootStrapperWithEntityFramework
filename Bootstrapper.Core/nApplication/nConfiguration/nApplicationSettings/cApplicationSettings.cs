@@ -11,6 +11,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration.nApplicationSettings
     {
         public List<string> DomainNames { get; set; }
 
+        public string TargetHostName { get; set; }
         public string UICultureName { get; set; }
 
         public bool LogToFile { get; set; }
@@ -54,7 +55,7 @@ namespace Bootstrapper.Core.nApplication.nConfiguration.nApplicationSettings
             __ApplicationSettings.DomainNames = new List<string>() { "Bootstrapper", "Base", "Data", "Web", "App", "GenericScaffold" };
             __ApplicationSettings.UICultureName = "tr-TR";
 
-
+            __ApplicationSettings.TargetHostName = "localhost";
 
             __ApplicationSettings.LogToFile = true;
             __ApplicationSettings.LogToConsole = false;

@@ -1,5 +1,4 @@
-﻿using Base.Data.nDataServiceManager;
-using Base.FileData;
+﻿using Base.FileData;
 using Core.BatchJobService.nBatchJobManager.nJobs;
 using Core.BatchJobService.nBatchJobManager.nJobs.nOldBatchJobExcutionsDeleteJob;
 using Core.BatchJobService.nBatchJobManager.nJobs.nTestJob;
