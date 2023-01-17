@@ -28,7 +28,6 @@ namespace Web.Domain
         {
             DataService.Migrate();
             DataService.ComponentLoad();
-            PageIDs __PageID = PageIDs.MainPage;
             if (App.Configuration.LoadDefaultDataOnStart) DataService.LoadDefaultData();
             if (App.Configuration.LoadBatchJobOnStart) DataService.LoadDefaultData();
 
