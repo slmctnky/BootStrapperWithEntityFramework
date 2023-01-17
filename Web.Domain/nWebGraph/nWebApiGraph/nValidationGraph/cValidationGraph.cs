@@ -19,7 +19,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nValidationGraph
             ListenerList = new List<cBaseValidation>();
         }
 
-        public void Init()
+        public override void Init()
         {
             List<Type> __Listeners = App.Handlers.AssemblyHandler.GetTypesFromBaseType<cBaseValidation>();
             __Listeners.ForEach(__Type =>

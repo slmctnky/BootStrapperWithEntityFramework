@@ -2,7 +2,7 @@
 using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nCacheItAction;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs;
 using Web.Domain.nWebGraph.nWebApiGraph.nListenerGraph;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;

@@ -8,7 +8,7 @@ using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommands.nCheckLoginCommand;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommands.nLoginCommand;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommands.nLogoutCommand;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using System;
 using System.Collections.Generic;
 using Bootstrapper.Core.nApplication;

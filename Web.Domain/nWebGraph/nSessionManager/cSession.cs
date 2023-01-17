@@ -2,11 +2,10 @@
 using Bootstrapper.Core.nCore;
 using Web.Domain.Controllers;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
-using Data.Domain.nDatabaseService.nEntities;
 
 namespace Web.Domain.nWebGraph.nSessionManager
 {

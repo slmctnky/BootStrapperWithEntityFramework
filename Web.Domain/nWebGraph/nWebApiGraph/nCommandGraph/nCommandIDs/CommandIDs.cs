@@ -1,5 +1,5 @@
 ﻿using Web.Domain.nUtils.nValueTypes;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;

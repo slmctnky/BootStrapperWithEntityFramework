@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
 using Data.Domain.nDatabaseService.nEntities;
 using Data.Domain.nDatabaseService.nEntities;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 
 namespace Web.Domain
 {
@@ -28,6 +28,7 @@ namespace Web.Domain
         {
             DataService.Migrate();
             DataService.ComponentLoad();
+            PageIDs __PageID = PageIDs.MainPage;
             if (App.Configuration.LoadDefaultDataOnStart) DataService.LoadDefaultData();
             if (App.Configuration.LoadBatchJobOnStart) DataService.LoadDefaultData();
 
