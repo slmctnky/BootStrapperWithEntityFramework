@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Data.GenericWebScaffold.nDefaultValueTypes
+namespace Data.Domain.nDefaultValueTypes
 {
     public class GenderIDs : cBaseConstType<GenderIDs>
     {

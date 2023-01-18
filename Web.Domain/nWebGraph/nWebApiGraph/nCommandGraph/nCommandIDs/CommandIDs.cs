@@ -15,7 +15,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs
         public static List<CommandIDs> TypeList { get; set; }
 
 
-        public static CommandIDs FirstInit = new CommandIDs(GetVariableName(() => FirstInit), 1, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
+        public static CommandIDs FirstInit = new CommandIDs(GetVariableName(() => FirstInit), 1, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
         public static CommandIDs GetCommandList = new CommandIDs(GetVariableName(() => GetCommandList), 2, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
         public static CommandIDs GetActionList = new CommandIDs(GetVariableName(() => GetActionList), 3, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });
         public static CommandIDs SetLanguage = new CommandIDs(GetVariableName(() => SetLanguage), 4, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User });

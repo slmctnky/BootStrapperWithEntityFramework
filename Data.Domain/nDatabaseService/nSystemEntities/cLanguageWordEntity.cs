@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Domain.nDataService.nEntityServices.nEntities
+namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
 {
     public class cLanguageWordEntity : cBaseEntity<cLanguageWordEntity>
     {
@@ -18,6 +18,8 @@ namespace Data.Domain.nDataService.nEntityServices.nEntities
         public int ParamCount { get; set; }
 
         public string CheckSum { get; set; }
+
+        public cLanguageEntity Language { get; set; }
 
     }
 }

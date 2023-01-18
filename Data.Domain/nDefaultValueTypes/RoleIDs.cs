@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Data.GenericWebScaffold.nDefaultValueTypes
+namespace Data.Domain.nDefaultValueTypes
 {
     public class RoleIDs : cBaseConstType<RoleIDs>
     {
@@ -13,9 +13,9 @@ namespace Data.GenericWebScaffold.nDefaultValueTypes
         public static List<RoleIDs> TypeList { get; set; }
 
         public static RoleIDs Admin = new RoleIDs(GetVariableName(() => Admin), "Admin", 1);
-        public static RoleIDs User = new RoleIDs(GetVariableName(() => User), "Seller", 2);
-		public static RoleIDs Unlogined = new RoleIDs(GetVariableName(() => Unlogined), "Unlogined", 4);
-        public static RoleIDs Developer = new RoleIDs(GetVariableName(() => Developer), "Developer", 5);
+        public static RoleIDs User = new RoleIDs(GetVariableName(() => User), "User", 2);
+		public static RoleIDs Unlogined = new RoleIDs(GetVariableName(() => Unlogined), "Unlogined", 3);
+        public static RoleIDs Developer = new RoleIDs(GetVariableName(() => Developer), "Developer", 4);
 
 
         public RoleIDs(string _Code, string _Name, int _ID)

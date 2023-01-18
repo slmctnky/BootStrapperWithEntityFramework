@@ -11,7 +11,7 @@ using Base.Data.nConfiguration;
 using Bootstrapper.Core.nCore;
 using Bootstrapper.Core.nApplication;
 using Web.Domain.Controllers;
-using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 using Data.Domain.nDataService.nDataManagers;
 
 namespace Web.Domain.nWebGraph.nSessionManager
@@ -71,7 +71,7 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 return SessionItems.CloneOnlyList().ToList();
             }
         }
-        public List<int> GetAllOnlineUsers()
+        public List<long> GetAllOnlineUsers()
         {
             lock (SessionItems)
             {

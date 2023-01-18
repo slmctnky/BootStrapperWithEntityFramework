@@ -5,15 +5,50 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Data.GenericWebScaffold.nDefaultValueTypes
+namespace Data.Domain.nDefaultValueTypes
 {
     public class MenuIDs : cBaseConstType<MenuIDs>
     {
         public static List<MenuIDs> TypeList { get; set; }
 
+
         //////////// Global Pages ////////////
 
         public static MenuIDs MainPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => MainPage), "MainPage", "fas fa-home", 0, true);
+        public static MenuIDs LoginPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => LoginPage), "LoginPage", "cui-list", 20, true);
+        ///////////////////////////////////////
+
+        //////////// Customer Pages ////////////
+
+        public static MenuIDs UserMainPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => UserMainPage), "HomePage", "fas fa-home", 11, false);
+
+        ///////////////////////////////////////
+
+        //////////// Admin Pages ////////////
+
+        public static MenuIDs AdminMainPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => AdminMainPage), "HomePage", "fas fa-home", 5, false);
+        public static MenuIDs BatchJobPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => BatchJobPage), "BatchJobPage", "fas fa-network-wired", 100, false);
+        public static MenuIDs ConfigurationPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => ConfigurationPage), "ConfigurationPage", "fas fa-cogs", 100, false);
+        public static MenuIDs LanguagePage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => LanguagePage), "LanguagePage", "fas fa-language", 102, false);
+        
+        public static MenuIDs UsersMenu = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => UsersMenu), "UsersMenu", "fas fa-users", 100, false);
+        public static MenuIDs UserList = new MenuIDs(MenuIDs.UsersMenu, MenuTypes.CenterMenu, GetVariableName(() => UserList), "UserList", "fas fa-users", 22, false);
+
+        ///////////////////////////////////////
+
+
+        //////////// Developer Menus ////////////
+        public static MenuIDs DeveloperMainPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => DeveloperMainPage), "HomePage", "fas fa-home", 11, false);
+        public static MenuIDs SharedSessionPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => SharedSessionPage), "SharedSessionPage", "fas fa-terminal", 11, false);
+        public static MenuIDs SystemSettingsPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => SystemSettingsPage), "SystemSettingsPage", "fas fa-terminal", 11, false);
+        public static MenuIDs LiveSessionsPage = new MenuIDs(null, MenuTypes.LeftMenu, GetVariableName(() => LiveSessionsPage), "LiveSessionsPage", "fas fa-terminal", 11, false);
+
+        ///////////////////////////////////////
+
+
+
+
+
 
 
         public MenuTypes MenuType { get; set; }

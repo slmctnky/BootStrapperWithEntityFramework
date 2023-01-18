@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
+using Data.Domain.nDataService.nDataManagers;
 using Data.Boundary.nData;
-using Data.GenericWebScaffold.nDefaultValueTypes;
-using Data.GenericWebScaffold.nDataService;
+using Data.Domain.nDefaultValueTypes;
+using Data.Domain.nDataService;
 using Core.BatchJobService.nDefaultValueTypes;
 using Core.BatchJobService.nBatchJobManager.nJobs;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
 namespace Core.BatchJobService.nDataService.nDataManagers.nLoaders
 {

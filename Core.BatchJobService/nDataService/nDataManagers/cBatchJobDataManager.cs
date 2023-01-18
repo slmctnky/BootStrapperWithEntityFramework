@@ -3,15 +3,15 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using Data.Boundary.nData;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
-using Data.GenericWebScaffold.nDataService;
+using Data.Domain.nDataService.nDataManagers;
+using Data.Domain.nDataService;
 using Core.BatchJobService.nDefaultValueTypes;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
-using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 using System.Xml.Linq;
 using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
@@ -29,7 +29,7 @@ namespace Core.BatchJobService.nDataService.nDataManagers
         {
             return cBatchJobEntity.Get(__Item => __Item.Code == _Code).FirstOrDefault();
         }
-        public dynamic GetBatchJobByID(int _ID)
+        public dynamic GetBatchJobByID(long _ID)
         {
             return cBatchJobEntity.GetEntityByID(_ID);
         }
@@ -74,7 +74,7 @@ namespace Core.BatchJobService.nDataService.nDataManagers
 
             return _BatchJobEntity;
         }
-        public cBatchJobEntity UpdateBatchJob(int _ID, int _TimePeriodMilisecond,bool _AutoExecution, bool _ExecuteFirstWithoutWait, bool _StopAfterFirstExecution, int _MaxRetryCount)
+        public cBatchJobEntity UpdateBatchJob(long _ID, int _TimePeriodMilisecond,bool _AutoExecution, bool _ExecuteFirstWithoutWait, bool _StopAfterFirstExecution, int _MaxRetryCount)
         {
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 

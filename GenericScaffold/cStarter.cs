@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDatabaseService.nEntities;
-using Data.Domain.nDatabaseService.nEntities;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDefaultValueTypes;
 using System.Xml.Linq;
 
 namespace GenericScaffold

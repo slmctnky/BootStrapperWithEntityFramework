@@ -7,7 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.GenericWebScaffold.nDataService.nDataManagers
+namespace Data.Domain.nDataService.nDataManagers
 {
     public class cBaseDataManager : cCoreService<cDataServiceContext>
     {

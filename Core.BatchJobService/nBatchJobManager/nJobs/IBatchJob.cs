@@ -1,5 +1,5 @@
 ﻿using Core.BatchJobService.nDefaultValueTypes;
-using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 using System;
 using System.Collections.Generic;
 using System.Text;

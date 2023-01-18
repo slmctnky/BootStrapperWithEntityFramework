@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public static class ReflectionExtensition 
 {
-    private static BindingFlags CreateFlagsFor(Type _Type, bool _IgnoreFlags = false)
+    public static BindingFlags CreateFlagsFor(Type _Type, bool _IgnoreFlags = false)
     {
         BindingFlags __Flags = BindingFlags.Default;
         if (_Type == null)
@@ -87,6 +87,7 @@ public static class ReflectionExtensition
             return null;
         }        
     }
+
 
     public static MethodInfo SearchMethod(this Type _Type, string _Name)
     {

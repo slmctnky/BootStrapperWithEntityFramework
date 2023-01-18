@@ -30,8 +30,7 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nNoPermissionA
             __MessageProps.Header = _Controller.GetWordValue("Error");
             __MessageProps.Message = _Controller.GetWordValue("NoPermission");
             int __CID = (int)_Controller.CommandJson["CID"];
-            RoleIDs __RoleIDs = _Controller.ClientSession.GetRole();
-            App.Loggers.CoreLogger.LogError(new Exception($"Yetkisiz işlem.Command ID {__CID} Role {__RoleIDs.Code}"));
+            App.Loggers.CoreLogger.LogError(new Exception($"Yetkisiz işlem.Command ID {__CID} User Name/IP {(_Controller.ClientSession.IsLogined ? _Controller.ClientSession.User.Name + " " + _Controller.ClientSession.User.Surname :"No Logined" + "/" + _Controller.ClientSession.IpAddress) }"));
             WebGraph.ActionGraph.ShowMessageAction.ErrorAction(new Exception("Yetkisiz işlem"), _Controller, __MessageProps, _SignalSessions, _InstantSend);
         }
 

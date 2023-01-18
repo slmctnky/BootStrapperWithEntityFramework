@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using Data.Boundary.nData;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
-using Data.GenericWebScaffold.nDataService;
+using Data.Domain.nDataService.nDataManagers;
+using Data.Domain.nDataService;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
 namespace Core.BatchJobService.nDataService.nDataManagers
 {

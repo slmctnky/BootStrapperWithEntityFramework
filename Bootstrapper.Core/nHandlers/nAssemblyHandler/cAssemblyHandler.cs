@@ -150,16 +150,17 @@ namespace Bootstrapper.Core.nHandlers.nAssemblyHandler
 
 		}
 
-		public List<Type> GetTypesFromBaseType<TType>()
+		public List<Type> GetTypesFromBaseType<TType>(string _StartWithName = null, string _EndWithName = null)
 		{
-			return GetTypesFromBaseType(typeof(TType));
+			return GetTypesFromBaseType(typeof(TType), _StartWithName, _EndWithName);
 		}
 
-		public List<Type> GetTypesFromBaseType(Type _BaseType, string _StartWithName = null)
+		public List<Type> GetTypesFromBaseType(Type _BaseType, string _StartWithName = null, string _EndWithName = null)
 		{
 			List<Type> __AllTypes = GetLoadedApplicationTypes(App.Configuration.ApplicationSettings.DomainNames);
 			return __AllTypes.Where(__Item => __Item.IsClass && !__Item.IsAbstract && !__Item.IsInterface && __Item.IsSubclassOf(_BaseType)
 			&& (_StartWithName == null || (_StartWithName != null && __Item.Name.StartsWith(_StartWithName)))
+            && (_EndWithName == null || (_EndWithName != null && __Item.Name.EndsWith(_EndWithName)))
 			).ToList();
 
 		}

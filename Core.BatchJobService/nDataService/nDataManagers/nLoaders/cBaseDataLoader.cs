@@ -3,7 +3,7 @@ using Base.FileData;
 using Base.FileData.nFileDataService;
 using Bootstrapper.Core.nCore;
 using Data.Domain.nDatabaseService;
-using Data.GenericWebScaffold.nDataService;
+using Data.Domain.nDataService;
 using System;
 using System.Collections.Generic;
 using System.Text;

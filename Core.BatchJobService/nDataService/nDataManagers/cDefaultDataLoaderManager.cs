@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders;
+using Data.Domain.nDataService.nDataManagers.nLoaders;
 
-using Data.GenericWebScaffold.nDefaultValueTypes;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
+using Data.Domain.nDefaultValueTypes;
+using Data.Domain.nDataService.nDataManagers;
 using Core.BatchJobService.nDataService.nDataManagers.nLoaders;
-using Data.GenericWebScaffold.nDataService;
+using Data.Domain.nDataService;
 using Bootstrapper.Core.nAttributes;
 using Bootstrapper.Boundary.nCore.nObjectLifeTime;
 using Data.Domain.nDatabaseService;

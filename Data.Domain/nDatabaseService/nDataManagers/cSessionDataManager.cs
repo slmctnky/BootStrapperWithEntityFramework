@@ -5,13 +5,9 @@ using System.Text;
 using System.Linq;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDatabaseService.nEntities;
-using Microsoft.AspNetCore.Http;
-using Data.Domain.nDatabaseService.nEntities;
-using System.Reflection.Metadata;
-using System.Net;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
-namespace Data.GenericWebScaffold.nDataService.nDataManagers
+namespace Data.Domain.nDataService.nDataManagers
 {
     public class cSessionDataManager : cBaseDataManager
     {
@@ -51,7 +47,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
                 User = _UserEntity
             };
 
-            __DatabaseContext.Sessions.Add(__UserSessionEntity);
+            cUserSessionEntity.Add(__UserSessionEntity);
             __DatabaseContext.SaveChanges();
             
             return __UserSessionEntity;

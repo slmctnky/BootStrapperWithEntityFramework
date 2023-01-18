@@ -1,12 +1,11 @@
 using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Domain.nDataService.nEntityServices.nEntities
+namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
 {
     public class cLanguageEntity : cBaseEntity<cLanguageEntity>
     {

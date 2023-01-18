@@ -10,13 +10,14 @@ using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Unity;
 
 namespace Base.Data.nDatabaseService.nDatabase
 {
-    public class cBaseEntity<TEntity> : cBaseEntityType where TEntity : cBaseEntityType
+    public abstract class cBaseEntity<TEntity> : cBaseEntityType where TEntity : cBaseEntityType
     {
         [Key]
-        public int ID { get; set; }
+        public long ID { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
 
@@ -39,14 +40,29 @@ namespace Base.Data.nDatabaseService.nDatabase
             
             foreach (PropertyInfo __PropertyInfo in __PropertyInfos)
             {
-                Type __GenericTypes = __PropertyInfo.PropertyType.GenericTypeArguments.FirstOrDefault();
-                Type __ListType = typeof(List<>);
-                Type __Constructor = __ListType.MakeGenericType(__GenericTypes);
-                __PropertyInfo.SetValue(this, __Constructor.CreateInstance());
+                if (__PropertyInfo.GetValue(this, new object[] { }) == null)
+                {
+                    Type __GenericTypes = __PropertyInfo.PropertyType.GenericTypeArguments.FirstOrDefault();
+                    Type __ListType = typeof(List<>);
+                    Type __Constructor = __ListType.MakeGenericType(__GenericTypes);
+                    __PropertyInfo.SetValue(this, __Constructor.CreateInstance());
+                }
             }
-
-
         }
+
+        public void Save()
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            __DbContext.SaveChanges();
+        }
+
+        public void Delete()
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            __DbContext.Remove(this);
+            __DbContext.SaveChanges();
+        }
+
 
         public static TEntity Add(TEntity _Entity)
         {
@@ -102,7 +118,7 @@ namespace Base.Data.nDatabaseService.nDatabase
             return __DbContext.Set<TEntity>();
         }
 
-        public static TEntity GetEntityByID(int _Id)
+        public static TEntity GetEntityByID(long _Id)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
             return __DbContext.Set<TEntity>().Find(_Id);

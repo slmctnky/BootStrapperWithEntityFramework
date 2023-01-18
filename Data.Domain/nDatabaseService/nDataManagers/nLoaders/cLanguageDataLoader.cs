@@ -3,34 +3,33 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDataService.nDataManagers;
+using Data.Domain.nDefaultValueTypes;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
-using Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders.nLoaderIDs;
+using Data.Domain.nDataService.nDataManagers.nLoaders.nLoaderIDs;
 using Bootstrapper.Core.nApplication;
 using Data.Domain.nDatabaseService;
 using Base.Data.nDatabaseService;
-using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
-namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
+namespace Data.Domain.nDataService.nDataManagers.nLoaders
 {
     public class cLanguageDataLoader : cBaseDataLoader
     {
         public cLanguageDataManager LanguageDataManager { get; set; }
 
-
-        public cLanguageDataLoader(cApp _App, cDataService _DataService, IFileDateService _FileDataService
-            , cLanguageDataManager _LanguageDataManager
+        public cLanguageDataLoader(cApp _App, cDataService _DataService, IFileDateService _FileDataService, cChecksumDataManager _ChecksumDataManager
+            , cLanguageDataManager _LanguageDataManager            
          )
-          : base(_App, LoaderIDs.LanguageDataLoader, _DataService, _FileDataService)
+          : base(_App, LoaderIDs.LanguageDataLoader, _DataService, _FileDataService, _ChecksumDataManager)
         {
             LanguageDataManager = _LanguageDataManager;
         }
 
-        public void Init()
+        public override void Init()
         {
-            /*
+            
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
             for (int i = App.Handlers.LanguageHandler.LanguageList.Count - 1; i > -1; i--)
             {
@@ -39,11 +38,6 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
                 cLanguageEntity __LanguageEntity = LanguageDataManager.CreateLanguageIfNotExists(__Item.Value.Language.Code, __Item.Value.Language.Name, __Item.Value.Language.IconCode);
 
 
-                foreach (var __HrefLang in __Item.Value.Language.HrefLangs)
-                {
-                    cLanguageHrefLangEntity __LanguageHrefLangEntity = LanguageDataManager.CreateLanguageHrefIfNotExists(__LanguageEntity, __HrefLang);
-
-                }
                 cDefaultDataChecksumEntity __DBCheckSum = ChecksumDataManager.GetCheckSumByCode(LoaderID.Code + "_" + __Item.Key);
                 string __FileCheckSum = __Item.Value.GetCheckSum();
 
@@ -73,7 +67,7 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers.nLoaders
                 {
                     cLanguageWordEntity __LanguageWordEntity = LanguageDataManager.CreateLanguageWordIfNotExists(__LanguageEntity, "PageRoute_" + __PageID.OriginalCode, "", "", 0, false);
                 }
-            }*/
+            }
         }
     }
 }

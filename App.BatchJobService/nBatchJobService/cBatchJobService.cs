@@ -13,8 +13,8 @@ using Bootstrapper.Core.nAttributes;
 using Bootstrapper.Core.nCore;
 using Core.BatchJobService.nDataService.nDataManagers;
 using Data.Boundary.nData;
-using Data.GenericWebScaffold.nDataService.nDataManagers;
-using Data.GenericWebScaffold.nDataService.nEntityServices.nEntities;
+using Data.Domain.nDataService.nDataManagers;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
 namespace App.BatchJobService.nBatchJobService
 {

@@ -1,13 +1,13 @@
 using Base.Data.nDatabaseService.nDatabase;
 using Data.Boundary.nData;
-using Data.Domain.nDataService.nEntityServices.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.GenericWebScaffold.nDataService.nEntityServices.nEntities
+namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
 {
     public class cBatchJobEntity : cBaseEntity<cBatchJobEntity>
     {

@@ -3,11 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
-namespace Data.GenericWebScaffold.nDataService.nDataManagers
+namespace Data.Domain.nDataService.nDataManagers
 {
     public class cParamsDataManager : cBaseDataManager
     {
@@ -15,64 +16,36 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
           : base(_CoreServiceContext, _DataServiceManager, _FileDataService)
         {
         }
-        /*
+        
 
         public cGlobalParamEntity GetParamByCode(string _Code)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
-            cGlobalParamEntity __MenuEntity = __DataService.Database.Query<cGlobalParamEntity>()
-                .SelectAll()
-                .Where()
-                .Operand(__Item => __Item.Code).Eq(_Code)
-                .ToQuery()
-                .ToList()
-                .FirstOrDefault();
-            return __MenuEntity;
+            return cGlobalParamEntity.Get(__Item => __Item.Code == _Code).FirstOrDefault();
         }
         public List<dynamic> GetAllParams()
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
-            List<dynamic> __GlobalParams = __DataService.Database.Query<cGlobalParamEntity>()
-                .SelectAll()
-                .Where()
-                .ToQuery()
-                .ToDynamicObjectList();
-            return __GlobalParams;
-        }
-        public List<dynamic> GetAllParamsBackup()
-        {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
-            List<dynamic> __GlobalParams = __DataService.Database.Query<cGlobalParamEntity>()
-                .SelectColumn(__Item => __Item.Code)
-                .SelectColumn(__Item => __Item.Value)
-                .Where()
-                .ToQuery()
-                .ToDynamicObjectList();
-            return __GlobalParams;
+            return cGlobalParamEntity.GetAll().ToDynamicObjectList();
         }
 
         public cGlobalParamEntity AddGlobalParam(string _Code, string _Name, object _Value, string _TypeFullName, int _Order)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
-            cGlobalParamEntity __GlobalParamEntity = __DataService.Database.CreateNew<cGlobalParamEntity>();
-            __GlobalParamEntity.Name = _Name;
-            __GlobalParamEntity.Code = _Code;
-            __GlobalParamEntity.SortOrder = _Order;
-            __GlobalParamEntity.Value = _Value.ToString();
-            __GlobalParamEntity.TypeFullName = _TypeFullName;
+            cGlobalParamEntity __GlobalParamEntity = cGlobalParamEntity.Add(new cGlobalParamEntity()
+            {
+                Name = _Name,
+                Code = _Code,
+                SortOrder = _Order,
+                Value = _Value.ToString(),
+                TypeFullName = _TypeFullName
+            });
+            
             __GlobalParamEntity.Save();
 
             return __GlobalParamEntity;
         }
         public cGlobalParamEntity UpdateGlobalParam(long _ID, string _Value)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
 
-            cGlobalParamEntity __GlobalParamEntity = __DataService.Database.GetEntityByID<cGlobalParamEntity>(_ID);
+            cGlobalParamEntity __GlobalParamEntity = cGlobalParamEntity.GetEntityByID(_ID);
 
             __GlobalParamEntity.Value = _Value;
             __GlobalParamEntity.Save();
@@ -82,8 +55,6 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
 
         public cGlobalParamEntity CreateMenuIfNotExists(string _Code, string _Name, object _Value, string _TypeFullName, int _Order)
         {
-            IDataService __DataService = DataServiceManager.GetDataService();
-
             cGlobalParamEntity __GlobalParamEntity = GetParamByCode(_Code);
             if (__GlobalParamEntity == null)
             {
@@ -96,6 +67,6 @@ namespace Data.GenericWebScaffold.nDataService.nDataManagers
         {
             return CreateMenuIfNotExists(_DefaultGlobalParamsID.Code, _DefaultGlobalParamsID.Name, _DefaultGlobalParamsID.Value, _DefaultGlobalParamsID.Value.GetType().FullName, _DefaultGlobalParamsID.Order);
         }
-        */
+        
     }
 }

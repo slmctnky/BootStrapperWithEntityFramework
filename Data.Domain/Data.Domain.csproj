@@ -18,8 +18,4 @@
     <ProjectReference Include="..\Data.Boundary\Data.Boundary.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

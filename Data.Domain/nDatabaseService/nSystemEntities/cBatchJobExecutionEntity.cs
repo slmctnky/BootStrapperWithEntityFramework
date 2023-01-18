@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.GenericWebScaffold.nDataService.nEntityServices.nEntities
+namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
 {
     public class cBatchJobExecutionEntity : cBaseEntity<cBatchJobExecutionEntity>
     {

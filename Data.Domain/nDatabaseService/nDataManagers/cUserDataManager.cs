@@ -5,13 +5,13 @@ using System.Globalization;
 using System.Text;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Data.GenericWebScaffold.nDefaultValueTypes;
+using Data.Domain.nDefaultValueTypes;
 
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 
-namespace Data.GenericWebScaffold.nDataService.nDataManagers
+namespace Data.Domain.nDataService.nDataManagers
 {
     public class cUserDataManager : cBaseDataManager
     {

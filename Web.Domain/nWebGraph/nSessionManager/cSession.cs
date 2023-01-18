@@ -3,7 +3,7 @@ using Bootstrapper.Core.nCore;
 using Web.Domain.Controllers;
 using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs;
 using Data.Domain.nDefaultValueTypes;
-using Data.Domain.nDatabaseService.nEntities;
+using Data.Domain.nDataService.nEntityServices.nSystemEntities;
 using System;
 using System.Collections.Generic;
 
@@ -85,10 +85,10 @@ namespace Web.Domain.nWebGraph.nSessionManager
             }
             else if (IsLogined && _CommandID != null)
             {
-                List<cRoleEntity> __ActorRoles = User.Roles.ToList();
+                List<cUserRoleMapEntity> __ActorRoles = User.UserRoleMaps.ToList();
                 for (int i = 0; i < _CommandID.MainRoles.Count; i++)
                 {
-                    if (__ActorRoles.Exists(__Item => __Item.Code == _CommandID.MainRoles[i].Code))
+                    if (__ActorRoles.Exists(__Item => __Item.Role.Code == _CommandID.MainRoles[i].Code))
                     {
                         return true;
                     }
@@ -96,27 +96,6 @@ namespace Web.Domain.nWebGraph.nSessionManager
                 return false;
             }
             return false;
-        }
-        
-        public RoleIDs GetRole()
-        {
-            if (!IsLogined)
-            {
-                return RoleIDs.Unlogined;
-            }
-            else
-            {
-                List<cRoleEntity> __ActorRoles = User.Roles.ToList();
-                if (__ActorRoles.Count > 0)
-                {
-                    return RoleIDs.GetByCode(__ActorRoles[0].Code, RoleIDs.Unlogined);
-                }
-                else
-                {
-                    return RoleIDs.Unlogined;
-                }
-
-            }
         }
     }
 }

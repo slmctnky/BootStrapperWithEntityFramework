@@ -1,5 +1,4 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDatabaseService.nEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Domain.nDatabaseService.nEntities
+namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
 {
     public class cUserSessionEntity : cBaseEntity<cUserSessionEntity>
     {

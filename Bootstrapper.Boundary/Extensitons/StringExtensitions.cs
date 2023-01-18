@@ -17,18 +17,18 @@ public static class StringExtensitions
         }
         return value;
     }
-    public static String ConvertToEnglishCharacter(this string __Word)
+    public static String ConvertToEnglishCharacter(this string _Word)
     {
-        Encoding __Iso = Encoding.GetEncoding("Cyrillic");
+        Encoding __Iso = Encoding.GetEncoding("iso-8859-1");
         Encoding __Utf8 = Encoding.UTF8;
-        byte[] __UtfBytes = __Utf8.GetBytes(__Word);
+        byte[] __UtfBytes = __Utf8.GetBytes(_Word);
         byte[] __IsoBytes = Encoding.Convert(__Utf8, __Iso, __UtfBytes);
         string __Result = __Iso.GetString(__IsoBytes);
         return __Result;
     }
-    public static String LowerConvertToEnglishCharacter(this string __Word)
+    public static String LowerConvertToEnglishCharacter(this string _Word)
     {
-        return __Word.ToLower().ConvertToEnglishCharacter();
+        return _Word.ToLower().ConvertToEnglishCharacter();
     }
     public static bool IsNullOrEmpty(this string value)
     {
