@@ -1,8 +1,9 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
 using Microsoft.EntityFrameworkCore;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
 using Bootstrapper.Core.nApplication;
 using System.Reflection;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Data.Domain.nDatabaseService
 {

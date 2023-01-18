@@ -31,6 +31,20 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs
 
 
 
+        /// <summary>
+        /// // DATA SOURCE
+        /// </summary>
+        public static CommandIDs DataSource_Read = new CommandIDs(GetVariableName(() => DataSource_Read), 20000, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs DataSource_Create = new CommandIDs(GetVariableName(() => DataSource_Create), 20001, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs DataSource_Update = new CommandIDs(GetVariableName(() => DataSource_Update), 20002, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs DataSource_Delete = new CommandIDs(GetVariableName(() => DataSource_Delete), 20003, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs DataSource_GetMetaData = new CommandIDs(GetVariableName(() => DataSource_GetMetaData), 20004, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs DataSource_GetSettings = new CommandIDs(GetVariableName(() => DataSource_GetSettings), 20005, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        /// <summary>
+        /// //
+        /// </summary>
+
+
         public bool Enabled { get; set; }
         public string Info { get; set; }
         public bool CacheIt { get; set; }

@@ -5,7 +5,7 @@ using Core.BatchJobService.nBatchJobManager.nJobs;
 using Core.BatchJobService.nDataService.nDataManagers;
 using Data.Boundary.nData;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDatabaseService.nSystemEntities;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;

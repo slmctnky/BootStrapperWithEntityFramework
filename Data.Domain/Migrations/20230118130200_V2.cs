@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Domain.Migrations
 {
     /// <inheritdoc />
-    public partial class V1 : Migration
+    public partial class V2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -240,7 +240,7 @@ namespace Data.Domain.Migrations
                     SortValue = table.Column<int>(type: "integer", nullable: false),
                     MenuTypeCode = table.Column<string>(type: "text", nullable: false),
                     RootMenuID = table.Column<long>(type: "bigint", nullable: true),
-                    PageID = table.Column<long>(type: "bigint", nullable: false),
+                    PageID = table.Column<long>(type: "bigint", nullable: true),
                     CreateDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false),
                     UpdateDate = table.Column<DateTime>(type: "timestamp without time zone", nullable: false)
                 },
@@ -256,8 +256,7 @@ namespace Data.Domain.Migrations
                         name: "FK_Menus_Pages_PageID",
                         column: x => x.PageID,
                         principalTable: "Pages",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "ID");
                 });
 
             migrationBuilder.CreateTable(

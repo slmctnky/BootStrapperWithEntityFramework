@@ -13,8 +13,9 @@ using Bootstrapper.Core.nAttributes;
 using Bootstrapper.Core.nCore;
 using Core.BatchJobService.nDataService.nDataManagers;
 using Data.Boundary.nData;
+using Data.Domain.nDatabaseService.nSystemEntities;
 using Data.Domain.nDataService.nDataManagers;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
 
 namespace App.BatchJobService.nBatchJobService
 {

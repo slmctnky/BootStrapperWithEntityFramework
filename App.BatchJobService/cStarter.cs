@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations.Internal;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
+
 using Data.Domain.nDefaultValueTypes;
 
 namespace Web.Domain

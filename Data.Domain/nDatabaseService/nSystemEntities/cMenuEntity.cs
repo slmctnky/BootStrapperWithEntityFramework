@@ -1,6 +1,6 @@
 using Base.Data.nDatabaseService.nDatabase;
 
-namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
+namespace Data.Domain.nDatabaseService.nSystemEntities
 {
     public class cMenuEntity : cBaseEntity<cMenuEntity>
     {
@@ -17,6 +17,6 @@ namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
         public cMenuEntity? RootMenu { get; set; }
 
         public List<cRoleMenuMapEntity> RoleMenus { get; set; }
-        public cPageEntity Page { get; set; }
+        public cPageEntity? Page { get; set; }
     }
 }

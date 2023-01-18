@@ -10,11 +10,12 @@ using Data.Domain.nDataService;
 using Core.BatchJobService.nDefaultValueTypes;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
+
 using System.Xml.Linq;
 using System.Data.Entity;
 using Microsoft.EntityFrameworkCore;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Core.BatchJobService.nDataService.nDataManagers
 {

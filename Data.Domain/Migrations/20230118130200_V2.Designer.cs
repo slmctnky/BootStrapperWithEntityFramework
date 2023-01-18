@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Data.Domain.Migrations
 {
     [DbContext(typeof(cDatabaseContext))]
-    [Migration("20230118120633_V1")]
-    partial class V1
+    [Migration("20230118130200_V2")]
+    partial class V2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -352,7 +352,7 @@ namespace Data.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("PageID")
+                    b.Property<long?>("PageID")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("RootMenuID")
@@ -717,9 +717,7 @@ namespace Data.Domain.Migrations
                 {
                     b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", "Page")
                         .WithMany("Menus")
-                        .HasForeignKey("PageID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PageID");
 
                     b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", "RootMenu")
                         .WithMany()

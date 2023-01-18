@@ -5,8 +5,9 @@ using Core.BatchJobService.nDataService.nDataManagers;
 using Core.BatchJobService.nDefaultValueTypes;
 using Data.Boundary.nData;
 using Data.Domain.nDatabaseService;
+using Data.Domain.nDatabaseService.nSystemEntities;
 using Data.Domain.nDataService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

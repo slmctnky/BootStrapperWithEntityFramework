@@ -11,7 +11,7 @@ using Data.Domain.nDataService.nDataManagers.nLoaders.nLoaderIDs;
 using Bootstrapper.Core.nApplication;
 using Data.Domain.nDatabaseService;
 using Base.Data.nDatabaseService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Data.Domain.nDataService.nDataManagers.nLoaders
 {

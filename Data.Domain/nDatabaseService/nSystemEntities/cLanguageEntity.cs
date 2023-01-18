@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
+namespace Data.Domain.nDatabaseService.nSystemEntities
 {
     public class cLanguageEntity : cBaseEntity<cLanguageEntity>
     {

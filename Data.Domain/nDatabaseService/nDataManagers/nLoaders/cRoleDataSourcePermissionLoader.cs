@@ -9,7 +9,7 @@ using Data.Domain.nDefaultValueTypes;
 using Bootstrapper.Core.nApplication;
 using Data.Domain.nDatabaseService;
 using Data.Domain.nDataService.nDataManagers.nLoaders.nLoaderIDs;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Data.Domain.nDataService.nDataManagers.nLoaders
 {

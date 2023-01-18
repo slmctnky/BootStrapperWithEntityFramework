@@ -10,7 +10,7 @@ using System.Text.RegularExpressions;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
 using System.Net;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Data.Domain.nDataService.nDataManagers
 {

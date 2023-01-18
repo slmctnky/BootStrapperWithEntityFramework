@@ -1,10 +1,10 @@
 ﻿using Base.Data.nDatabaseService.nDatabase;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
+namespace Data.Domain.nDatabaseService.nSystemEntities
 {
     public class cDefaultDataChecksumEntity : cBaseEntity<cDefaultDataChecksumEntity>
     {

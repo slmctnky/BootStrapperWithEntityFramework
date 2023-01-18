@@ -1,6 +1,6 @@
 using Base.Data.nDatabaseService.nDatabase;
 
-namespace Data.Domain.nDataService.nEntityServices.nSystemEntities
+namespace Data.Domain.nDatabaseService.nSystemEntities
 {
     public class cDataSourceColumnEntity : cBaseEntity<cDataSourceColumnEntity>
     {

@@ -11,7 +11,7 @@ using Core.BatchJobService.nDefaultValueTypes;
 using Core.BatchJobService.nBatchJobManager.nJobs;
 using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
-using Data.Domain.nDataService.nEntityServices.nSystemEntities;
+using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Core.BatchJobService.nDataService.nDataManagers.nLoaders
 {

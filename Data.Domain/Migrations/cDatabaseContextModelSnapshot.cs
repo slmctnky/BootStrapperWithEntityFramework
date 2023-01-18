@@ -349,7 +349,7 @@ namespace Data.Domain.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<long>("PageID")
+                    b.Property<long?>("PageID")
                         .HasColumnType("bigint");
 
                     b.Property<long?>("RootMenuID")
@@ -714,9 +714,7 @@ namespace Data.Domain.Migrations
                 {
                     b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", "Page")
                         .WithMany("Menus")
-                        .HasForeignKey("PageID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PageID");
 
                     b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", "RootMenu")
                         .WithMany()
