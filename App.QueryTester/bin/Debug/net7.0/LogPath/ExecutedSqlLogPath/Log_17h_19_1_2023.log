@@ -1,0 +1,24 @@
+Time : 2023.01.19 17:50:47	
+Time : 2023.01.19 17:50:47	                   ↓↓                    
+Time : 2023.01.19 17:50:47	RequestID : Console
+Time : 2023.01.19 17:50:47	ElapsedTime : 00:00:00.0000329
+Time : 2023.01.19 17:50:47	//////////////////////////////////
+Time : 2023.01.19 17:50:47	SELECT m."ID", m."Code", m."CreateDate", m."Icon", m."MenuTypeCode", m."Name", m."PageID", m."RootMenuID", m."SortValue", m."UpdateDate"
+FROM "Menus" AS m
+WHERE m."MenuTypeCode" = @___MenuTypeCode_0 AND EXISTS (
+    SELECT 1
+    FROM "RoleMenuMaps" AS r
+    INNER JOIN "Roles" AS r0 ON r."RoleID" = r0."ID"
+    WHERE m."ID" = r."MenuID" AND EXISTS (
+        SELECT 1
+        FROM "UserRoleMaps" AS u
+        INNER JOIN "Users" AS u0 ON u."UserID" = u0."ID"
+        WHERE r0."ID" = u."RoleID" AND u0."ID" = @___User_ID_1))
+Time : 2023.01.19 17:50:47	//////////// PARAMETERS ///////////
+Time : 2023.01.19 17:50:47		@___MenuTypeCode_0	:	LeftMenu
+Time : 2023.01.19 17:50:47		@___User_ID_1	:	11
+Time : 2023.01.19 17:50:47	/////////////////////////////////// 
+Time : 2023.01.19 17:50:47	                   ↓↓                    
+Time : 2023.01.19 17:50:47	RequestID : Console
+Time : 2023.01.19 17:50:47	ElapsedTime : 00:00:00.0071482
+Time : 2023.01.19 17:50:47	//////////////////////////////////

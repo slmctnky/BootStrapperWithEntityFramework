@@ -25,7 +25,9 @@ namespace Data.Domain.nDataService.nDataManagers
         public cRoleMenuLoader RoleMenuLoader { get; set; }
         public cRoleDataSourcePermissionLoader RoleDataSourcePermissionLoader { get; set; }
         public cRoleDataSourceColumnLoader RoleDataSourceColumnLoader { get; set; }
-        
+
+        public cDefaultUsersDataLoader DefaultUsersDataLoader { get; set; }
+
 
 
         public cDefaultDataLoaderManager(cDataServiceContext CoreServiceContext, cDataService _DataService, IFileDateService _FileDataService
@@ -39,6 +41,7 @@ namespace Data.Domain.nDataService.nDataManagers
             , cRoleMenuLoader _RoleMenuLoader
             , cRoleDataSourcePermissionLoader _RoleDataSourcePermissionLoader
             , cRoleDataSourceColumnLoader _RoleDataSourceColumnLoader
+            , cDefaultUsersDataLoader _DefaultUsersDataLoader
             )
 
           : base(CoreServiceContext, _DataService, _FileDataService)
@@ -53,17 +56,13 @@ namespace Data.Domain.nDataService.nDataManagers
             RoleMenuLoader = _RoleMenuLoader;
             RoleDataSourcePermissionLoader = _RoleDataSourcePermissionLoader;
             RoleDataSourceColumnLoader = _RoleDataSourceColumnLoader;
+            DefaultUsersDataLoader = _DefaultUsersDataLoader;
         }
 
         public void Load()
         {
             cDatabaseContext __DatabaseContext = DataService.GetDatabaseContext();
 
-            /*__DatabaseContext.Perform(() => { LanguageDataLoader.Init(); });
-            __DatabaseContext.Perform(() => { GlobalParamsDataLoader.Init(); });
-            __DatabaseContext.Perform(() => { RoleDataLoader.Init(); });
-            __DatabaseContext.Perform(() => { MenuDataLoader.Init(); });
-            __DatabaseContext.Perform(() => { PageDataLoader.Init(); });*/
 
             __DatabaseContext.Perform(() => { LanguageDataLoader.Init(); });
             __DatabaseContext.Perform(() => { GlobalParamsDataLoader.Init(); });
@@ -74,7 +73,7 @@ namespace Data.Domain.nDataService.nDataManagers
             __DatabaseContext.Perform(() => { RoleMenuLoader.Init(); });
             __DatabaseContext.Perform(() => { RoleDataSourcePermissionLoader.Init(); });
             __DatabaseContext.Perform(() => { RoleDataSourceColumnLoader.Init(); });
-            //__DatabaseContext.Perform(() => { DefaultUsersDataLoader.Init(); });
+            __DatabaseContext.Perform(() => { DefaultUsersDataLoader.Init(); });
 
 
             __DatabaseContext.Perform(() => { LanguageDataManager.RefreshLanguageFromDB(); });

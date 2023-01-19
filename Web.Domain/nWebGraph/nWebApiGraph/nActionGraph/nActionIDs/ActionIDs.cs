@@ -46,6 +46,10 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActionIDs
 		public static ActionIDs DebugAlert= new ActionIDs(GetVariableName(() => DebugAlert), 38, "", true);
 		public static ActionIDs DoCheckLoginRequest = new ActionIDs(GetVariableName(() => DoCheckLoginRequest), 39, "", true);
 		public static ActionIDs ValidationResult = new ActionIDs(GetVariableName(() => ValidationResult), 40, "", true);
+        public static ActionIDs PageResult = new ActionIDs(GetVariableName(() => PageResult), 41, "", true);
+        public static ActionIDs MenuResult = new ActionIDs(GetVariableName(() => MenuResult), 41, "", true);
+
+
         public static ActionIDs ModalOpen = new ActionIDs(GetVariableName(() => ModalOpen), 10009, "", true);
         public static ActionIDs SetClientLanguage = new ActionIDs(GetVariableName(() => SetClientLanguage), 20003, "", true);
         public static ActionIDs ForceLogout = new ActionIDs(GetVariableName(() => ForceLogout), 20004, "", true);

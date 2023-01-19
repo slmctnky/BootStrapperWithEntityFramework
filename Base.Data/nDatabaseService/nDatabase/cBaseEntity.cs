@@ -99,6 +99,12 @@ namespace Base.Data.nDatabaseService.nDatabase
             __DbContext.Set<TEntity>().Where(_Predicate);
         }
 
+        public static IQueryable<TEntity> Get()
+        {
+            DbContext __DbContext = DataService.GetCoreEFDatabaseContext();
+            return __DbContext.Set<TEntity>();
+        }
+
         public static IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> _Predicate)
         {
             DbContext __DbContext = DataService.GetCoreEFDatabaseContext();

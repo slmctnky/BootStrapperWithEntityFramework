@@ -10,6 +10,12 @@ using Bootstrapper.Core.nHandlers.nLanguageHandler;
 using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nLanguageAction;
 using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nShowMessageAction;
 using Base.Data.nDatabaseService;
+using Web.Domain.nWebGraph.nWebApiGraph.nListenerGraph.nLogInOutListener;
+using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nPageResultAction;
+using Web.Domain.nWebGraph.nWebApiGraph.nListenerGraph.nPermissionListener;
+using Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommands.nGetMenuListCommand;
+using Data.Domain.nDefaultValueTypes;
+using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nMenuResultAction;
 
 namespace Web.Domain.nWebGraph.nWebApiGraph.nListenerGraph.nGeneralListener
 {
@@ -55,6 +61,9 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nListenerGraph.nGeneralListener
             }
 
             WebGraph.ActionGraph.LanguageAction.Action(_Controller, new cLanguageProps() { Language = __LanguageItem.LanguageObject, LanguageCode = _ReceivedData.LanguageCode, DefinedLanguages = __DefinedLanguages });
+
+            cMenuResultProps __MenuResultProps = WebGraph.ListenerGraph.GetListenerByType<cPermissionListener>().PreparePageResultProps(_Controller, new cGetMenuListCommandData() { MenuTypeCode = MenuTypes.LeftMenu.Code, RootMenuCode = null});
+            WebGraph.ActionGraph.MenuResultAction.Action(_Controller, __MenuResultProps);
 
         }
     }

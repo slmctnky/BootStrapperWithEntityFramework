@@ -30,6 +30,9 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nCommandGraph.nCommandIDs
         public static CommandIDs CheckLogin = new CommandIDs(GetVariableName(() => CheckLogin), 12, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.Unlogined, RoleIDs.Developer, RoleIDs.User }, _DoFlowCheck: true);
 
 
+        public static CommandIDs GetMenuList = new CommandIDs(GetVariableName(() => GetMenuList), 13, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+        public static CommandIDs GetPageList = new CommandIDs(GetVariableName(() => GetPageList), 14, "", true, new List<RoleIDs>() { RoleIDs.Admin, RoleIDs.User, RoleIDs.Unlogined, RoleIDs.Developer });
+
 
         /// <summary>
         /// // DATA SOURCE

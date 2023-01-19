@@ -17,12 +17,12 @@ namespace Data.Domain.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("ProductVersion", "7.0.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cBatchJobEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cBatchJobEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -67,7 +67,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("BatchJobs");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cBatchJobExecutionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cBatchJobExecutionEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -115,7 +115,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("BatchJobExecutions");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourceColumnEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cDataSourceColumnEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -145,7 +145,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("DataSourceColumns");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourcePermissionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cDataSourcePermissionEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -183,7 +183,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("DataSourcePermissions");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDefaultDataChecksumEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cDefaultDataChecksumEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -210,7 +210,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("DefaultDataChecksums");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cGlobalParamEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cGlobalParamEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -248,7 +248,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("GlobalParams");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cLanguageEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cLanguageEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -279,7 +279,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("Languages");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cLanguageWordEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cLanguageWordEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -322,7 +322,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("LanguageWords");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cMenuEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -370,7 +370,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("Menus");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cPageEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -405,7 +405,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("Pages");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleDataSourceColumnMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleDataSourceColumnMapEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -434,7 +434,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("RoleDataSourceColumnMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleDataSourcePermissionMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleDataSourcePermissionMapEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -463,7 +463,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("RoleDataSourcePermissionMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -490,7 +490,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("Roles");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleMenuMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleMenuMapEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -522,7 +522,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("RoleMenuMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRolePageMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRolePageMapEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -551,7 +551,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("RolePageMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserDetailEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserDetailEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -580,7 +580,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("UserDetails");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -627,7 +627,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserRoleMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserRoleMapEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -656,7 +656,7 @@ namespace Data.Domain.Migrations
                     b.ToTable("UserRoleMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserSessionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserSessionEntity", b =>
                 {
                     b.Property<long>("ID")
                         .ValueGeneratedOnAdd()
@@ -688,9 +688,9 @@ namespace Data.Domain.Migrations
                     b.ToTable("UserSessions");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cBatchJobExecutionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cBatchJobExecutionEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cBatchJobEntity", "BatchJob")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cBatchJobEntity", "BatchJob")
                         .WithMany("JobExecutions")
                         .HasForeignKey("BatchJobID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -699,9 +699,9 @@ namespace Data.Domain.Migrations
                     b.Navigation("BatchJob");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cLanguageWordEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cLanguageWordEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cLanguageEntity", "Language")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cLanguageEntity", "Language")
                         .WithMany("Words")
                         .HasForeignKey("LanguageID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -710,13 +710,13 @@ namespace Data.Domain.Migrations
                     b.Navigation("Language");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cMenuEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", "Page")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cPageEntity", "Page")
                         .WithMany("Menus")
                         .HasForeignKey("PageID");
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", "RootMenu")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cMenuEntity", "RootMenu")
                         .WithMany()
                         .HasForeignKey("RootMenuID");
 
@@ -725,15 +725,15 @@ namespace Data.Domain.Migrations
                     b.Navigation("RootMenu");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleDataSourceColumnMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleDataSourceColumnMapEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourceColumnEntity", "DataSourceColumn")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cDataSourceColumnEntity", "DataSourceColumn")
                         .WithMany("RoleDataSourceColumnMaps")
                         .HasForeignKey("DataSourceColumnID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", "Role")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", "Role")
                         .WithMany("RoleDataSourceColumnMaps")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -744,15 +744,15 @@ namespace Data.Domain.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleDataSourcePermissionMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleDataSourcePermissionMapEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourcePermissionEntity", "DataSourcePermissionEntity")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cDataSourcePermissionEntity", "DataSourcePermissionEntity")
                         .WithMany("RoleDataSourcePermissionMaps")
                         .HasForeignKey("DataSourcePermissionEntityID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", "Role")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", "Role")
                         .WithMany("RoleDataSourcePermissionMaps")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -763,15 +763,15 @@ namespace Data.Domain.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleMenuMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleMenuMapEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", "Menu")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cMenuEntity", "Menu")
                         .WithMany("RoleMenus")
                         .HasForeignKey("MenuID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", "Role")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", "Role")
                         .WithMany("RoleMenus")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -782,15 +782,15 @@ namespace Data.Domain.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRolePageMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRolePageMapEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", "Page")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cPageEntity", "Page")
                         .WithMany("RolePages")
                         .HasForeignKey("PageID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", "Role")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", "Role")
                         .WithMany("RolePages")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -801,9 +801,9 @@ namespace Data.Domain.Migrations
                     b.Navigation("Role");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserDetailEntity", "UserDetail")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cUserDetailEntity", "UserDetail")
                         .WithMany()
                         .HasForeignKey("UserDetailID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -812,15 +812,15 @@ namespace Data.Domain.Migrations
                     b.Navigation("UserDetail");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserRoleMapEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserRoleMapEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", "Role")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", "Role")
                         .WithMany("UserRoleMaps")
                         .HasForeignKey("RoleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserEntity", "User")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cUserEntity", "User")
                         .WithMany("UserRoleMaps")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -831,9 +831,9 @@ namespace Data.Domain.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserSessionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserSessionEntity", b =>
                 {
-                    b.HasOne("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserEntity", "User")
+                    b.HasOne("Data.Domain.nDatabaseService.nSystemEntities.cUserEntity", "User")
                         .WithMany("Sessions")
                         .HasForeignKey("UserID")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -842,39 +842,39 @@ namespace Data.Domain.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cBatchJobEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cBatchJobEntity", b =>
                 {
                     b.Navigation("JobExecutions");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourceColumnEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cDataSourceColumnEntity", b =>
                 {
                     b.Navigation("RoleDataSourceColumnMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cDataSourcePermissionEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cDataSourcePermissionEntity", b =>
                 {
                     b.Navigation("RoleDataSourcePermissionMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cLanguageEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cLanguageEntity", b =>
                 {
                     b.Navigation("Words");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cMenuEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cMenuEntity", b =>
                 {
                     b.Navigation("RoleMenus");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cPageEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cPageEntity", b =>
                 {
                     b.Navigation("Menus");
 
                     b.Navigation("RolePages");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cRoleEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cRoleEntity", b =>
                 {
                     b.Navigation("RoleDataSourceColumnMaps");
 
@@ -887,7 +887,7 @@ namespace Data.Domain.Migrations
                     b.Navigation("UserRoleMaps");
                 });
 
-            modelBuilder.Entity("Data.Domain.nDataService.nEntityServices.nSystemEntities.cUserEntity", b =>
+            modelBuilder.Entity("Data.Domain.nDatabaseService.nSystemEntities.cUserEntity", b =>
                 {
                     b.Navigation("Sessions");
 

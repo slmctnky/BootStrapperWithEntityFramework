@@ -32,6 +32,9 @@ using System.Linq;
 using System.Reflection;
 using Bootstrapper.Core.nCore;
 using Bootstrapper.Core.nApplication;
+using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nPageResultAction;
+using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nMenuResultAction;
+using Web.Domain.nWebGraph.nWebApiGraph.nActionGraph.nActions.nResultItemAction;
 
 namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph
 {
@@ -82,7 +85,14 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph
 		public cDoCheckLoginRequestAction DoCheckLoginRequestAction { get; set; }
 		public cValidationResultAction ValidationResultAction { get; set; }
 
-		public cActionGraph(cApp _App, cWebGraph _WebGraph)
+        public cPageResultAction PageResultAction { get; set; }
+
+        public cMenuResultAction MenuResultAction { get; set; }
+
+        public cResultItemAction ResultItemAction { get; set; }
+
+
+        public cActionGraph(cApp _App, cWebGraph _WebGraph)
             : base(_App)
         {
             ActionList = new List<IAction>();
@@ -98,6 +108,8 @@ namespace Web.Domain.nWebGraph.nWebApiGraph.nActionGraph
                 PropertyInfo __PropertyInfo = __ThisType.GetAllProperties().Where(__Item => __Item.Name.StartsWith(__Action.ActionID.Name + "Action")).FirstOrDefault();
                 if (__PropertyInfo == null)
                 {
+                    ////// Oluşturulan her action bu class'ın içine tanımlanmalı
+                    //////
                     throw new Exception($"{__Action.ActionID.Name} Action ismi ActionIDs ile eşleşmiyor.");
                 }
                 __PropertyInfo.GetSetMethod().Invoke(this, new object[] { __Action });

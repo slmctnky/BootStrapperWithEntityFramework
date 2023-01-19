@@ -9,6 +9,9 @@ using Data.Domain.nDatabaseService;
 using System.Drawing;
 using Data.Domain.nDefaultValueTypes;
 using Data.Domain.nDatabaseService.nSystemEntities;
+using System.Data;
+using Microsoft.EntityFrameworkCore;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Data.Domain.nDataService.nDataManagers
 {
@@ -92,25 +95,36 @@ namespace Data.Domain.nDataService.nDataManagers
         {
             return CreateSubMenuIfNotExists(_RootMenuID, _MenuID.MenuType.Code, _MenuID.Name, _MenuID.Code, _MenuID.Icon, _MenuID.ID, _PageEntity);
         }
-        
 
-       /* public List<object> GetSubMenus(List<MenuIDs> _MenuIDsList)
+        public List<cMenuEntity> GetMenuByUser(cUserEntity _User, string _MenuTypeCode, string _RootMenuCode)
         {
-            List<object> __List = new List<object>();
-            foreach (MenuIDs _Menu in _MenuIDsList)
-            {
-                cMenuEntity __MenuEntity = GetMenuByCode(_Menu.Code);
-                cPageEntity __Page = __MenuEntity.Page.GetValue();
-                __List.Add(new
-                {
-                    url = __Page.Url,
-                    icon = __MenuEntity.Icon,
-                    name = __MenuEntity.Name,
-                    Active = false
-                });
-                
-            }
-            return __List;
-        }*/
+            List<cMenuEntity> __MenuEntity = cMenuEntity.Get(
+                __Item => __Item.MenuTypeCode == _MenuTypeCode && __Item.RoleMenus.Any(
+                    __Item => __Item.Role.UserRoleMaps.Any(__Item => __Item.User.ID == _User.ID)
+                )
+            
+            ).ToList();
+            return __MenuEntity;
+        }
+
+
+        /* public List<object> GetSubMenus(List<MenuIDs> _MenuIDsList)
+         {
+             List<object> __List = new List<object>();
+             foreach (MenuIDs _Menu in _MenuIDsList)
+             {
+                 cMenuEntity __MenuEntity = GetMenuByCode(_Menu.Code);
+                 cPageEntity __Page = __MenuEntity.Page.GetValue();
+                 __List.Add(new
+                 {
+                     url = __Page.Url,
+                     icon = __MenuEntity.Icon,
+                     name = __MenuEntity.Name,
+                     Active = false
+                 });
+
+             }
+             return __List;
+         }*/
     }
 }

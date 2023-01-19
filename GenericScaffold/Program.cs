@@ -18,9 +18,6 @@ public static class Program
         // if you have many layer you can add your domain from core to app layer
         //__DataConfiguration.ApplicationSettings.DomainNames.Add("GenericScaffold");
 
-        // this is culture
-        __DataConfiguration.ApplicationSettings.UICultureName = "tr-TR";
-
 
         // You can change other configuration at here
         //__DataConfiguration.

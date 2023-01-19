@@ -7,7 +7,6 @@ using Base.Data.nDatabaseService;
 using Data.Domain.nDatabaseService;
 
 using Data.Domain.nDefaultValueTypes;
-using System.Data.Entity;
 using Data.Domain.nDatabaseService.nSystemEntities;
 
 namespace Data.Domain.nDataService.nDataManagers

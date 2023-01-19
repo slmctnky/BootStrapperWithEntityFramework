@@ -23,12 +23,15 @@ namespace Web.Domain.nWebGraph.nComponentManager
         public cDataService DataService { get; set; }
         public IFileDateService FileDataService { get; set; }
 
-        public cComponentManager(cApp _App, cDataServiceContext _CoreServiceContext, cDataService _DataService, IFileDateService _FileDataService)
+        public cComponentManager(cApp _App, cDataServiceContext _CoreServiceContext, cDataService _DataService, IFileDateService _FileDataService
+            , cDataSourceManager _DataSourceManager
+            )
             : base(_App)
         {
             CoreServiceContext = _CoreServiceContext;
             DataService = _DataService;
             FileDataService = _FileDataService;
+            DataSourceManager = _DataSourceManager;
         }
 
         public override void Init()
